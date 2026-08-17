@@ -479,7 +479,7 @@
       pointer-events: auto;
     }
     @media (max-width: 1024px) {
-      .hero-grid, .grid, .collections, .footer-grid {
+          .grid, .collections, .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
