@@ -483,8 +483,8 @@
       right: 20px;
       top: 50%;
       transform: translateY(-50%);
-      width: 420px;
-      height: 320px;
+      width: 560px;
+      height: 400px;
       object-fit: cover;
       object-position: center;
 }
