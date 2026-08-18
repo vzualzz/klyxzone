@@ -83,7 +83,7 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 2fr;
       gap: 20px;
       align-items: stretch;
     }
