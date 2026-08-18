@@ -487,6 +487,7 @@
       height: 400px;
       object-fit: cover;
       object-position: center;
+      border: 5px solid red;
 }
     @media (max-width: 1024px) {
           .grid, .collections, .footer-grid {
