@@ -5,8 +5,7 @@ const products = [
         category: "mouses",
         price: 1349.91,
         desc: "Leve, preciso e com acabamento monocromático.",
-        initial: "B"
-            image: "imagens1/beast1.webp"
+        initial: "M"
       },
       {
         id: 2,
@@ -119,11 +118,7 @@ const products = [
   return 
     <article class="product">
       <div class="thumb">
-        ${
-          p.image
-            ? <img src="${p.image}" alt="${p.name}">
-            : <div class="fallback">${p.initial}</div>
-        }
+        <div class="fallback">${p.initial}</div>
       </div>
       <div class="content">
         <div class="tag">${p.category}</div>
@@ -139,7 +134,6 @@ const products = [
     </article>
   ;
 }
-
     function renderGrid() {
       const items = filteredProducts();
       gridEl.innerHTML = items.length
