@@ -115,24 +115,27 @@ function filteredProducts() {
 }
 
 function productCard(p) {
-  return `
+  return 
     <article class="product">
       <div class="thumb">
         <div class="fallback">${p.initial}</div>
       </div>
+
       <div class="content">
         <div class="tag">${p.category}</div>
         <h3 class="name">${p.name}</h3>
         <p class="desc">${p.desc}</p>
+
         <div class="price-row">
           <div>
             <div class="price">${money(p.price)}</div>
           </div>
+
           <button class="buy" data-id="${p.id}">Adicionar</button>
         </div>
       </div>
     </article>
-   `;
+  ;
 }
 
 function renderGrid() {
