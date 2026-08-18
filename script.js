@@ -116,26 +116,29 @@ const products = [
     }
 
     function productCard(p) {
-      return `
-        <article class="product">
-          <div class="thumb">
-          <img src="${p,image}" alt="$
-          {p.name}">
+  return 
+    <article class="product">
+      <div class="thumb">
+        ${
+          p.image
+            ? <img src="${p.image}" alt="${p.name}">
+            : <div class="fallback">${p.initial}</div>
+        }
+      </div>
+      <div class="content">
+        <div class="tag">${p.category}</div>
+        <h3 class="name">${p.name}</h3>
+        <p class="desc">${p.desc}</p>
+        <div class="price-row">
+          <div>
+            <div class="price">${money(p.price)}</div>
           </div>
-          <div class="content">
-            <div class="tag">${p.category}</div>
-            <h3 class="name">${p.name}</h3>
-            <p class="desc">${p.desc}</p>
-            <div class="price-row">
-              <div>
-                <div class="price">${money(p.price)}</div>
-              </div>
-              <button class="buy" data-id="${p.id}">Adicionar</button>
-            </div>
-          </div>
-        </article>
-      `;
-    }
+          <button class="buy" data-id="${p.id}">Adicionar</button>
+        </div>
+      </div>
+    </article>
+  ;
+}
 
     function renderGrid() {
       const items = filteredProducts();
