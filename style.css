@@ -483,7 +483,7 @@
       right: 20px;
       top: 50%;
       transform: translateY(-50%);
-      width:180px;
+      width: 180px;
 }
     @media (max-width: 1024px) {
           .grid, .collections, .footer-grid {
