@@ -115,7 +115,7 @@ function filteredProducts() {
 }
 
 function productCard(p) {
-  return 
+  return `
     <article class="product">
       <div class="thumb">
         <div class="fallback">${p.initial}</div>
