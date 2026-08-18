@@ -3,7 +3,7 @@ const products = [
         id: 1,
         name: "Beast X Max",
         category: "mouses",
-        price: 1349.90,
+        price: 1349.91,
         desc: "Leve, preciso e com acabamento monocromático.",
         initial: "B"
       },
