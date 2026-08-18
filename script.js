@@ -88,13 +88,13 @@ const drawerEl = document.getElementById("drawer");
 const overlayEl = document.getElementById("overlay");
 
 function renderChips() {
-  chipsEl.innerHTML = categories.map(cat => `
+  chipsEl.innerHTML = categories.map(cat => 
     <button class="chip ${
       state.category === cat ? "active" : ""
     }" data-cat="${cat}">
       ${cat === "todos" ? "Todos" : cat.charAt(0).toUpperCase() + cat.slice(1)}
     </button>
-    `).join("");
+  ).join("");
 
   chipsEl.querySelectorAll(".chip").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -107,9 +107,18 @@ function renderChips() {
 
 function filteredProducts() {
   return products.filter(p => {
-    const matchesCategory = state.category === "todos" || p.category === state.category;
+    const matchesCategory =
+      state.category === "todos" || p.category === state.category;
+
     const q = state.query.trim().toLowerCase();
-    const matchesQuery = !q || [p.name, p.desc, p.category].join(" ").toLowerCase().includes(q);
+
+    const matchesQuery =
+      !q ||
+      [p.name, p.desc, p.category]
+        .join(" ")
+        .toLowerCase()
+        .includes(q);
+
     return matchesCategory && matchesQuery;
   });
 }
