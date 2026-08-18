@@ -6,7 +6,7 @@ const products = [
         price: 1349.91,
         desc: "Leve, preciso e com acabamento monocromático.",
         initial: "B"
-            image: "imagens1/beast1.webp"
+            ,image: "imagens1/beast1.webp"
       },
       {
         id: 2,
