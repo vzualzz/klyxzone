@@ -1,11 +1,11 @@
 const products = [
       {
         id: 1,
-        name: "Mouse gamer ultralight",
+        name: "Beast X Max",
         category: "mouses",
-        price: 349.90,
+        price: 1349.91,
         desc: "Leve, preciso e com acabamento monocromático.",
-        initial: "M"
+        initial: "B"
       },
       {
         id: 2,
