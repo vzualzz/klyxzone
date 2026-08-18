@@ -140,6 +140,7 @@ function productCard(p) {
 
 function renderGrid() {
   const items = filteredProducts();
+
   gridEl.innerHTML = items.length
     ? items.map(productCard).join("")
     : <div class="stat" style="grid-column:1/-1;">Nenhum produto encontrado.</div>;
