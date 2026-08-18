@@ -490,6 +490,12 @@
       border: none !important;
       outline: none !important;
       box-shadow: none !important;
+
+      mask-image: radial-gradient (ellipse,
+            black 55%, transparent 100%);
+      -webkitt-mask-image:
+            radial-gradient (ellipse, black 55%,
+            transparent 100%);
 }
     @media (max-width: 1024px) {
           .grid, .collections, .footer-grid {
