@@ -132,7 +132,7 @@ function productCard(p) {
         </div>
       </div>
     </article>
-  ;
+   `;
 }
 
 function renderGrid() {
