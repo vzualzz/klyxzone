@@ -478,6 +478,13 @@
       opacity: 1;
       pointer-events: auto;
     }
+.hero-product {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width:420px;
+}
     @media (max-width: 1024px) {
           .grid, .collections, .footer-grid {
         grid-template-columns: 1fr 1fr;
