@@ -487,6 +487,9 @@
       height: 400px;
       object-fit: cover;
       object-position: center;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
 }
     @media (max-width: 1024px) {
           .grid, .collections, .footer-grid {
