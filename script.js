@@ -6,7 +6,6 @@ const products = [
         price: 1349.91,
         desc: "Leve, preciso e com acabamento monocromático.",
         initial: "B"
-            image: "imagens1/beast1.webp"
       },
       {
         id: 2,
@@ -119,11 +118,7 @@ const products = [
       return `
         <article class="product">
           <div class="thumb">
-          ${p.image}" alt="$
-          {p.name}">`
-            :`<div class="fallback">$
-            {p.intitial}</div>`
-    }
+            <div class="fallback">${p.initial}</div>
           </div>
           <div class="content">
             <div class="tag">${p.category}</div>
