@@ -137,21 +137,22 @@ const products = [
     }
 
     function renderGrid() {
-      const items = filteredProducts();
-      gridEl.innerHTML = items.length
-        ? items.map(productCard).join("")
-        : `<div class="stat" style="grid-column:1/-1;">Nenhum produto encontrado.</div>`;
+     gridEl.querySelectorAll(".buy").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item = products.find(p => p.id === Number(btn.dataset.id));
+    const existing = state.cart.find(cartItem => cartItem.id === item.id);
 
-      gridEl.querySelectorAll(".buy").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const item = products.find(p => p.id === Number(btn.dataset.id));
-          state.cart.push(item);
-          updateCart();
-          openCart();
-        });
-      });
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      state.cart.push({ ...item, quantity: 1 });
     }
 
+    updateCart();
+    openCart();
+  });
+});
+          
     function updateCart() {
       const count = state.cart.length;
       const total = state.cart.reduce((acc, item) => acc + item.price, 0);
