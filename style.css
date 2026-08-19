@@ -544,9 +544,9 @@
     linear-gradient(
       to bottom,
       transparent 0%,
-      black 18%,
-      black 82%,
-      transparent 100%
+      transparent 8%,
+      black 28%,
+      black 100%,
     ),
     linear-gradient(
       to right,
@@ -562,9 +562,9 @@
     linear-gradient(
       to bottom,
       transparent 0%,
-      black 18%,
-      black 82%,
-      transparent 100%
+      transparent 8%,
+      black 28%,
+      black 100%,
     ),
     linear-gradient(
       to right,
