@@ -345,26 +345,74 @@
       cursor: pointer;
       white-space: nowrap;
     }
-    .collections {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px;
-    }
-    .collection {
-      padding: 18px;
-      min-height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .collection strong {
-      font-size: 1.2rem;
-    }
-    .collection span {
-      color: var(--muted);
-      line-height: 1.6;
-    }
+ .collections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.collection {
+  position: relative;
+  min-height: 110px;
+  padding: 20px 52px 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.025);
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.collection:hover {
+  border-color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.05);
+}
+
+.collection-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.collection-icon svg {
+  width: 46px;
+  height: 46px;
+}
+
+.collection-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.collection strong {
+  font-size: 1.1rem;
+}
+
+.collection span {
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 0.9rem;
+}
+
+.collection-arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #fff;
+  transition: transform .2s ease;
+}
+
+.collection:hover .collection-arrow {
+  transform: translate(4px, -50%);
+}
     footer {
       margin-top: 26px;
       padding: 28px 0 36px;
