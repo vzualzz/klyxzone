@@ -532,29 +532,50 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 58%;
-  max-width: 820px;
-  height: 100%;
+  width: 68%;
+  max-width: 900px;
+  height: 110%;
   object-fit: contain;
   object-position: center;
   border-radius: 28px;
   opacity: 0.95;
 
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0,0,0,0.35) 12%,
-    black 30%,
-    black 100%
-  );
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0,0,0,0.35) 12%,
+      black 30%,
+      black 100%
+    );
 
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0,0,0,0.35) 12%,
-    black 30%,
-    black 100%
-  );
+  -webkit-mask-composite: source-in;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0,0,0,0.35) 12%,
+      black 30%,
+      black 100%
+    );
+
+  mask-composite: intersect;
+}
 }
 
     @media (max-width: 1024px) {
