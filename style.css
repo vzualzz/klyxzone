@@ -535,7 +535,7 @@
   width: 58%;
   max-width: 820px;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 28px;
   opacity: 0.95;
