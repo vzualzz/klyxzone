@@ -529,10 +529,10 @@
     }
 .hero-product {
   position: absolute;
-  right: 0;
+  right: 3%;
   top: 50%;
   transform: translateY(-50%);
-  width: 68%;
+  width: 74%;
   max-width: 1000px;
   height: 100%;
   object-fit: cover;
