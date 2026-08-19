@@ -154,8 +154,11 @@ const products = [
 });
           
     function updateCart() {
-      const count = state.cart.length;
-      const total = state.cart.reduce((acc, item) => acc + item.price, 0);
+      const count = state.cart.reduce((acc, item) => acc + item.quantity, 0);
+const total = state.cart.reduce(
+  (acc, item) => acc + item.price * item.quantity,
+  0
+);
 
       cartCountEl.textContent = count;
       cartItemsCountEl.textContent = count;
