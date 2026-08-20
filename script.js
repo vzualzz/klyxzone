@@ -1,5 +1,5 @@
 const products = [
-  { id: 1, name: "Beast X Max", category: "mouses", price: 1349.91, desc: "Leve, preciso e com acabamento monocromático.", initial: "M", image: "" },
+  { id: 1, name: "Beast X Max", category: "mouses", price: 1349.91, desc: "Leve, preciso e com acabamento monocromático.", initial: "B", image: "" },
   { id: 2, name: "Mouse esportivo high DPI", category: "mouses", price: 289.90, desc: "Design enxuto para performance e controle.", initial: "M", image: "" },
   { id: 3, name: "Teclado Hall Effect 65%", category: "teclados", price: 899.90, desc: "Formato compacto com aparência premium.", initial: "T", image: "" },
   { id: 4, name: "Teclado mecânico TKL branco", category: "teclados", price: 499.90, desc: "Visual limpo com teclas de alta resposta.", initial: "T", image: "" },
@@ -164,7 +164,8 @@ function updateCart() {
     const cartItem = document.createElement("div");
     cartItem.className = "cart-item";
 
-    const thumb = document.createElement("div");
+    const thumb = 
+      document.createElement("div");
     thumb.className = "fallback";
 
     if (item.image) {
@@ -177,22 +178,72 @@ function updateCart() {
       thumb.textContent = item.initial;
     }
 
-    const info = document.createElement("div");
-    const name = document.createElement("strong");
-    name.textContent = item.name;
+    state.cart.forEach(item => {
+  const cartItem = document.createElement("div");
+  cartItem.className = "cart-item";
 
-    const details = document.createElement("small");
-    details.textContent = `${money(item.price)} • ${item.category} • Quantidade: ${item.quantity}`;
+  const thumb = document.createElement("div");
+  thumb.className = "fallback";
 
-    const removeButton = document.createElement("button");
-    removeButton.className = "btn";
-    removeButton.textContent = "x";
-    removeButton.addEventListener("click", () => removeFromCart(item.id));
+  if (item.image) {
+    const image = document.createElement("img");
+    image.src = item.image;
+    image.alt = item.name;
+    image.loading = "lazy";
+    thumb.appendChild(image);
+  } else {
+    thumb.textContent = item.initial;
+  }
 
-    info.append(name, details);
-    cartItem.append(thumb, info, removeButton);
-    cartItemsEl.appendChild(cartItem);
+  const info = document.createElement("div");
+
+  const name = document.createElement("strong");
+  name.textContent = item.name;
+
+  const details = document.createElement("small");
+  details.textContent = ${money(item.price)} • ${item.category};
+
+  const quantityControls = document.createElement("div");
+  quantityControls.className = "quantity-controls";
+
+  const decreaseButton = document.createElement("button");
+  decreaseButton.className = "btn quantity-button";
+  decreaseButton.textContent = "−";
+
+  const quantity = document.createElement("span");
+  quantity.textContent = item.quantity;
+
+  const increaseButton = document.createElement("button");
+  increaseButton.className = "btn quantity-button";
+  increaseButton.textContent = "+";
+
+  decreaseButton.addEventListener("click", () => {
+    if (item.quantity > 1) {
+      item.quantity -= 1;
+      updateCart();
+    } else {
+      removeFromCart(item.id);
+    }
   });
+
+  increaseButton.addEventListener("click", () => {
+    item.quantity += 1;
+    updateCart();
+  });
+
+  quantityControls.appendChild(decreaseButton);
+  quantityControls.appendChild(quantity);
+  quantityControls.appendChild(increaseButton);
+
+  info.appendChild(name);
+  info.appendChild(details);
+  info.appendChild(quantityControls);
+
+  cartItem.appendChild(thumb);
+  cartItem.appendChild(info);
+
+  cartItemsEl.appendChild(cartItem);
+});
 }
 
 function removeFromCart(productId) {
