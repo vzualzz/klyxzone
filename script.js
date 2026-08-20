@@ -183,13 +183,23 @@ function updateCart() {
 
     const details = document.createElement("small");
     details.textContent = `${money(item.price)} • ${item.category} • Quantidade: ${item.quantity}`;
+    const increaseButton = 
+    document.createElement("button");
+    increaseButton.classname = "btn";
+    increaseButton.textContent = "+";
+    increaseButton.addEventListener("click"
+                                    , () => {
+                                      item.quantity += 1;
+                                      updateCart();
+                                    });
 
     const removeButton = document.createElement("button");
     removeButton.className = "btn";
     removeButton.textContent = "x";
     removeButton.addEventListener("click", () => removeFromCart(item.id));
-
+    
     info.append(name, details);
+    info.appendChild(increaseButton);
     cartItem.append(thumb, info, removeButton);
     cartItemsEl.appendChild(cartItem);
   });
