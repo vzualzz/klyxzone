@@ -183,6 +183,19 @@ function updateCart() {
 
     const details = document.createElement("small");
     details.textContent = `${money(item.price)} • ${item.category} • Quantidade: ${item.quantity}`;
+    const decreaseButton = 
+      document.createElement("button");
+    decreaseButton.className = "btn";
+    decreaseButton.textContent = "-";
+    decreaseButton.addEventListener("click"
+                                    , () => {
+                                      if (item.quantity > 1) {
+                                        item.quantity -= 1;
+                                        updateCart();
+                                        { else {
+                                          removeFromCart(item.id);
+                                        }
+                                        });
     const increaseButton = 
     document.createElement("button");
     increaseButton.classname = "btn";
@@ -199,6 +212,7 @@ function updateCart() {
     removeButton.addEventListener("click", () => removeFromCart(item.id));
     
     info.append(name, details);
+    info.appendChild(decreaseButton);
     info.appendChild(increaseButton);
     cartItem.append(thumb, info, removeButton);
     cartItemsEl.appendChild(cartItem);
