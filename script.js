@@ -1,12 +1,11 @@
 const products = [
       {
         id: 1,
-        name: "Beast X Max",
+        name: "Mouse gamer ultralight",
         category: "mouses",
-        price: 1349.91,
+        price: 349.90,
         desc: "Leve, preciso e com acabamento monocromático.",
-        initial: "B"
-            ,image: "imagens1/beast1.webp"
+        initial: "M"
       },
       {
         id: 2,
@@ -137,26 +136,24 @@ const products = [
     }
 
     function renderGrid() {
-     gridEl.querySelectorAll(".buy").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const item = products.find(p => p.id === Number(btn.dataset.id));
-    const existing = state.cart.find(cartItem => cartItem.id === item.id);
+      const items = filteredProducts();
+      gridEl.innerHTML = items.length
+        ? items.map(productCard).join("")
+        : `<div class="stat" style="grid-column:1/-1;">Nenhum produto encontrado.</div>`;
 
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      state.cart.push({ ...item, quantity: 1 });
+      gridEl.querySelectorAll(".buy").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const item = products.find(p => p.id === Number(btn.dataset.id));
+          state.cart.push(item);
+          updateCart();
+          openCart();
+        });
+      });
     }
 
-    updateCart();
-    openCart();
-  });
-});
-          
     function updateCart() {
       const count = state.cart.length;
-const total = state.cart.reduce((acc, item) => acc + item.price, 0);
-);
+      const total = state.cart.reduce((acc, item) => acc + item.price, 0);
 
       cartCountEl.textContent = count;
       cartItemsCountEl.textContent = count;
