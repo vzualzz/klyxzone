@@ -1,5 +1,5 @@
 const products = [
-  { id: 1, name: "Mouse gamer ultralight", category: "mouses", price: 349.90, desc: "Leve, preciso e com acabamento monocromático.", initial: "M", image: "" },
+  { id: 1, name: "Beast X Max", category: "mouses", price: 1349.91, desc: "Leve, preciso e com acabamento monocromático.", initial: "M", image: "" },
   { id: 2, name: "Mouse esportivo high DPI", category: "mouses", price: 289.90, desc: "Design enxuto para performance e controle.", initial: "M", image: "" },
   { id: 3, name: "Teclado Hall Effect 65%", category: "teclados", price: 899.90, desc: "Formato compacto com aparência premium.", initial: "T", image: "" },
   { id: 4, name: "Teclado mecânico TKL branco", category: "teclados", price: 499.90, desc: "Visual limpo com teclas de alta resposta.", initial: "T", image: "" },
