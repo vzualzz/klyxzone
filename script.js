@@ -220,17 +220,17 @@ function updateCart() {
                                         removeFromCart(item.id);
                                       }
                                     });
-quantityRow.appendChild(quantityLabel);
-quantityRow.appendChild(decreaseButton)
-  ;
-    const quantityValue =
-    document.createElement('span');
-    quantityValue.textContent =
-    item.quantity;
-    quantityRow.appendChild(quantityValue);
     
-    quantityRow.appendChild(increaseButton)
-  ;
+quantityRow.appendChild(quantityLabel);
+
+const quantityValue =
+    document.createElement("span");
+quantityValue.textContent =
+    item.quantity;
+
+quantityRow.appendChild(quantityValue);
+quantityRow.appendChild(decreaseButton);
+quantityRow.appendChild(increaseButton);
 
 info.append(name, details, quantityRow);
     
