@@ -201,8 +201,9 @@ function updateCart() {
     
     info.append(name, details);
     info.appendChild(increaseButton);
-    const decreaseButton = 
-      incraseButton.cloneNode(true);
+    const decreaseButton =
+      document.createElement("button");
+    decreaseButton.className = "btn";
     decreaseButton.textContent = "-";
     
     decreaseButton.addEventListener("click"
