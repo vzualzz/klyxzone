@@ -190,7 +190,7 @@ function updateCart() {
     
     const quantityLabel =
       document.createElement("span");
-    quantityLabel.textContent = "`Quantidade:";
+    quantityLabel.textContent = "Quantidade:";
     
     const increaseButton = 
     document.createElement("button");
