@@ -194,7 +194,7 @@ function updateCart() {
     
     const increaseButton = 
     document.createElement("button");
-    increaseButton.classname = "btn";
+    increaseButton.className = "btn";
     increaseButton.textContent = "+";
     increaseButton.addEventListener("click"
                                     , () => {
