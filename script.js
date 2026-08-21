@@ -201,6 +201,22 @@ function updateCart() {
     
     info.append(name, details);
     info.appendChild(increaseButton);
+    const decreaseButton = 
+      incraseButton.clickNode(true);
+    decreaseButton.textContent = "-";
+    
+    decreaseButton.addEventListener("click"
+                                    , () => {
+                                      if (item.quantity > 1) {
+                                        item.quantity -= 1;
+                                        updateCart();
+                                      } else {
+                                        removeFromCart(item.id);
+                                      }
+                                    });
+    info.insertBefore(decreaseButton,
+    increaseButton);
+    
     cartItem.append(thumb, info, removeButton);
     cartItemsEl.appendChild(cartItem);
   });
