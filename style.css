@@ -589,13 +589,24 @@
 }
 
 .quantity-row .btn {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 44px;
   padding: 0;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+
   font-size: 14px;
+  font-weight: 500;
+
+  box-shadow: none;
 }
 
 .quantity-row span {
