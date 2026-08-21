@@ -230,6 +230,13 @@ quantityValue.textContent =
 
 quantityRow.appendChild(quantityValue);
 quantityRow.appendChild(decreaseButton);
+
+const quantityValueButtons =
+    document.createElement("span");
+quantityValueButtons.textContent =
+    item.quantity;
+
+quantityRow.appendChild(quantityValueButtons);
 quantityRow.appendChild(increaseButton);
 
 info.append(name, details, quantityRow);
