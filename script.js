@@ -190,8 +190,7 @@ function updateCart() {
     
     const quantityLabel =
       document.createElement("span");
-    quantityLabel.textContent =
-      `• Quantidade: ${item.quantity}`;
+    quantityLabel.textContent = "`Quantidade:";
     
     const increaseButton = 
     document.createElement("button");
@@ -222,8 +221,16 @@ function updateCart() {
                                       }
                                     });
 quantityRow.appendChild(quantityLabel);
-quantityRow.appendChild(decreaseButton);
-quantityRow.appendChild(increaseButton);
+quantityRow.appendChild(decreaseButton)
+  ;
+    const quantityValue =
+    document.createElement('span');
+    quantityValue.textContent =
+    item.quantity;
+    quantityRow.appendChild(quantityValue);
+    
+    quantityRow.appendChild(increaseButton)
+  ;
 
 info.append(name, details, quantityRow);
     
