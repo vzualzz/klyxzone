@@ -609,6 +609,15 @@
   box-shadow: none;
 }
 
+.quantity-row .btn:first-of-type {
+      width: 32px;
+      height: 32px;
+}
+.quantity-row .btn:last-of-type {
+      background: rgba(255, 255, 255,
+                       0.06);
+      color: var(--text);
+
 .quantity-row span {
   font-size: 13px;
   color: var(--muted);
