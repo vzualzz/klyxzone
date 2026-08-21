@@ -182,7 +182,16 @@ function updateCart() {
     name.textContent = item.name;
 
     const details = document.createElement("small");
-    details.textContent = `${money(item.price)} • ${item.category} • Quantidade: ${item.quantity}`;
+    details.textContent = `${money(item.price)} • ${item.category}
+    `;
+    const quantityRow =
+      document.createElement("div");
+    quantityRow.className = "quantity-row";
+    
+    const quantityLabel =
+      document.createElement("span");
+    quantityLabel.textContent =
+      `• Quantidade: ${item.quantity}`;
     
     const increaseButton = 
     document.createElement("button");
@@ -193,14 +202,11 @@ function updateCart() {
                                       item.quantity += 1;
                                       updateCart();
                                     });
-
     const removeButton = document.createElement("button");
     removeButton.className = "btn";
     removeButton.textContent = "x";
     removeButton.addEventListener("click", () => removeFromCart(item.id));
     
-    info.append(name, details);
-    info.appendChild(increaseButton);
     const decreaseButton =
       document.createElement("button");
     decreaseButton.className = "btn";
@@ -215,8 +221,11 @@ function updateCart() {
                                         removeFromCart(item.id);
                                       }
                                     });
-    info.insertBefore(decreaseButton,
-    increaseButton);
+quantityRow.appendChild(quantityLabel);
+quantityRow.appendChild(decreaseButton);
+quantityRow.appendChild(increaseButton);
+
+info.append(name, details, quantityRow);
     
     cartItem.append(thumb, info, removeButton);
     cartItemsEl.appendChild(cartItem);
