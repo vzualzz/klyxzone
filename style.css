@@ -282,6 +282,9 @@
       box-shadow: 0 18px 40px rgba(0,0,0,0.28);
       background: #fff;
     }
+    .thumb:hover img {
+      filter: grayscale(0.2) contrast(1.1);
+    }
     .thumb .fallback {
       width: 78%;
       height: 78%;
