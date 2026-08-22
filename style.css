@@ -277,7 +277,6 @@
       width: 82%;
       height: 82%;
       object-fit: cover;
-      filter: grayscale(1) contrast(1.05);
       border-radius: 18px;
       z-index: 1;
       box-shadow: 0 18px 40px rgba(0,0,0,0.28);
