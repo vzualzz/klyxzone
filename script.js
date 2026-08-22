@@ -26,6 +26,8 @@ const drawerEl = document.getElementById("drawer");
 const overlayEl = document.getElementById("overlay");
 const openCartEl = document.getElementById("openCart");
 const closeCartEl = document.getElementById("closeCart");
+const checkoutButton =
+  document.getElementById("checkoutButton");
 
 function renderChips() {
   chipsEl.innerHTML = "";
