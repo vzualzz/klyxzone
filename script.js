@@ -287,8 +287,8 @@ checkoutButton.addEventListener("click"
                                   }
                                   let message = "Olá! Gostaria de fazer um pedido:%0A%0A";
                                   state.cart.forEach(item => {
-                                    message += `• ${item.name} - $
-                                    {item.quantity}x $ ${money(item.price)}
+                                    message += `• ${item.name} - 
+                                    ${item.quantity}x $ ${money(item.price)}
                                     %0A`;
                                   });
 
