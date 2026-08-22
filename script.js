@@ -3,7 +3,7 @@ const products = [
   { id: 2, name: "ATK Ghost Extreme Carbon Fiber", category: "mouses", price: 989.91, desc: "Design enxuto para performance e controle.", initial: "A", image: "imagens1/atkghost.webp" },
   { id: 3, name: "Aspas RS6 Ultra HE", category: "teclados", price: 1889.91, desc: "Formato compacto com aparência premium.", initial: "A", image: "imagens1/aspasrs6.webp" },
   { id: 4, name: "ATK RS7 Air", category: "teclados", price: 701.91, desc: "Visual limpo com teclas de alta resposta.", initial: "R", image: "imagens1/rs7air.webp" },
-  { id: 5, name: "Mousepad control XL", category: "mousepads", price: 149.90, desc: "Base estável, textura suave e grande área útil.", initial: "P", image: "" },
+  { id: 5, name: "Artisan FX Hien XL", category: "mousepads", price: 602.91, desc: "Base estável, textura suave e grande área útil.", initial: "H", image: "imagens1/artisanhienblue.webp" },
   { id: 6, name: "Mousepad speed XXL", category: "mousepads", price: 179.90, desc: "Deslize rápido com acabamento minimalista.", initial: "P", image: "" },
   { id: 7, name: "Headset premium black", category: "audio", price: 459.90, desc: "Som limpo e visual discreto para o setup.", initial: "A", image: "" },
   { id: 8, name: "Controle wireless branco", category: "controles", price: 239.90, desc: "Pegada confortável e design moderno.", initial: "C", image: "" }
