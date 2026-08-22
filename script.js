@@ -279,33 +279,27 @@ renderChips();
 renderGrid();
 updateCart();
 
-checkoutButton.addEventListener("click"
-                                ,() => {
-                                  if (!state.cart.length) {
-                                    alert("Seu carrinho está vazio.");
-                                    return;
-                                  }
-                                  let message = "Olá! Gostaria de fazer um pedido:%0A%0A";
-                                  state.cart.forEach(item => {
-                                    message += `• ${item.name} - 
-                                    ${item.quantity}x $ ${money(item.price)}
-                                    %0A`;
-                                  });
+checkoutButton.addEventListener("click", () => {
+  if (!state.cart.length) {
+    alert("Seu carrinho está vazio.");
+    return;
+  }
 
-                                  const total = state.cart.reduce(
-                                    (sum, item) => sum + item.price *
-                                      item.quantity,
-                                    0
-                                    );
-                                  
-                                  message += `%0ATotal: ${money(total)}
-                                  `;
+  let message = "🛒 *Pedido via Loja Online* %0A%0A";
+  state.cart.forEach(item => {
+    message += `• ${item.name} %0A   Quantidade: ${item.quantity}x %0A   Preço unitário: ${money(item.price)} %0A%0A`;
+  });
 
-                                  const whatsappNumber =
-                                    "5531972247548";
-                                  const whatsappUrl =
-                                    `https://wa.me/${whatsappNumber}?text=
-                                  ${message}`;
+  const total = state.cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
-                                  window.open(whatsappUrl, "_blank");
-                                });
+  message += `💰 *Total:* ${money(total)} %0A%0A`;
+  message += "📦 Por favor, confirme o endereço de entrega.";
+
+  const whatsappNumber = "5531972247548";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+  window.open(whatsappUrl, "_blank");
+});
