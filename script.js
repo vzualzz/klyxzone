@@ -278,3 +278,34 @@ overlayEl.addEventListener("click", closeCart);
 renderChips();
 renderGrid();
 updateCart();
+
+checkoutButton.addEventListener("click"
+                                ,() => {
+                                  if (!state.cart.lenght) {
+                                    alert("Seu carrinho está vazio.");
+                                    return;
+                                  }
+                                  let message = "Olá! Gostaria de fazer um pedido:%0A%0A";
+                                  state.cart.forEach(item => {
+                                    message += `• #{item.name} - $
+                                    {item.quantity}x $ ${money(item.price)}
+                                    %0A`;
+                                  });
+
+                                  const total = state.cart.reduce(
+                                    (sum, item) => sum = item.price *
+                                      item.quantity,
+                                    0
+                                    );
+                                  
+                                  message += `%0ATotal: ${money(total)}
+                                  `;
+
+                                  const whatsappNumber =
+                                    "5531972247548";
+                                  const whatsappUrl =
+                                    `https://wa.me/${whatsappNumber}?text=
+                                  ${message}`;
+
+                                  window.open(whatsappUrl, "_blank");
+                                });
