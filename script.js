@@ -6,7 +6,8 @@ const products = [
   { id: 5, name: "Artisan FX Hien XXL", category: "mousepads", price: 602.91, desc: "Base estável, textura suave e grande área útil.", initial: "H", image: "imagens1/artisanhienblue.webp" },
   { id: 6, name: "Artisan FX Zero XXL", category: "mousepads", price: 683.91, desc: "Deslize rápido com acabamento minimalista.", initial: "Z", image: "imagens1/artisanfxzero.jpg" },
   { id: 7, name: "Mchose V9 Pro", category: "audio", price: 450.91, desc: "Som limpo e visual discreto para o setup.", initial: "M", image: "imagens1/mchosev9pro.png" },
-  { id: 8, name: "Mnaguito Talon Games", category: "manguitos", price: 119.91, desc: "Manguito confortável e design moderno.", initial: "M", image: "imagens1/manguito1.png" }
+  { id: 8, name: "Manguito Talon Games", category: "manguitos", price: 119.91, desc: "Manguito confortável e design moderno.", initial: "M", image: "imagens1/manguito1.png" }
+  { id: 9, name: "MOMOLADA GOTOSA", category: "manguitos", price: 159.91, desc: "Manguito confortável e design moderno.", initial: "B", image: "" }
 ];
 
 const state = { query: "", category: "todos", cart: [] };
