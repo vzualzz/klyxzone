@@ -4,9 +4,9 @@ const products = [
   { id: 3, name: "Aspas RS6 Ultra HE", category: "teclados", price: 1889.91, desc: "Formato compacto com aparência premium.", initial: "A", image: "imagens1/aspasrs6.webp" },
   { id: 4, name: "ATK RS7 Air", category: "teclados", price: 701.91, desc: "Visual limpo com teclas de alta resposta.", initial: "R", image: "imagens1/rs7air.webp" },
   { id: 5, name: "Artisan FX Hien XXL", category: "mousepads", price: 602.91, desc: "Base estável, textura suave e grande área útil.", initial: "H", image: "imagens1/artisanhienblue.webp" },
-  { id: 6, name: "Mousepad speed XXL", category: "mousepads", price: 179.90, desc: "Deslize rápido com acabamento minimalista.", initial: "P", image: "" },
+  { id: 6, name: "Artisan FX Zero XXL", category: "mousepads", price: 683.91, desc: "Deslize rápido com acabamento minimalista.", initial: "Z", image: "imagens1/artisanfxzero.jpg" },
   { id: 7, name: "Mchose V9 Pro", category: "audio", price: 450.91, desc: "Som limpo e visual discreto para o setup.", initial: "M", image: "imagens1/mchosev9pro.png" },
-  { id: 8, name: "Controle wireless branco", category: "controles", price: 239.90, desc: "Pegada confortável e design moderno.", initial: "C", image: "" }
+  { id: 8, name: "Mnaguito Talon Games", category: "manguitos", price: 119.91, desc: "Manguito confortável e design moderno.", initial: "M", image: "imagens1/manguito1.png" }
 ];
 
 const state = { query: "", category: "todos", cart: [] };
