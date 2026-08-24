@@ -59,6 +59,14 @@ function filteredProducts() {
 function createProductCard(product) {
   const article = document.createElement("article");
   article.className = "product";
+  article.addEventListener("click", () => {
+  localStorage.setItem(
+    "klyxSelectedProduct",
+    JSON.stringify(product)
+  );
+
+  window.location.href = `produto.html?id=${product.id}`;
+});
 
   const thumb = document.createElement("div");
   thumb.className = "thumb";
@@ -100,19 +108,13 @@ function createProductCard(product) {
   price.className = "price";
   price.textContent = money(product.price);
 
-  const buyButton = document.createElement("button");
-  buyButton.className = "buy";
-  buyButton.dataset.id = product.id;
-  buyButton.textContent = "Adicionar";
-  buyButton.addEventListener("click", () => addToCart(product.id));
-
   priceContainer.appendChild(price);
   priceRow.appendChild(priceContainer);
-  priceRow.appendChild(buyButton);
-  content.append(tag, name, description, priceRow);
-  article.append(thumb, content);
 
-  return article;
+content.append(tag, name, description, priceRow);
+article.append(thumb, content);
+
+return article;
 }
 
 function renderGrid() {
