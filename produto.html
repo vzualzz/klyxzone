@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" type="image/png" href="imagens1/favicon1.jpg">
+  <link rel="stylesheet" href="style.css">
+
+  <title>KLYXZONE • Produto</title>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="wrap nav">
+
+      <a class="brand" href="index.html">
+        <img src="imagens1/logo.jpg" alt="Logo KLYXZONE">
+
+        <div>
+          <strong>KLYXZONE</strong>
+          <span>A melhor loja de periféricos high end</span>
+        </div>
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html#produtos">Produtos</a>
+        <a href="index.html#colecoes">Coleções</a>
+        <a href="index.html#contato">Contato</a>
+
+        <a class="btn" href="index.html#produtos">
+          Voltar
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <main class="wrap">
+
+    <section class="product-page">
+
+      <div class="product-gallery">
+
+        <div class="product-main-image" id="productMainImage">
+        </div>
+
+        <div class="product-thumbnails" id="productThumbnails">
+        </div>
+
+      </div>
+
+
+      <div class="product-info">
+
+        <div class="product-category" id="productCategory">
+          Categoria
+        </div>
+
+        <h1 id="productName">
+          Produto
+        </h1>
+
+        <div class="product-price" id="productPrice">
+          R$ 0,00
+        </div>
+
+        <div class="product-installments">
+          ou <strong id="installmentPrice">10x de R$ 0,00</strong> sem juros
+        </div>
+
+        <div class="product-payment">
+          Pagamento seguro • Pix e cartão
+        </div>
+
+
+        <div class="product-quantity">
+
+          <span>QUANTIDADE</span>
+
+          <div class="product-quantity-controls">
+
+            <button id="decreaseProduct">
+              −
+            </button>
+
+            <strong id="productQuantity">
+              1
+            </strong>
+
+            <button id="increaseProduct">
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <button class="product-add-button" id="addProductToCart">
+          ADICIONAR AO CARRINHO
+        </button>
+
+
+        <div class="product-shipping">
+
+          <strong>Calcular frete</strong>
+
+          <div class="shipping-form">
+
+            <input
+              type="text"
+              id="shippingCep"
+              placeholder="Digite seu CEP"
+            >
+
+            <button id="calculateShipping">
+              Calcular
+            </button>
+
+          </div>
+
+          <small id="shippingResult"></small>
+
+        </div>
+
+
+        <div class="product-description">
+
+          <h2>Descrição</h2>
+
+          <p id="productDescription">
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="product-specs">
+
+      <h2>Especificações</h2>
+
+      <div class="specs-grid" id="productSpecs">
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="produto.js"></script>
+
+</body>
+</html>
