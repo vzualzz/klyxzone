@@ -686,7 +686,7 @@
   .hero-main {
     min-height: 0;
     height: auto;
-    aspect-ratio: 16 / 7;
+    aspect-ratio: 16 / 9;
     padding: 18px;
     border-radius: 18px;
   }
