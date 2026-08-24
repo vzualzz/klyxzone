@@ -627,14 +627,219 @@
       }
     }
     @media (max-width: 760px) {
-      .nav { align-items: start; flex-direction: column; }
-      .navlinks { justify-content: flex-start; }
-      .hero-grid, .grid, .collections, .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-main { min-height: unset; }
-      .toolbar { grid-template-columns: 1fr; }
-    }
+
+  .wrap {
+    width: calc(100% - 28px);
+  }
+
+  /* NAVBAR */
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .brand {
+    gap: 9px;
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .brand strong {
+    font-size: 0.9rem;
+  }
+
+  .brand span {
+    font-size: 0.7rem;
+  }
+
+  .navlinks {
+    gap: 8px;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+  }
+
+  .navlinks a {
+    display: none;
+  }
+
+  .navlinks .btn {
+    padding: 9px 11px;
+    font-size: 0.75rem;
+  }
+
+
+  /* HERO */
+  .hero {
+    padding: 18px 0 8px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-main {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 16 / 7;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .hero-main > *:not(.hero-product) {
+    position: relative;
+    z-index: 4;
+  }
+
+
+  /* LOGO K */
+  .k-letter {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    margin-bottom: 8px;
+  }
+
+  .k-letter img {
+    border-radius: 13px;
+  }
+
+
+  /* TEXTO DO HERO */
+  .eyebrow {
+    font-size: 0.45rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: clamp(1.35rem, 7vw, 2.2rem);
+    max-width: 7ch;
+    line-height: 0.95;
+  }
+
+  .hero p {
+    max-width: 43%;
+    font-size: 0.62rem;
+    line-height: 1.4;
+    margin: 8px 0 10px;
+  }
+
+
+  /* BOTÕES DO HERO */
+  .cta-row {
+    gap: 6px;
+  }
+
+  .cta-row .btn {
+    padding: 7px 9px;
+    font-size: 0.62rem;
+  }
+
+
+  /* ESCONDE ESTATÍSTICAS NO CELULAR */
+  .hero-side {
+    display: none;
+  }
+
+
+  /* IMAGEM DO HERO */
+  .hero-product {
+    right: -3%;
+    width: 64%;
+    height: 100%;
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 18px;
+    opacity: 0.95;
+
+    z-index: 1;
+  }
+
+
+  /* TÍTULOS */
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+
+  /* COLEÇÕES */
+  .collections {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* PRODUTOS — 2 POR LINHA */
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .product {
+    border-radius: 16px;
+  }
+
+  .thumb {
+    aspect-ratio: 1 / 1;
+  }
+
+  .thumb img {
+    width: 86%;
+    height: 86%;
+  }
+
+  .content {
+    padding: 11px;
+    gap: 7px;
+  }
+
+  .name {
+    font-size: 0.88rem;
+  }
+
+  .desc {
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+
+  .price {
+    font-size: 0.92rem;
+  }
+
+  .price-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .buy {
+    width: 100%;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+
+
+  /* BUSCA */
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* RODAPÉ */
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* =========================
    PRODUCT PAGE
