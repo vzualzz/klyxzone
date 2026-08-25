@@ -87,7 +87,7 @@
       gap: 20px;
       align-items: stretch;
     }
-    .hero-main, .hero-side, .panel, .product, .collection {
+    .hero-side, .product, .collection {
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
       box-shadow: var(--shadow);
@@ -226,7 +226,7 @@
       color: var(--muted);
     }
     .panel {
-      padding: 20px;
+      padding: 20px 0;
     }
     .toolbar {
       display: grid;
