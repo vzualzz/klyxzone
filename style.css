@@ -46,17 +46,16 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
-      min-width: 0;
     }
     .brand img {
-      width: 48px;
-      height: 48px;
-      object-fit: cover;
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: 0 10px 30px rgba(255,255,255,0.07);
-    }
+      width: 180px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+}
     .brand strong {
       display: block;
       font-size: 1.05rem;
@@ -644,9 +643,11 @@
   }
 
   .brand img {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
+    width: 145px;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .brand strong {
