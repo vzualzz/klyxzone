@@ -887,7 +887,128 @@
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   HERO — CARROSSEL
+========================= */
 
+.hero-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-slide {
+  display: none;
+  width: 100%;
+}
+
+.hero-slide.active {
+  display: block;
+  animation: heroSlideIn 0.55s ease;
+}
+
+@keyframes heroSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================
+   BANNER DE ENCOMENDAS
+========================= */
+
+.hero-order {
+  position: relative;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 5;
+  max-width: 48%;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 14px;
+  margin-bottom: 12px;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.04);
+
+  color: #fff;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.hero-globe {
+  right: 0;
+  width: 62%;
+  max-width: 900px;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  opacity: 0.96;
+
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+
+/* =========================
+   BOLINHAS
+========================= */
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.hero-dot {
+  width: 11px;
+  height: 11px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.18);
+
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.hero-dot:hover {
+  transform: scale(1.15);
+}
+
+.hero-dot.active {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.15);
+}
 /* =========================
    PRODUCT PAGE
 ========================= */
