@@ -1049,6 +1049,73 @@
   border-color: #fff;
   transform: scale(1.15);
 }
+/* BANNER 1 — KLYX 3D */
+.hero-slide:first-child .hero-product {
+  width: 68%;
+  height: 100%;
+  right: -2%;
+  top: 50%;
+
+  object-fit: contain;
+  object-position: center;
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+}
+
+
+/* BANNER 2 — GLOBO */
+.hero-slide:nth-child(2) .hero-globe {
+  width: 82%;
+  height: 100%;
+  right: -6%;
+  top: 50%;
+
+  object-fit: contain;
+  object-position: center;
+
+  transform: translateY(-50%) scale(1.15);
+
+  z-index: 2;
+}
+
+
+/* TEXTO SEMPRE NA FRENTE */
+.hero-slide .hero-copy {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* MOBILE */
+@media (max-width: 760px) {
+
+  .hero-slide:first-child .hero-product {
+    width: 64%;
+    right: -3%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .hero-slide:nth-child(2) .hero-globe {
+    width: 82%;
+    right: -8%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  .hero-slide .hero-copy {
+    z-index: 10;
+  }
+
+}
 /* =========================
    PRODUCT PAGE
 ========================= */
