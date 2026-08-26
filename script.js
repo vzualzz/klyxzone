@@ -100,22 +100,25 @@ function createProductCard(product) {
   name.className = "name";
   name.textContent = product.name;
 
-  const description = document.createElement("p");
-  description.className = "desc";
-  description.textContent = product.desc;
-
   const priceRow = document.createElement("div");
-  priceRow.className = "price-row";
+priceRow.className = "price-row";
 
   const priceContainer = document.createElement("div");
+
   const price = document.createElement("div");
-  price.className = "price";
-  price.textContent = money(product.price);
+price.className = "price";
+price.textContent = money(product.price);
 
-  priceContainer.appendChild(price);
-  priceRow.appendChild(priceContainer);
+  const installment = document.createElement("div");
+installment.className = "installment";
+installment.textContent = `10x de ${money(product.price / 10)} sem juros`;
 
-content.append(tag, name, description, priceRow);
+priceContainer.appendChild(price);
+priceContainer.appendChild(installment);
+
+priceRow.appendChild(priceContainer);
+
+content.append(tag, name, priceRow);
 article.append(thumb, content);
 
 return article;
