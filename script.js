@@ -10,7 +10,11 @@ const products = [
   { id: 9, name: "Feets Universais", category: "feets", price: 87.91, desc: "Feets Universais Speed.", initial: "F", image: "imagens1/feets.png" }
 ];
 
-const state = { query: "", category: "todos", cart: [] };
+const state = {
+  query: "",
+  category: "todos",
+  cart: JSON.parse(localStorage.getItem("klyxCart")) || []
+};
 
 const money = value => value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 const categories = ["todos", ...new Set(products.map(product => product.category))];
@@ -150,6 +154,8 @@ function addToCart(productId) {
 }
 
 function updateCart() {
+  localStorage.setItem("klyxCart", JSON.stringify(state.cart));
+  
   const count = state.cart.reduce((total, item) => total + item.quantity, 0);
   const total = state.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
