@@ -1107,7 +1107,7 @@
 
   .hero-slide:nth-child(2) .hero-globe {
     width: 82%;
-    right: 25%;
+    right: 50%;
     height: 100%;
 
     object-fit: contain;
