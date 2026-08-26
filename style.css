@@ -764,6 +764,36 @@
 
     z-index: 1;
   }
+   /* BANNER DE ENCOMENDAS — MOBILE */
+
+  .hero-copy {
+    max-width: 48%;
+  }
+
+  .hero-badge {
+    padding: 5px 8px;
+    margin-bottom: 6px;
+    font-size: 0.48rem;
+  }
+
+  .hero-globe {
+    right: -3%;
+    width: 64%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.95;
+  }
+
+  .hero-dots {
+    gap: 7px;
+    margin-top: 7px;
+  }
+
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+  }
 
 
   /* TÍTULOS */
