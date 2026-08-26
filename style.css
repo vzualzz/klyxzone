@@ -993,13 +993,14 @@
 }
 
 .hero-globe {
-  right: 10%;
-  width: 62%;
-  max-width: 900px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  max-width: none;
   height: 100%;
 
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: right center;
 
   opacity: 0.96;
 
