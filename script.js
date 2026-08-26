@@ -316,3 +316,84 @@ checkoutButton.addEventListener("click", () => {
 
   window.open(whatsappUrl, "_blank");
 });
+/* =========================
+   HERO CAROUSEL
+========================= */
+
+const heroSlides =
+  document.querySelectorAll(".hero-slide");
+
+const heroDots =
+  document.querySelectorAll(".hero-dot");
+
+let currentHeroSlide = 0;
+let heroInterval;
+
+
+function showHeroSlide(index) {
+
+  if (!heroSlides.length) return;
+
+  heroSlides.forEach((slide, i) => {
+    slide.classList.toggle(
+      "active",
+      i === index
+    );
+  });
+
+  heroDots.forEach((dot, i) => {
+    dot.classList.toggle(
+      "active",
+      i === index
+    );
+  });
+
+  currentHeroSlide = index;
+}
+
+
+function nextHeroSlide() {
+
+  const nextIndex =
+    (currentHeroSlide + 1) %
+    heroSlides.length;
+
+  showHeroSlide(nextIndex);
+}
+
+
+function startHeroCarousel() {
+
+  clearInterval(heroInterval);
+
+  heroInterval = setInterval(
+    nextHeroSlide,
+    6000
+  );
+}
+
+
+/* =========================
+   CLIQUE NAS BOLINHAS
+========================= */
+
+heroDots.forEach(dot => {
+
+  dot.addEventListener("click", () => {
+
+    const index =
+      Number(dot.dataset.slide);
+
+    showHeroSlide(index);
+
+    startHeroCarousel();
+
+  });
+
+});
+
+
+/* INICIA */
+
+showHeroSlide(0);
+startHeroCarousel();
