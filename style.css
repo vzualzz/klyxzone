@@ -498,9 +498,12 @@
     }
     .drawer-body {
       padding: 18px;
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
       display: grid;
       gap: 12px;
+      min-height: 0;
+      flex: 1;
     }
     .cart-item {
       display: grid;
@@ -1562,4 +1565,8 @@
     font-size: 0.86rem;
   }
 
+}
+
+body.cart-open {
+  overflow: hidden;
 }
