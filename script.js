@@ -277,12 +277,14 @@ function removeFromCart(productId) {
 function openCart() {
   drawerEl.classList.add("open");
   overlayEl.classList.add("open");
+  document.body.classList.add("cart-open");
   drawerEl.setAttribute("aria-hidden", "false");
 }
 
 function closeCart() {
   drawerEl.classList.remove("open");
   overlayEl.classList.remove("open");
+  document.body.classList.remove("cart-open");
   drawerEl.setAttribute("aria-hidden", "true");
 }
 
