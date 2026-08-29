@@ -19,17 +19,20 @@
         <img src="imagens1/klyxzone.png" alt="Logo KLYXZONE">
       </a>
 
-      <div class="navlinks">
-        <a href="index.html#produtos">Produtos</a>
-        <a href="index.html#colecoes">Coleções</a>
-        <a href="index.html#contato">Contato</a>
+       <div class="navlinks">
+   <a href="index.html#produtos">Produtos</a>
+   <a href="index.html#colecoes">Coleções</a>
+   <a href="index.html#contato">Contato</a>
 
-        <a class="btn" href="index.html#produtos">
-          Voltar
-        </a>
-      </div>
+   <button class="btn" id="openCart">
+     Carrinho <span id="cartCount">0</span>
+   </button>
 
-    </div>
+   <a class="btn" href="index.html#produtos">
+     Voltar
+   </a>
+</div>
+      
   </div>
 
 
@@ -147,6 +150,41 @@
 
   </main>
 
+    <div class="overlay" id="overlay"></div>
+
+<aside class="drawer" id="drawer" aria-hidden="true">
+
+  <div class="drawer-head">
+    <strong>Carrinho</strong>
+
+    <button class="btn" id="closeCart">
+      Fechar
+    </button>
+  </div>
+
+  <div class="drawer-body" id="cartItems"></div>
+
+  <div class="drawer-foot">
+
+    <div class="totals">
+      <span>Itens</span>
+      <strong id="cartItemsCount">0</strong>
+    </div>
+
+    <div class="totals">
+      <span>Total</span>
+      <strong id="cartTotal">R$ 0,00</strong>
+    </div>
+
+    <button class="btn primary" id="checkoutButton">
+      Finalizar pedido
+    </button>
+
+  </div>
+
+</aside>
+
+<script src="produto.js"></script>
 
   <script src="produto.js"></script>
 
