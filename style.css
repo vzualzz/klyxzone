@@ -823,10 +823,11 @@ h1 {
   }
 
   .hero-badge {
-    padding: 5px 8px;
-    margin-bottom: 6px;
-    font-size: 0.48rem;
-  }
+  font-size: 0.5rem;
+  padding: 4px 9px;
+  letter-spacing: 0.13em;
+  margin-bottom: 7px;
+}
 
   .hero-globe {
   right: 20%;
