@@ -1111,7 +1111,29 @@ h1 {
 
   transform: translateY(-50%);
 
+  filter: grayscale(1) contrast(1.15);
+
   z-index: 2;
+}
+
+.hero-slide:first-child .hero-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(7,7,7,0.95) 0%,
+    rgba(7,7,7,0.75) 25%,
+    rgba(7,7,7,0.35) 55%,
+    transparent 100%
+  );
+
+  z-index: 3;
+  pointer-events: none;
 }
 
 
