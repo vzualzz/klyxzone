@@ -130,23 +130,177 @@ increaseButton.addEventListener("click", () => {
 ========================= */
 
 function getCart() {
-
-  return JSON.parse(
-    localStorage.getItem("klyxCart")
-  ) || [];
-
+  return JSON.parse(localStorage.getItem("klyxCart")) || [];
 }
-
 
 function saveCart(cart) {
-
-  localStorage.setItem(
-    "klyxCart",
-    JSON.stringify(cart)
-  );
-
+  localStorage.setItem("klyxCart", JSON.stringify(cart));
 }
 
+
+/* =========================
+   ATUALIZAR CARRINHO
+========================= */
+
+function updateCart() {
+
+  const cart = getCart();
+
+  let totalItems = 0;
+  let totalPrice = 0;
+
+  cartItems.innerHTML = "";
+
+  cart.forEach((item, index) => {
+
+    totalItems += Number(item.quantity) || 0;
+    totalPrice += Number(item.price) * Number(item.quantity);
+
+    const cartItem = document.createElement("div");
+    cartItem.className = "cart-item";
+
+
+    /* IMAGEM */
+
+    if (item.image) {
+
+      const image = document.createElement("img");
+
+      image.src = item.image;
+      image.alt = item.name;
+      image.loading = "lazy";
+
+      cartItem.appendChild(image);
+
+    } else {
+
+      const fallback = document.createElement("div");
+
+      fallback.className = "fallback";
+      fallback.textContent = item.initial || "K";
+
+      cartItem.appendChild(fallback);
+
+    }
+
+
+    /* INFORMAÇÕES */
+
+    const info = document.createElement("div");
+
+    const name = document.createElement("strong");
+
+    name.textContent = item.name;
+
+
+    const details = document.createElement("small");
+
+    details.textContent =
+      `${item.quantity}x • ${money(item.price)}`;
+
+
+    info.appendChild(name);
+    info.appendChild(details);
+
+
+    /* QUANTIDADE */
+
+    const quantityRow = document.createElement("div");
+
+    quantityRow.className = "quantity-row";
+
+
+    const decreaseButton =
+      document.createElement("button");
+
+    decreaseButton.className = "btn";
+    decreaseButton.textContent = "-";
+
+
+    decreaseButton.addEventListener("click", () => {
+
+      if (item.quantity > 1) {
+
+        item.quantity--;
+
+      } else {
+
+        cart.splice(index, 1);
+
+      }
+
+      saveCart(cart);
+      updateCart();
+
+    });
+
+
+    const quantityValue =
+      document.createElement("span");
+
+    quantityValue.textContent = item.quantity;
+
+
+    const increaseButton =
+      document.createElement("button");
+
+    increaseButton.className = "btn";
+    increaseButton.textContent = "+";
+
+
+    increaseButton.addEventListener("click", () => {
+
+      item.quantity++;
+
+      saveCart(cart);
+      updateCart();
+
+    });
+
+
+    quantityRow.appendChild(decreaseButton);
+    quantityRow.appendChild(quantityValue);
+    quantityRow.appendChild(increaseButton);
+
+    info.appendChild(quantityRow);
+
+
+    /* REMOVER */
+
+    const removeButton =
+      document.createElement("button");
+
+    removeButton.className = "btn";
+    removeButton.textContent = "×";
+
+
+    removeButton.addEventListener("click", () => {
+
+      cart.splice(index, 1);
+
+      saveCart(cart);
+      updateCart();
+
+    });
+
+
+    cartItem.appendChild(info);
+    cartItem.appendChild(removeButton);
+
+    cartItems.appendChild(cartItem);
+
+  });
+
+
+  /* CONTADOR DO TOPO */
+
+  cartCount.textContent = totalItems;
+
+  cartItemsCount.textContent = totalItems;
+
+  cartTotal.textContent = money(totalPrice);
+
+}
 
 /* =========================
    ATUALIZAR CARRINHO
