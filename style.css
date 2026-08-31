@@ -1239,7 +1239,7 @@ h1 {
 .product-thumbnails {
   display: flex;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 18px;
   overflow-x: auto;
   scrollbar-width: thin;
   padding-bottom: 3px;
