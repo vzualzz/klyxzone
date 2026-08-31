@@ -116,27 +116,33 @@ gallery.forEach((imageSrc, index) => {
 
   thumbnail.addEventListener("click", () => {
 
-    mainImage.innerHTML = "";
+  const currentImage = mainImage.querySelector("img");
 
-    const newImage =
-      document.createElement("img");
+  if (!currentImage) return;
 
-    newImage.src = imageSrc;
-    newImage.alt = product.name;
+  currentImage.style.opacity = "0";
 
-    mainImage.appendChild(newImage);
+  setTimeout(() => {
+
+    currentImage.src = imageSrc;
+
+    currentImage.onload = () => {
+      currentImage.style.opacity = "1";
+    };
+
+  }, 180);
 
 
-    document
-      .querySelectorAll(".product-thumbnail")
-      .forEach(item => {
-        item.classList.remove("active");
-      });
+  document
+    .querySelectorAll(".product-thumbnail")
+    .forEach(item => {
+      item.classList.remove("active");
+    });
 
-    thumbnail.classList.add("active");
+  thumbnail.classList.add("active");
 
-  });
-
+});
+  
 });
 
 /* =========================
