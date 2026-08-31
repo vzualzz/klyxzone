@@ -1268,11 +1268,7 @@ h1 {
 }
 
 .product-thumbnail.active {
-  border-color: #fff;
-  box-shadow:
-    0 0 0 2px rgba(255,255,255,0.12),
-    0 8px 20px rgba(0,0,0,0.25);
-  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.65);
 }
 
 .product-info {
