@@ -498,9 +498,11 @@
     }
     .drawer-body {
       padding: 18px;
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
       display: grid;
       gap: 12px;
+      min-height: 0;
     }
     .cart-item {
       display: grid;
@@ -554,6 +556,7 @@
       border-top: 1px solid var(--line);
       display: grid;
       gap: 12px;
+      flex-shrink: 0;
     }
     .totals {
       display: flex;
