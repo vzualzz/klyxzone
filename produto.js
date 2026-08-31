@@ -66,36 +66,78 @@ productDescription.textContent =
 
 
 /* =========================
-   IMAGEM
+   GALERIA DE IMAGENS
 ========================= */
 
-if (product.image) {
+const gallery = product.gallery || [product.image];
 
-  const image = document.createElement("img");
+gallery.forEach((imageSrc, index) => {
 
-  image.src = product.image;
-  image.alt = product.name;
+  /* IMAGEM PRINCIPAL */
 
-  mainImage.appendChild(image);
+  if (index === 0) {
+
+    const image = document.createElement("img");
+
+    image.src = imageSrc;
+    image.alt = product.name;
+
+    mainImage.appendChild(image);
+
+  }
 
 
-  const thumbnail = document.createElement("button");
+  /* MINIATURA */
 
-  thumbnail.className = "product-thumbnail active";
+  const thumbnail =
+    document.createElement("button");
+
+  thumbnail.className =
+    "product-thumbnail";
+
+  if (index === 0) {
+    thumbnail.classList.add("active");
+  }
 
 
   const thumbnailImage =
     document.createElement("img");
 
-  thumbnailImage.src = product.image;
+  thumbnailImage.src = imageSrc;
   thumbnailImage.alt = product.name;
+
 
   thumbnail.appendChild(thumbnailImage);
 
   thumbnails.appendChild(thumbnail);
 
-}
 
+  /* TROCAR IMAGEM AO CLICAR */
+
+  thumbnail.addEventListener("click", () => {
+
+    mainImage.innerHTML = "";
+
+    const newImage =
+      document.createElement("img");
+
+    newImage.src = imageSrc;
+    newImage.alt = product.name;
+
+    mainImage.appendChild(newImage);
+
+
+    document
+      .querySelectorAll(".product-thumbnail")
+      .forEach(item => {
+        item.classList.remove("active");
+      });
+
+    thumbnail.classList.add("active");
+
+  });
+
+});
 
 /* =========================
    QUANTIDADE
