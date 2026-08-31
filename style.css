@@ -1628,3 +1628,29 @@ h1 {
   }
 
 }
+
+.product-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+}
+
+.product-breadcrumb a {
+  transition: color .2s ease;
+}
+
+.product-breadcrumb a:hover {
+  color: var(--text);
+}
+
+.product-breadcrumb span {
+  opacity: 0.55;
+}
+
+.product-breadcrumb .current {
+  color: rgba(243,243,243,0.5);
+}
