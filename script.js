@@ -476,3 +476,36 @@ heroDots.forEach(dot => {
 
 showHeroSlide(0);
 startHeroCarousel();
+
+document.querySelectorAll(".product-shelf").forEach((shelf) => {
+  const products = shelf.querySelector(".horizontal-products");
+  const prev = shelf.querySelector(".shelf-prev");
+  const next = shelf.querySelector(".shelf-next");
+
+  if (!products || !prev || !next) return;
+
+  const scrollAmount = () => {
+    const card = products.querySelector(".product");
+
+    if (!card) {
+      return products.clientWidth * 0.8;
+    }
+
+    const gap = parseFloat(getComputedStyle(products).gap) || 0;
+    return card.getBoundingClientRect().width + gap;
+  };
+
+  prev.addEventListener("click", () => {
+    products.scrollBy({
+      left: -scrollAmount(),
+      behavior: "smooth"
+    });
+  });
+
+  next.addEventListener("click", () => {
+    products.scrollBy({
+      left: scrollAmount(),
+      behavior: "smooth"
+    });
+  });
+});
