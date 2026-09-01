@@ -7,12 +7,13 @@ const products = [
   { id: 6, name: "Artisan FX Zero XXL", category: "mousepads", price: 683.91, desc: "Deslize rápido com acabamento minimalista.", initial: "Z", image: "imagens1/artisanfxzero.jpg" },
   { id: 7, name: "Mchose V9 Pro", category: "audio", price: 450.91, desc: "Som limpo e visual discreto para o setup.", initial: "M", image: "imagens1/mchosev9pro.png" },
   { id: 8, name: "Manguito Talon Games", category: "manguitos", price: 119.91, desc: "Manguito confortável e design moderno.", initial: "M", image: "imagens1/manguito1.png" },
-  { id: 9, name: "Feets Universais", category: "feets", price: 87.91, desc: "Feets Universais Speed.", initial: "F", image: "imagens1/feets.png" }
+  { id: 9, name: "Feets Universais", category: "feets", price: 87.91, desc: "Feets Universais Speed.", initial: "F", image: "imagens1/feets.png" },
+  { id: 10, name: "NemVira Doll", category: "mousepads", price: 340.91, desc: "NemVira Doll é um mousepad de tecido extremamente raro, feito para quem busca algo diferente e difícil de encontrar.", initial: "D", image: "imagens1/nemviradollmain.jfif", imageHover: "imagens1/nemviradoll.jfif", gallery: [ "imagens1/nemviradollmain.jfif", "imagens1/nemviradoll.jfif", "imagens1/nemviradoll1.jfif" ] }
 ];
 
 const shelves = {
 
-  global: [1, 2, 3, 5],
+  global: [10],
 
   featured: [1, 4, 6, 7],
 
