@@ -272,7 +272,7 @@
     }
 
     .horizontal-products .product {
-      flex: 0 0 330px;
+      flex: 0 0 300px;
       width: 330px;
       min-width: 330px;
     }
