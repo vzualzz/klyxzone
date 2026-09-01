@@ -272,9 +272,9 @@
     }
 
     .horizontal-products .product {
-      flex: 0 0 500px !important;
-      width: 500px !important;
-      min-width: 500px !important;
+      flex: 0 0 360px !important;
+      width: 360px !important;
+      min-width: 360px !important;
     }
 
     .horizontal-products::-webkit-scrollbar {
