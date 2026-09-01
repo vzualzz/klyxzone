@@ -272,9 +272,9 @@
     }
 
     .horizontal-products .product {
-      flex: 0 0 360px !important;
-      width: 360px !important;
-      min-width: 360px !important;
+      flex: 0 0 360px;
+      width: 360px;
+      min-width: 360px;
     }
 
     .horizontal-products::-webkit-scrollbar {
@@ -1018,9 +1018,7 @@ h1 {
   .footer-grid {
     grid-template-columns: 1fr;
   }
-}
-
-/* VITRINES HORIZONTAIS — MOBILE */
+ VITRINES HORIZONTAIS — MOBILE 
 
 .horizontal-products {
   gap: 10px;
@@ -1031,6 +1029,7 @@ h1 {
   flex: 0 0 220px;
   width: 220px;
   min-width: 220px;
+}
 }
 
 /* =========================
