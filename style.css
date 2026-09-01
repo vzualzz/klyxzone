@@ -257,6 +257,41 @@
       margin-top: 20px;
     }
 
+    .shelf-arrows {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .shelf-arrow {
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: rgba(255,255,255,0.9);
+      font-size: 34px;
+      font-weight: 200;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .shelf-arrow:hover {
+      opacity: 0.65;
+    }
+
+    .shelf-prev:hover {
+      transform: translateX(-2px);
+    }
+
+    .shelf-next:hover {
+      transform: translateX(2px);
+    }
+
     .product-shelf .section-head {
       margin-bottom: 16px;
     }
