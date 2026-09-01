@@ -86,49 +86,6 @@ function createProductCard(product) {
   window.location.href = `produto.html?id=${product.id}`;
 });
 
-   RENDERIZAR VITRINES
-
-
-function renderShelf(productIds, container) {
-
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  productIds.forEach(id => {
-
-    const product = products.find(
-      item => item.id === id
-    );
-
-    if (!product) return;
-
-    container.appendChild(
-      createProductCard(product)
-    );
-
-  });
-
-}
-
-  function renderShelves() {
-
-  renderShelf(
-    shelves.global,
-    globalGridEl
-  );
-
-  renderShelf(
-    shelves.featured,
-    featuredGridEl
-  );
-
-  renderShelf(
-    shelves.exclusive,
-    exclusiveGridEl
-  );
-
-}
 
   const thumb = document.createElement("div");
   thumb.className = "thumb";
@@ -195,6 +152,52 @@ content.append(tag, name, priceRow);
 article.append(thumb, content);
 
 return article;
+}
+
+/* =========================
+   RENDERIZAR VITRINES
+========================= */
+
+function renderShelf(productIds, container) {
+
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  productIds.forEach(id => {
+
+    const product = products.find(
+      item => item.id === id
+    );
+
+    if (!product) return;
+
+    container.appendChild(
+      createProductCard(product)
+    );
+
+  });
+
+}
+
+
+function renderShelves() {
+
+  renderShelf(
+    shelves.global,
+    globalGridEl
+  );
+
+  renderShelf(
+    shelves.featured,
+    featuredGridEl
+  );
+
+  renderShelf(
+    shelves.exclusive,
+    exclusiveGridEl
+  );
+
 }
 
 function renderGrid() {
