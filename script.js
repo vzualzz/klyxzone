@@ -10,6 +10,15 @@ const products = [
   { id: 9, name: "Feets Universais", category: "feets", price: 87.91, desc: "Feets Universais Speed.", initial: "F", image: "imagens1/feets.png" }
 ];
 
+const shelves = {
+
+  global: [1, 2, 3, 5],
+
+  featured: [1, 4, 6, 7],
+
+  exclusive: [2, 3, 8, 9]
+
+};
 const state = {
   query: "",
   category: "todos",
@@ -21,6 +30,11 @@ const categories = ["todos", ...new Set(products.map(product => product.category
 
 const chipsEl = document.getElementById("chips");
 const gridEl = document.getElementById("grid");
+
+const globalGridEl = document.getElementById("globalGrid");
+const featuredGridEl = document.getElementById("featuredGrid");
+const exclusiveGridEl = document.getElementById("exclusiveGrid");
+
 const searchEl = document.getElementById("search");
 const clearEl = document.getElementById("clearFilters");
 const cartCountEl = document.getElementById("cartCount");
@@ -71,6 +85,50 @@ function createProductCard(product) {
 
   window.location.href = `produto.html?id=${product.id}`;
 });
+
+   RENDERIZAR VITRINES
+
+
+function renderShelf(productIds, container) {
+
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  productIds.forEach(id => {
+
+    const product = products.find(
+      item => item.id === id
+    );
+
+    if (!product) return;
+
+    container.appendChild(
+      createProductCard(product)
+    );
+
+  });
+
+}
+
+  function renderShelves() {
+
+  renderShelf(
+    shelves.global,
+    globalGridEl
+  );
+
+  renderShelf(
+    shelves.featured,
+    featuredGridEl
+  );
+
+  renderShelf(
+    shelves.exclusive,
+    exclusiveGridEl
+  );
+
+}
 
   const thumb = document.createElement("div");
   thumb.className = "thumb";
@@ -305,6 +363,7 @@ overlayEl.addEventListener("click", closeCart);
 
 renderChips();
 renderGrid();
+renderShelves();
 updateCart();
 
 checkoutButton.addEventListener("click", () => {
