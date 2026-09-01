@@ -249,6 +249,46 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
+    /* =========================
+   VITRINES HORIZONTAIS
+========================= */
+
+    .product-shelf {
+      margin-top: 28px;
+    }
+
+    .product-shelf .section-head {
+      margin-bottom: 16px;
+    }
+
+    .horizontal-products {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 4px 4px 12px;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+    }
+
+    .horizontal-products .product {
+      flex: 0 0 300px;
+      width: 300px;
+      min-width: 300px;
+    }
+
+    .horizontal-products::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .horizontal-products::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .horizontal-products::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.18);
+      border-radius: 999px;
+    }
     .product {
       overflow: hidden;
       display: flex;
@@ -979,6 +1019,20 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* VITRINES HORIZONTAIS — MOBILE */
+
+.horizontal-products {
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.horizontal-products .product {
+  flex: 0 0 220px;
+  width: 220px;
+  min-width: 220px;
+}
+
 /* =========================
    HERO — CARROSSEL
 ========================= */
