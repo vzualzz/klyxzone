@@ -1074,6 +1074,13 @@ h1 {
 .hero-slider {
   width: 100%;
   overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.hero-slider.dragging {
+  cursor: grabbing;
 }
 
 .hero-slide {
