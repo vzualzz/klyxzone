@@ -509,3 +509,79 @@ document.querySelectorAll(".product-shelf").forEach((shelf) => {
     });
   });
 });
+
+// =========================
+// ARRASTE DO BANNER
+// =========================
+
+const heroSlider = document.getElementById("heroSlider");
+
+if (heroSlider && heroSlides.length > 1) {
+  let isDragging = false;
+  let startX = 0;
+  let currentX = 0;
+  let dragDistance = 0;
+
+  function startDrag(x) {
+    isDragging = true;
+    startX = x;
+    currentX = x;
+    dragDistance = 0;
+
+    heroSlider.classList.add("dragging");
+
+    clearInterval(heroInterval);
+  }
+
+  function moveDrag(x) {
+    if (!isDragging) return;
+
+    currentX = x;
+    dragDistance = currentX - startX;
+  }
+
+  function endDrag() {
+    if (!isDragging) return;
+
+    isDragging = false;
+    heroSlider.classList.remove("dragging");
+
+    const threshold = 70;
+
+    if (dragDistance < -threshold) {
+      nextHeroSlide();
+    }
+
+    if (dragDistance > threshold) {
+      const previousIndex =
+        (currentHeroSlide - 1 + heroSlides.length) %
+        heroSlides.length;
+
+      showHeroSlide(previousIndex);
+    }
+
+    startHeroCarousel();
+  }
+
+  // MOUSE
+  heroSlider.addEventListener("mousedown", (event) => {
+    startDrag(event.clientX);
+  });
+
+  window.addEventListener("mousemove", (event) => {
+    moveDrag(event.clientX);
+  });
+
+  window.addEventListener("mouseup", endDrag);
+
+  // TOUCH
+  heroSlider.addEventListener("touchstart", (event) => {
+    startDrag(event.touches[0].clientX);
+  }, { passive: true });
+
+  heroSlider.addEventListener("touchmove", (event) => {
+    moveDrag(event.touches[0].clientX);
+  }, { passive: true });
+
+  heroSlider.addEventListener("touchend", endDrag);
+}
