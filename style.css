@@ -1105,6 +1105,24 @@ h1 {
   }
 }
 
+/* TEXTO DO BANNER — ENTRADA SUAVE */
+
+.hero-slide.active .hero-copy {
+  animation: heroTextUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroTextUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* =========================
    BANNER DE ENCOMENDAS
