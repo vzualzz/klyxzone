@@ -144,9 +144,12 @@ gallery.forEach((imageSrc, index) => {
 
     currentImage.src = imageSrc;
 
-    currentImage.onload = () => {
-      currentImage.style.opacity = "1";
-    };
+const scale = galleryScales[index] || 1;
+currentImage.style.transform = `scale(${scale})`;
+
+currentImage.onload = () => {
+  currentImage.style.opacity = "1";
+};
 
   }, 180);
 
