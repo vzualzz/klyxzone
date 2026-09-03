@@ -12,16 +12,17 @@ const products = [
   { id: 11, name: "SAYO Glass", category: "glasspads", price: 851.91, desc: "O Dysphoria Sayo Glass Pad é um mousepad de vidro desenvolvido com foco em velocidade, utilizando uma construção fina e uma superfície micro-coated especialmente desenvolvida para proporcionar um deslize rápido, suave e consistente. O Sayo combina uma superfície orientada para velocidade com uma construção de baixo perfil, oferecendo baixa resistência durante a movimentação do mouse.", initial: "S", image: "imagens1/sayoglass.webp", imageHover: "imagens1/sayoglass2.webp", gallery: [ "imagens1/sayoglass.webp", "imagens1/sayoglass2.webp" ],
   galleryScales: [1, 1.4]},
   { id: 12, name: "Kokū — The Void Glass Edition", category: "glasspads", price: 976.91, desc: "Nomeado a partir do conceito japonês de void and open sky,   Kokū - The Void não é apenas um glasspad. É uma declaração. Uma superfície de vidro de edição limitada feita para quem exige precisão sem compromissos e beleza sem ruído.", initial: "K", image: "imagens1/koku.webp", imageHover: "imagens1/koku2.webp", gallery: [ "imagens1/koku.webp", "imagens1/koku2.webp" ] },
-  { id: 13, name: "OP1w 4K v2", category: "mouses", price: 854.91, desc: "O Endgame Gear OP1w 4K V2 foi projetado para entregar resposta ultrarrápida, construção robusta e controle preciso, atendendo tanto jogadores casuais quanto profissionais.", initial: "O", image: "imagens1/op1wv2.webp", imageHover: "imagens1/op1wv22.webp", gallery: [ "imagens1/op1wv2.webp", "imagens1/op1wv22.webp", "imagens1/op1wv23.webp" ] }
+  { id: 13, name: "OP1w 4K v2", category: "mouses", price: 854.91, desc: "O Endgame Gear OP1w 4K V2 foi projetado para entregar resposta ultrarrápida, construção robusta e controle preciso, atendendo tanto jogadores casuais quanto profissionais.", initial: "O", image: "imagens1/op1wv2.webp", imageHover: "imagens1/op1wv22.webp", gallery: [ "imagens1/op1wv2.webp", "imagens1/op1wv22.webp", "imagens1/op1wv23.webp" ] },
+  { id: 14, name: "ATK RS6+", category: "teclados", price: 776.91, desc: "A evolução da Série RS une armadura mecha totalmente transparente com precisão de elite. Impulsionada pela solução Blazing Wind ULTRA da Gen-3, esta série entrega resposta instantânea e precisão cirúrgica. Com 5-Layer Acoustic Padding e Frosted-Top Keycaps, ela é meticulosamente ajustada para um som HiFi puro e uma experiência tátil refinada.", initial: "R", image: "imagens1/rs6plus1.webp", imageHover: "imagens1/ras6plus.webp", gallery: [ "imagens1/rs6plus1.webp", "imagens1/ras6plus.webp", "imagens1/rs6plus6.webp", "imagens1/rs6plus3.webp", "imagens1/rs6pluspink.webp", "imagens1/rs6plus4.webp" ] }
 ];
 
 const shelves = {
 
-  global: [10, 11, 12],
+  global: [10, 11, 12, 14],
 
   featured: [13, 1, 4, 6, 7],
 
-  exclusive: [12, 3, 11]
+  exclusive: [12, 3, 11, 14]
 
 };
 const state = {
