@@ -77,8 +77,10 @@
       font-size: 0.95rem;
     }
     .navlinks a:hover { color: var(--text); }
-    .hero {
-      padding: 34px 0 10px;
+     .hero {
+      padding: 0 0 10px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
     }
     .hero-grid {
       display: grid;
