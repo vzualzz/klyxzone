@@ -1775,22 +1775,49 @@ h1 {
   color: rgba(243,243,243,0.5);
 }
 
-/* =========================
-   SEGUNDO BANNER — MESMO TAMANHO DO MAYO
-========================= */
+/* =========================================
+   HERO — TAMANHO SEMPRE IGUAL AO MAYO
+========================================= */
 
+.hero-slider {
+  position: relative;
+}
+
+/* O MAYO continua sendo a referência da altura */
+.hero-slide:first-child {
+  display: block;
+  position: relative;
+  visibility: visible;
+}
+
+/* Os outros banners ficam por cima da área do MAYO */
+.hero-slide:not(:first-child) {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  visibility: hidden;
+}
+
+/* Slide ativo aparece normalmente */
+.hero-slide.active {
+  visibility: visible;
+}
+
+/* Segundo banner ocupa exatamente a área do MAYO */
+.hero-slide:nth-child(2) .hero-order {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Texto do segundo banner */
 .hero-slide:nth-child(2) .hero-copy {
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
   width: 50%;
   max-width: 50%;
-}
-
-.hero-slide:nth-child(2) .hero-order {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  z-index: 10;
 }
