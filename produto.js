@@ -85,20 +85,24 @@ productDescription.textContent =
 
 const gallery = product.gallery || [product.image];
 
+const galleryScales =
+  product.galleryScales || [];
+
 gallery.forEach((imageSrc, index) => {
 
   /* IMAGEM PRINCIPAL */
 
   if (index === 0) {
+  const image = document.createElement("img");
+  image.src = imageSrc;
+  image.alt = product.name;
 
-    const image = document.createElement("img");
+  const scale = galleryScales[index] || 1;
+  image.style.transform = `scale(${scale})`;
 
-    image.src = imageSrc;
-    image.alt = product.name;
-
-    mainImage.appendChild(image);
-
-  }
+  mainImage.appendChild(image);
+    
+}
 
 
   /* MINIATURA */
