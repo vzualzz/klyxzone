@@ -18,7 +18,7 @@ const shelves = {
 
   global: [10, 11, 12],
 
-  featured: [3, 1, 4, 6, 7],
+  featured: [13, 1, 4, 6, 7],
 
   exclusive: [2, 3, 8, 9]
 
