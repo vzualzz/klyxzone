@@ -11,6 +11,13 @@ const thumbnails = document.getElementById("productThumbnails");
 
 const productName = document.getElementById("productName");
 const productCategory = document.getElementById("productCategory");
+
+const breadcrumbCategory =
+  document.getElementById("breadcrumbCategory");
+
+const breadcrumbProduct =
+  document.getElementById("breadcrumbProduct");
+
 const productPrice = document.getElementById("productPrice");
 const installmentPrice = document.getElementById("installmentPrice");
 const productDescription = document.getElementById("productDescription");
@@ -52,6 +59,13 @@ productName.textContent = product.name;
 
 productCategory.textContent =
   product.category.toUpperCase();
+
+breadcrumbCategory.textContent =
+  product.category.charAt(0).toUpperCase() +
+  product.category.slice(1);
+
+breadcrumbProduct.textContent =
+  product.name;
 
 productPrice.textContent =
   money(product.price);
