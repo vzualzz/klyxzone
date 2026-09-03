@@ -93,11 +93,13 @@
       border-radius: var(--radius);
     }
     .hero-main {
-      padding: 30px;
+      padding: 0;
       position: relative;
       overflow: hidden;
-      height: 500px;
-      min-height: 500px;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      aspect-ratio: 16 / 9;
     }
     .hero-main::after {
       content: "";
