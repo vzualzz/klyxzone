@@ -1,8 +1,8 @@
 const products = [
   { id: 1, name: "Beast X Max", category: "mouses", price: 1349.91, desc: "Leve, preciso e com acabamento monocromático.", initial: "B", image: "imagens1/beast1.webp", imageHover: "imagens1/beastblue.webp", gallery: [ "imagens1/beast1.webp", "imagens1/beastblue.webp" ] },
   { id: 2, name: "ATK Ghost Extreme Carbon Fiber", category: "mouses", price: 989.91, desc: "Design enxuto para performance e controle.", initial: "A", image: "imagens1/atkghost.webp", imageHover: "imagens1/atkghost2.webp" },
-  { id: 3, name: "Aspas RS6 Ultra HE", category: "teclados", price: 1889.91, desc: "Formato compacto com aparência premium.", initial: "A", image: "imagens1/aspasrs6.webp" },
-  { id: 4, name: "ATK RS6 Air", category: "teclados", price: 701.91, desc: "Visual limpo com teclas de alta resposta.", initial: "R", image: "imagens1/rs7air.webp" },
+  { id: 3, name: "Aspas RS6 Ultra HE", category: "teclados", price: 1889.91, desc: "Formato compacto com aparência premium.", initial: "A", image: "imagens1/aspasrs6.webp", imageHover: "imagens1/aspasrs61.webp", gallery: [ "imagens1/aspasrs6.webp", "imagens1/aspasrs61.webp", "imagens1/aspasrs62.webp", "imagens1/aspasrs63.webp" ] },
+  { id: 4, name: "ATK RS6 Air", category: "teclados", price: 701.91, desc: "Visual limpo com teclas de alta resposta.", initial: "R", image: "imagens1/rs7air.webp", imageHover: "imagens1/rs6air4.webp", gallery: ["imagens1/rs7air.webp", "imagens1/rs6air4.webp", "imagens1/rs6air3.webp"] },
   { id: 5, name: "Artisan FX Hien XXL", category: "mousepads", price: 602.91, desc: "Base estável, textura suave e grande área útil.", initial: "H", image: "imagens1/artisanhienblue.webp" },
   { id: 6, name: "Artisan FX Zero XXL", category: "mousepads", price: 683.91, desc: "Deslize rápido com acabamento minimalista.", initial: "Z", image: "imagens1/artisanfxzero.jpg" },
   { id: 7, name: "Mchose V9 Pro", category: "audio", price: 450.91, desc: "Som limpo e visual discreto para o setup.", initial: "M", image: "imagens1/mchosev9pro.png" },
@@ -14,16 +14,17 @@ const products = [
   { id: 12, name: "Kokū — The Void Glass Edition", category: "glasspads", price: 976.91, desc: "Nomeado a partir do conceito japonês de void and open sky,   Kokū - The Void não é apenas um glasspad. É uma declaração. Uma superfície de vidro de edição limitada feita para quem exige precisão sem compromissos e beleza sem ruído.", initial: "K", image: "imagens1/koku.webp", imageHover: "imagens1/koku2.webp", gallery: [ "imagens1/koku.webp", "imagens1/koku2.webp" ] },
   { id: 13, name: "OP1w 4K v2", category: "mouses", price: 854.91, desc: "O Endgame Gear OP1w 4K V2 foi projetado para entregar resposta ultrarrápida, construção robusta e controle preciso, atendendo tanto jogadores casuais quanto profissionais.", initial: "O", image: "imagens1/op1wv2.webp", imageHover: "imagens1/op1wv22.webp", gallery: [ "imagens1/op1wv2.webp", "imagens1/op1wv22.webp", "imagens1/op1wv23.webp" ] },
   { id: 14, name: "ATK RS6+", category: "teclados", price: 776.91, desc: "A evolução da Série RS une armadura mecha totalmente transparente com precisão de elite. Impulsionada pela solução Blazing Wind ULTRA da Gen-3, esta série entrega resposta instantânea e precisão cirúrgica. Com 5-Layer Acoustic Padding e Frosted-Top Keycaps, ela é meticulosamente ajustada para um som HiFi puro e uma experiência tátil refinada.", initial: "R", image: "imagens1/rs6plus1.webp", imageHover: "imagens1/ras6plus.webp", gallery: [ "imagens1/rs6plus1.webp", "imagens1/ras6plus.webp", "imagens1/rs6plus6.webp", "imagens1/rs6plus3.webp", "imagens1/rs6pluspink.webp", "imagens1/rs6plus4.webp" ] },
-  { id: 15, name: "真夜Mayo", category: "glasspads", price: 754.91, desc: "Superfície revestida de nano proporciona um deslize ultra suave com movimentos rápidos e responsivos. Um feedback sutil na superfície ajuda a manter o controle preciso em cada movimento.", initial: "M", image: "imagens1/mayo1.webp", imageHover: "imagens1/mayo2.jpg", gallery: [ "imagens1/mayo1.webp", "imagens1/mayo2.jpg", "imagens1/mayo3.webp" ] }
+  { id: 15, name: "真夜Mayo", category: "glasspads", price: 754.91, desc: "Superfície revestida de nano proporciona um deslize ultra suave com movimentos rápidos e responsivos. Um feedback sutil na superfície ajuda a manter o controle preciso em cada movimento.", initial: "M", image: "imagens1/mayo1.webp", imageHover: "imagens1/mayo2.jpg", gallery: [ "imagens1/mayo1.webp", "imagens1/mayo2.jpg", "imagens1/mayo3.webp" ] },
+  { id: 16, name: "Mercury V60 Pro Deluxe Edition ", category: "teclados", price: 1237.91, desc: "Projetado para precisão de 0,005 mm com profundidade de disparo ajustável (0,005 mm–3,5 mm) para eliminar o atraso e melhorar o controle.", initial: "M", image: "imagens1/mercuryv60pro.webp", imageHover: "imagens1/mercuryv60pro2.webp", gallery: [ "imagens1/mercuryv60pro.webp", "imagens1/mercuryv60pro2.webp" ] }
 ];
 
 const shelves = {
 
-  global: [15, 10, 11, 12, 14],
+  global: [15, 10, 11, 12, 14, 16],
 
   featured: [13, 1, 4, 6, 7],
 
-  exclusive: [12, 3, 11, 14, 15]
+  exclusive: [12, 3, 11, 14, 15, 16]
 
 };
 const state = {
