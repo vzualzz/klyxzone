@@ -1235,7 +1235,7 @@ h1 {
 }
 
 /* BANNER 2 — GLOBO */
-.hero-slide:nth-child(2) .hero-globe {
+.hero-slide:nth-child(3) .hero-globe {
   position: absolute;
 
   inset: 0;
@@ -1286,7 +1286,7 @@ h1 {
 /* MOBILE */
 @media (max-width: 760px) {
 
-  .hero-slide:nth-child(2) .hero-globe {
+  .hero-slide:nth-child(3) .hero-globe {
   position: absolute;
 
   inset: 0;
