@@ -1812,16 +1812,33 @@ h1 {
 /* Texto do segundo banner */
 .hero-slide:nth-child(2) .hero-copy {
   position: absolute;
-  left: 0;
+  left: 4%;
   top: 50%;
-  transform: translateY(-50%);
-  width: 50%;
-  max-width: 50%;
+  width: 46%;
+  max-width: 46%;
   z-index: 10;
+
+  transform: translateY(-50%);
 }
 
 .hero-banner {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.hero-slide:nth-child(2).active .hero-copy {
+  animation: heroOrderTextUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroOrderTextUp {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-50% + 28px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
 }
