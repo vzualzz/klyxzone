@@ -101,7 +101,6 @@
       width: 100%;
       height: auto;
       min-height: 0;
-      aspect-ratio: 16 / 9;
     }
     .hero-main::after {
       content: "";
@@ -795,12 +794,11 @@
   }
 
   .hero-main {
-    min-height: 0;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    padding: 18px;
-    border-radius: 18px;
-  }
+   min-height: 0;
+   height: auto;
+   padding: 18px;
+   border-radius: 18px;
+ }
 
   .hero-main > *:not(.hero-product) {
     position: relative;
@@ -1820,4 +1818,10 @@ h1 {
   width: 50%;
   max-width: 50%;
   z-index: 10;
+}
+
+.hero-banner {
+  display: block;
+  width: 100%;
+  height: auto;
 }
