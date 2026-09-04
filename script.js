@@ -23,7 +23,7 @@ const shelves = {
 
   featured: [13, 1, 4, 6, 7],
 
-  exclusive: [12, 3, 11, 14]
+  exclusive: [12, 3, 11, 14, 15]
 
 };
 const state = {
