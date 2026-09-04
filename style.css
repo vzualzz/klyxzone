@@ -1774,21 +1774,19 @@ h1 {
 }
 
 /* =========================================
-   HERO — TAMANHO SEMPRE IGUAL AO MAYO
+   HERO — MAYO
 ========================================= */
 
 .hero-slider {
   position: relative;
 }
 
-/* O MAYO continua sendo a referência da altura */
 .hero-slide:first-child {
   display: block;
   position: relative;
   visibility: visible;
 }
 
-/* Os outros banners ficam por cima da área do MAYO */
 .hero-slide:not(:first-child) {
   position: absolute;
   inset: 0;
@@ -1796,12 +1794,12 @@ h1 {
   visibility: hidden;
 }
 
-/* Slide ativo aparece normalmente */
+
 .hero-slide.active {
   visibility: visible;
 }
 
-/* Segundo banner ocupa exatamente a área do MAYO */
+
 .hero-slide:nth-child(2) .hero-order {
   position: absolute;
   inset: 0;
@@ -1809,7 +1807,7 @@ h1 {
   height: 100%;
 }
 
-/* Texto do segundo banner */
+
 .hero-slide:nth-child(2) .hero-copy {
   position: absolute;
   left: 4%;
@@ -1863,5 +1861,53 @@ h1 {
   to {
     opacity: 1;
     transform: translateY(-50%);
+  }
+}
+
+/* BOTÃO DO BANNER MAYO */
+.mayo-button {
+  position: absolute;
+  left: 7%;
+  top: 68%;
+  z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 7px;
+
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+
+  opacity: 0;
+  transform: translateY(28px);
+
+  animation: mayoButtonUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+}
+
+.mayo-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #fff;
+}
+
+@keyframes mayoButtonUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
