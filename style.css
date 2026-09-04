@@ -2000,7 +2000,7 @@ h1 {
 .mayo-content {
   position: absolute;
   left: 6%;
-  top: 53%;
+  top: 55%;
   z-index: 20;
 
   display: flex;
@@ -2008,26 +2008,27 @@ h1 {
   align-items: flex-start;
 }
 
-/* TEXTO PEQUENO */
+/* GLASSPAD */
 .mayo-label {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
 }
 
-/* NOME DO PRODUTO */
+/* # 真夜 MAYO */
 .mayo-title {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 
   color: #fff;
-  font-size: clamp(1.15rem, 2vw, 1.7rem);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   line-height: 1;
+  white-space: nowrap;
 }
 
 /* BOTÃO */
@@ -2036,16 +2037,19 @@ h1 {
   align-items: center;
   justify-content: center;
 
-  padding: 14px 28px;
+  padding: 13px 27px;
 
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 8px;
 
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
+
+  white-space: nowrap;
+  text-decoration: none;
 
   backdrop-filter: blur(6px);
 
@@ -2053,17 +2057,17 @@ h1 {
   transform: translateY(28px);
 }
 
-/* ANIMAÇÃO */
-.hero-slide:first-child.active .mayo-content .mayo-label {
-  animation: mayoContentUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+/* ANIMAÇÕES */
+.hero-slide:first-child.active .mayo-label {
+  animation: mayoContentUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 }
 
-.hero-slide:first-child.active .mayo-content .mayo-title {
-  animation: mayoContentUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+.hero-slide:first-child.active .mayo-title {
+  animation: mayoContentUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
 }
 
-.hero-slide:first-child.active .mayo-content .mayo-button {
-  animation: mayoContentUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+.hero-slide:first-child.active .mayo-button {
+  animation: mayoContentUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
 
 @keyframes mayoContentUp {
@@ -2079,6 +2083,6 @@ h1 {
 }
 
 .mayo-button:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.12);
   border-color: #fff;
 }
