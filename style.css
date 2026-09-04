@@ -1911,3 +1911,83 @@ h1 {
     transform: translateY(0);
   }
 }
+
+/* =========================================
+   HERO — SLIDES
+========================================= */
+
+.hero-slide:first-child {
+  display: block;
+  position: relative;
+  visibility: hidden;
+}
+
+.hero-slide:first-child.active {
+  visibility: visible;
+}
+
+.hero-slide:not(:first-child) {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  visibility: hidden;
+}
+
+.hero-slide:not(:first-child).active {
+  visibility: visible;
+}
+
+
+/* =========================================
+   BOTÃO MAYO
+========================================= */
+
+.mayo-button {
+  position: absolute;
+  left: 6%;
+  top: 61%;
+  z-index: 20;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 28px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.hero-slide:first-child.active .mayo-button {
+  animation: mayoButtonUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mayo-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #fff;
+}
+
+@keyframes mayoButtonUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
