@@ -2089,3 +2089,37 @@ h1 {
   background: rgba(255, 255, 255, 0.12);
   border-color: #fff;
 }
+
+
+/* =========================================
+   TEXTO DO BANNER DE ENCOMENDAS
+========================================= */
+
+.hero-slide:nth-child(3) .hero-copy {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  z-index: 10;
+
+  width: 46%;
+  max-width: 46%;
+
+  transform: translateY(-50%);
+}
+
+/* Mantém a animação, mas faz o texto subir reto */
+.hero-slide:nth-child(3).active .hero-copy {
+  animation: encomendasTextUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes encomendasTextUp {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-50% + 28px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
