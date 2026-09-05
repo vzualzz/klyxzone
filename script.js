@@ -208,11 +208,27 @@ function renderShelves() {
 
 }
 
+const catalogOrder = [
+  15, 16, 1, 2, 3, 4, 5, 6,
+  7, 8, 9, 10, 11, 12, 13, 14
+];
+
 function renderGrid() {
   const items = filteredProducts();
+
+  const orderedItems = [...items].sort((a, b) => {
+    const indexA = catalogOrder.indexOf(a.id);
+    const indexB = catalogOrder.indexOf(b.id);
+
+    return (
+      (indexA === -1 ? Infinity : indexA) -
+      (indexB === -1 ? Infinity : indexB)
+    );
+  });
+
   gridEl.innerHTML = "";
 
-  if (!items.length) {
+  if (!orderedItems.length) {
     const empty = document.createElement("div");
     empty.className = "stat";
     empty.style.gridColumn = "1 / -1";
@@ -220,6 +236,11 @@ function renderGrid() {
     gridEl.appendChild(empty);
     return;
   }
+
+  orderedItems.forEach(product => {
+    gridEl.appendChild(createProductCard(product));
+  });
+}
 
   items.forEach(product => gridEl.appendChild(createProductCard(product)));
 }
