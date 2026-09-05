@@ -206,6 +206,54 @@ function saveCart(cart) {
   localStorage.setItem("klyxCart", JSON.stringify(cart));
 }
 
+/* =========================
+   FINALIZAR PEDIDO
+========================= */
+
+if (checkoutButton) {
+
+  checkoutButton.addEventListener("click", () => {
+
+    const cart = getCart();
+
+    if (!cart.length) {
+      alert("Seu carrinho está vazio.");
+      return;
+    }
+
+    let message = "🛒 *Pedido via Loja Online* %0A%0A";
+
+    cart.forEach(item => {
+
+      message +=
+        `• ${item.name} %0A` +
+        `   Quantidade: ${item.quantity}x %0A` +
+        `   Preço unitário: ${money(item.price)} %0A%0A`;
+
+    });
+
+    const total = cart.reduce(
+      (sum, item) =>
+        sum + Number(item.price) * Number(item.quantity),
+      0
+    );
+
+    message +=
+      `💰 *Total:* ${money(total)} %0A%0A`;
+
+    message +=
+      "📦 Por favor, confirme o endereço de entrega.";
+
+    const whatsappNumber = "5531972247548";
+
+    const whatsappUrl =
+      `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    window.open(whatsappUrl, "_blank");
+
+  });
+
+}
 
 /* =========================
    ATUALIZAR CARRINHO
