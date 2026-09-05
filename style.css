@@ -2178,3 +2178,84 @@ h1 {
   height: 100vh;
   max-height: 100vh;
 }
+
+
+/* =========================================
+   CONTEÚDO DO BANNER GRAVASTAR
+========================================= */
+
+.gravastar-content {
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* NOME */
+
+.gravastar-title {
+  margin-bottom: 28px;
+
+  color: #fff;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+/* BOTÃO */
+
+.gravastar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 24px;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.gravastar-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ANIMAÇÃO */
+
+.hero-slide.active .gravastar-content {
+  animation: gravastarContentUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes gravastarContentUp {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-50% + 25px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
