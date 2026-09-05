@@ -2116,26 +2116,3 @@ h1 {
     transform: translateY(-50%);
   }
 }
-
-.international-tag {
-  position: absolute;
-  left: 16px;
-  bottom: 12px;
-  z-index: 5;
-
-  display: inline-flex;
-  align-items: center;
-
-  padding: 5px 10px;
-
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 999px;
-
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.85);
-
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
