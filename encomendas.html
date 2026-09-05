@@ -192,5 +192,23 @@
 
   </main>
 
+  <script>
+  const orderWhatsapp = document.getElementById("orderWhatsapp");
+
+  orderWhatsapp.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const message =
+      "Olá! Gostaria de fazer uma encomenda pela KLYXZONE";
+
+    const whatsappNumber = "5531972247548";
+
+    const whatsappUrl =
+      `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    window.open(whatsappUrl, "_blank");
+  });
+</script>
+
 </body>
 </html>
