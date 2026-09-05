@@ -2116,3 +2116,14 @@ h1 {
     transform: translateY(-50%);
   }
 }
+
+.international-tag {
+  padding: 5px 9px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
