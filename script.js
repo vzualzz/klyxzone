@@ -132,12 +132,13 @@ function createProductCard(product) {
 
   const tag = document.createElement("div");
 tag.className = "tag";
+tag.textContent = product.category;
+
+const internationalTag = document.createElement("div");
 
 if (product.international) {
-  tag.classList.add("international-tag");
-  tag.textContent = "INTERNACIONAL";
-} else {
-  tag.textContent = product.category;
+  internationalTag.className = "international-tag";
+  internationalTag.textContent = "INTERNACIONAL";
 }
 
   const name = document.createElement("h3");
@@ -161,6 +162,10 @@ priceContainer.appendChild(price);
 priceContainer.appendChild(installment);
 
 priceRow.appendChild(priceContainer);
+
+if (product.international) {
+  content.append(internationalTag);
+}
 
 content.append(tag, name, priceRow);
 article.append(thumb, content);
