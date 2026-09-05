@@ -120,6 +120,14 @@ function createProductCard(product) {
   }
 
 }
+
+    if (product.international) {
+  const internationalTag = document.createElement("div");
+  internationalTag.className = "international-tag";
+  internationalTag.textContent = "INTERNACIONAL";
+  thumb.appendChild(internationalTag);
+}
+      
   else {
     const fallback = document.createElement("div");
     fallback.className = "fallback";
