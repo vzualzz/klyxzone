@@ -2124,17 +2124,22 @@ h1 {
 
 
 .horizontal-products {
+  position: relative;
+  overflow-x: auto;
+
   mask-image: linear-gradient(
     to right,
     black 0%,
-    black 94%,
-    transparent 100%
+    black 93%,
+    rgba(120,120,120,0.75) 97%,
+    rgba(120,120,120,0) 100%
   );
 
   -webkit-mask-image: linear-gradient(
     to right,
     black 0%,
-    black 94%,
-    transparent 100%
+    black 93%,
+    rgba(120,120,120,0.75) 97%,
+    rgba(120,120,120,0) 100%
   );
 }
