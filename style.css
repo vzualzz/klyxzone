@@ -2143,3 +2143,28 @@ h1 {
     rgba(120,120,120,0) 100%
   );
 }
+
+/* =========================
+   CARRINHO — TOPO E RODAPÉ FIXOS
+========================= */
+
+.drawer {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.drawer-head {
+  flex-shrink: 0;
+}
+
+.drawer-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.drawer-foot {
+  flex-shrink: 0;
+  margin-top: 0;
+}
