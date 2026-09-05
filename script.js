@@ -501,19 +501,34 @@ document.querySelectorAll(".product-shelf").forEach((shelf) => {
     return card.getBoundingClientRect().width + gap;
   };
 
-  prev.addEventListener("click", () => {
-    products.scrollBy({
-      left: -scrollAmount(),
-      behavior: "smooth"
-    });
-  });
+  function animateShelfScroll(container, distance, duration = 500) {
+  const start = container.scrollLeft;
+  const startTime = performance.now();
 
-  next.addEventListener("click", () => {
-    products.scrollBy({
-      left: scrollAmount(),
-      behavior: "smooth"
-    });
-  });
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    // suaviza o começo e o final
+    const ease = 1 - Math.pow(1 - progress, 3);
+
+    container.scrollLeft = start + distance * ease;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+prev.addEventListener("click", () => {
+  animateShelfScroll(products, -scrollAmount());
+});
+
+next.addEventListener("click", () => {
+  animateShelfScroll(products, scrollAmount());
+});
 });
 
 // =========================
