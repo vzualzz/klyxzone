@@ -242,9 +242,6 @@ function renderGrid() {
   });
 }
 
-  items.forEach(product => gridEl.appendChild(createProductCard(product)));
-}
-
 function addToCart(productId) {
   const product = products.find(item => item.id === productId);
   if (!product) return;
