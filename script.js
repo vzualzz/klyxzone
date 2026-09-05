@@ -405,8 +405,15 @@ checkoutButton.addEventListener("click", () => {
    HERO CAROUSEL
 ========================= */
 
+const allHeroSlides =
+  [...document.querySelectorAll(".hero-slide")];
+
+const heroOrder = [2, 1, 3];
+
 const heroSlides =
-  document.querySelectorAll(".hero-slide");
+  heroOrder
+    .map(number => allHeroSlides[number - 1])
+    .filter(Boolean);
 
 const heroDots =
   document.querySelectorAll(".hero-dot");
