@@ -515,15 +515,17 @@ if (openCartButton) {
 
       drawer.classList.add("open");
 
-      overlay.classList.add("open");
+   document.documentElement.style.overflow = "hidden";
+   document.body.style.overflow = "hidden";
 
-      drawer.setAttribute(
-        "aria-hidden",
-        "false"
-      );
+   overlay.classList.add("open");
 
-      updateCart();
+   drawer.setAttribute(
+     "aria-hidden",
+     "false"
+   );
 
+   updateCart();
     }
   );
 
@@ -544,6 +546,9 @@ function closeCart() {
     "aria-hidden",
     "true"
   );
+
+  document.documentElement.style.overflow = "";
+  document.body.style.overflow = "";
 
 }
 
@@ -616,6 +621,9 @@ addButton.addEventListener(
     setTimeout(() => {
 
       drawer.classList.add("open");
+
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
 
       overlay.classList.add("open");
 
