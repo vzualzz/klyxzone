@@ -316,16 +316,21 @@
     }
 
     .horizontal-products::-webkit-scrollbar {
-      height: 6px;
+  height: 4px;
+}
+
+   .horizontal-products::-webkit-scrollbar-track {
+     background: transparent;
+   }
+
+   .horizontal-products::-webkit-scrollbar-thumb {
+     background: rgba(255,255,255,0.12);
+     border-radius: 999px;
     }
 
-    .horizontal-products::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .horizontal-products::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.18);
-      border-radius: 999px;
+    .horizontal-products {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.12) transparent;
     }
     .product {
       overflow: hidden;
@@ -2115,4 +2120,21 @@ h1 {
     opacity: 1;
     transform: translateY(-50%);
   }
+}
+
+
+.horizontal-products {
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 94%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 94%,
+    transparent 100%
+  );
 }
