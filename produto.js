@@ -801,7 +801,7 @@ const relatedProducts = [
     category: "mousepads",
     price: 683.91,
     image: "imagens1/artisanfxzero.jpg",
-    imageHover: "imagens1/artisanzeroorange.jpg"
+    imageHover: "imagens1/artizanzeroorange.jpg"
   },
 
   {
