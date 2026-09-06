@@ -430,5 +430,37 @@
     </div>
   </aside>
   <script src="script.js"></script>
+
+<script>
+  const headerSearchWrap = document.querySelector(".header-search-wrap");
+  const headerSearchToggle = document.getElementById("headerSearchToggle");
+  const headerSearch = document.getElementById("headerSearch");
+  const catalogSearch = document.getElementById("search");
+
+  headerSearchToggle.addEventListener("click", () => {
+    const isOpen = headerSearchWrap.classList.toggle("active");
+
+    headerSearchToggle.setAttribute("aria-expanded", isOpen);
+
+    if (isOpen) {
+      headerSearch.focus();
+    }
+  });
+
+  headerSearch.addEventListener("input", () => {
+    catalogSearch.value = headerSearch.value;
+
+    catalogSearch.dispatchEvent(
+      new Event("input", { bubbles: true })
+    );
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!headerSearchWrap.contains(event.target)) {
+      headerSearchWrap.classList.remove("active");
+      headerSearchToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+</script>
+
 </body>
-</html>
