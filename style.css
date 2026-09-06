@@ -2271,3 +2271,7 @@ h1 {
 .product .tag {
   color: #111;
 }
+
+.hero-slide:nth-child(3) .gravastar-title {
+  color: #8fd8ff;
+}
