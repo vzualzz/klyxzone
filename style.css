@@ -2295,3 +2295,29 @@ h1 {
 .product .tag {
   text-transform: none;
 }
+
+/* =========================
+   PRODUTOS RELACIONADOS
+========================= */
+
+.related-products {
+  padding: 10px 0 80px;
+}
+
+.related-products .section-head {
+  margin-bottom: 16px;
+}
+
+#relatedProducts {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 4px 12px;
+}
+
+#relatedProducts .product {
+  flex: 0 0 360px;
+  width: 360px;
+  min-width: 360px;
+}
