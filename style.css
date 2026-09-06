@@ -2426,11 +2426,9 @@ h1 {
   color: #555;
 }
 
-/* TESTE — busca no header */
+/* TESTE — busca expandida no header */
 .header-search-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
+  position: static;
 }
 
 .header-search-toggle {
@@ -2447,8 +2445,8 @@ h1 {
 }
 
 .header-search-toggle svg {
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -2457,22 +2455,28 @@ h1 {
 
 .header-search-box {
   position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  width: 240px;
-  padding: 8px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
+
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  align-items: center;
+
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
+  transform: translateY(-100%);
+
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    visibility 0.2s ease;
-  z-index: 1000;
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+  z-index: 2000;
 }
 
 .header-search-wrap.active .header-search-box {
@@ -2483,12 +2487,16 @@ h1 {
 
 .header-search-box input {
   width: 100%;
-  height: 38px;
-  padding: 0 12px;
+  height: 42px;
+  padding: 0 18px;
+
   border: 1px solid #ddd;
-  border-radius: 9px;
-  background: #f7f7f7;
+  border-radius: 10px;
+
+  background: #f5f5f5;
   color: #111;
+
+  font-size: 15px;
   outline: none;
   box-sizing: border-box;
 }
@@ -2496,4 +2504,3 @@ h1 {
 .header-search-box input:focus {
   border-color: #aaa;
 }
-
