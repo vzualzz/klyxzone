@@ -834,10 +834,10 @@ const relatedProducts = [
     initial: "Z",
     brand: "Artisan",
     image: "imagens1/artisanfxzero.jpg",
-    imageHover: "imagens1/artisanzeroorange.jpg",
+    imageHover: "imagens1/artizanzeroorange.jpg",
     gallery: [
       "imagens1/artisanfxzero.jpg",
-      "imagens1/artisanzeroorange.jpg"
+      "imagens1/artizanzeroorange.jpg"
     ]
   },
 
