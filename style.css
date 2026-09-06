@@ -2289,3 +2289,9 @@ h1 {
 .product .price-row {
   justify-content: center;
 }
+
+
+
+.product .tag {
+  text-transform: none;
+}
