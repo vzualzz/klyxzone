@@ -439,14 +439,16 @@
   const catalogSection = document.getElementById("produtos");
 
   headerSearchToggle.addEventListener("click", () => {
-    const isOpen = headerSearchWrap.classList.toggle("active");
+  const isOpen = headerSearchWrap.classList.toggle("active");
 
-    headerSearchToggle.setAttribute("aria-expanded", isOpen);
+  headerSearchToggle.setAttribute("aria-expanded", isOpen);
 
-    if (isOpen) {
+  if (isOpen) {
+    setTimeout(() => {
       headerSearch.focus();
-    }
-  });
+    }, 300);
+  }
+});
 
   headerSearch.addEventListener("input", () => {
     catalogSearch.value = headerSearch.value;
