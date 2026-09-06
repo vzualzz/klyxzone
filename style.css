@@ -354,7 +354,7 @@
   height: 82%;
   object-fit: cover;
   border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+  box-shadow: none;
   background: #fff;
 
   position: absolute;
