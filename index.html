@@ -436,6 +436,7 @@
   const headerSearchToggle = document.getElementById("headerSearchToggle");
   const headerSearch = document.getElementById("headerSearch");
   const catalogSearch = document.getElementById("search");
+  const catalogSection = document.getElementById("produtos");
 
   headerSearchToggle.addEventListener("click", () => {
     const isOpen = headerSearchWrap.classList.toggle("active");
@@ -453,6 +454,13 @@
     catalogSearch.dispatchEvent(
       new Event("input", { bubbles: true })
     );
+
+    if (headerSearch.value.trim() !== "") {
+      catalogSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   });
 
   document.addEventListener("click", (event) => {
@@ -462,5 +470,4 @@
     }
   });
 </script>
-
 </body>
