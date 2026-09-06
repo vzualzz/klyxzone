@@ -22,7 +22,35 @@
         <a href="#produtos">Produtos</a>
         <a href="#colecoes">Coleções</a>
         <a href="#contato">Contato</a>
-        <button class="btn" id="openCart">Carrinho <span id="cartCount">0</span></button>
+
+<div class="header-search-wrap">
+  <button
+    class="header-search-toggle"
+    id="headerSearchToggle"
+    type="button"
+    aria-label="Buscar"
+    aria-expanded="false"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="6.5"></circle>
+      <line x1="16" y1="16" x2="21" y2="21"></line>
+    </svg>
+  </button>
+
+  <div class="header-search-box" id="headerSearchBox">
+    <input
+      id="headerSearch"
+      type="text"
+      placeholder="Buscar produto..."
+      autocomplete="off"
+    />
+  </div>
+</div>
+
+<button class="btn" id="openCart">
+  Carrinho <span id="cartCount">0</span>
+</button>
+        
       </div>
     </div>
   </div>
