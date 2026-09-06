@@ -2321,3 +2321,13 @@ h1 {
   width: 360px;
   min-width: 360px;
 }
+
+
+/* TESTE — efeito de produto flutuando */
+.product .thumb img {
+  transition: transform 0.35s ease;
+}
+
+.product:hover .thumb img {
+  transform: translateY(-8px) scale(1.03);
+}
