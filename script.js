@@ -426,7 +426,7 @@ checkoutButton.addEventListener("click", () => {
 const allHeroSlides =
   [...document.querySelectorAll(".hero-slide")];
 
-const heroOrder = [4, 2, 1, 3];
+const heroOrder = [3, 2, 1, 4];
 
 const heroSlides =
   heroOrder
