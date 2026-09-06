@@ -2331,3 +2331,61 @@ h1 {
 .product:hover .thumb img {
   transform: translateY(-8px) scale(1.03);
 }
+
+
+/* TESTE — destaque de encomendas */
+.order-highlight {
+  margin: 40px 0 70px;
+  padding: 70px 40px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #eeeeee, #d9d9d9);
+  text-align: center;
+  overflow: hidden;
+}
+
+.order-highlight-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.order-highlight-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #555;
+}
+
+.order-highlight h2 {
+  margin: 0 0 14px;
+  font-size: 42px;
+  line-height: 1.1;
+  color: #111;
+}
+
+.order-highlight p {
+  margin: 0 auto 28px;
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.order-highlight-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.order-highlight-button:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
