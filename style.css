@@ -1234,7 +1234,7 @@ h1 {
 }
 
 /* BANNER 2 — GLOBO */
-.hero-slide:nth-child(3) .hero-globe {
+.hero-slide:nth-child(4) .hero-globe {
   position: absolute;
 
   inset: 0;
@@ -1285,7 +1285,7 @@ h1 {
 /* MOBILE */
 @media (max-width: 760px) {
 
-  .hero-slide:nth-child(3) .hero-globe {
+  .hero-slide:nth-child(4) .hero-globe {
   position: absolute;
 
   inset: 0;
@@ -1799,7 +1799,7 @@ h1 {
 }
 
 
-.hero-slide:nth-child(2) .hero-order {
+.hero-slide:nth-child(4) .hero-order {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1807,7 +1807,7 @@ h1 {
 }
 
 
-.hero-slide:nth-child(2) .hero-copy {
+.hero-slide:nth-child(4) .hero-copy {
   position: absolute;
   left: 4%;
   top: 50%;
@@ -1824,7 +1824,7 @@ h1 {
   height: auto;
 }
 
-.hero-slide:nth-child(2).active .hero-copy {
+.hero-slide:nth-child(4).active .hero-copy {
   animation: heroOrderTextUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -1847,7 +1847,7 @@ h1 {
   pointer-events: none;
 }
 
-.hero-slide:nth-child(2).active .hero-copy {
+.hero-slide:nth-child(4).active .hero-copy {
   animation: heroOrderTextUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
