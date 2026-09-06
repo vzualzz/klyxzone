@@ -2425,3 +2425,75 @@ h1 {
   line-height: 1.7;
   color: #555;
 }
+
+/* TESTE — busca no header */
+.header-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header-search-toggle {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header-search-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.header-search-box {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 240px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+  z-index: 1000;
+}
+
+.header-search-wrap.active .header-search-box {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header-search-box input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  background: #f7f7f7;
+  color: #111;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.header-search-box input:focus {
+  border-color: #aaa;
+}
+
