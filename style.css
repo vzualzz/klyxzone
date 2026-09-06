@@ -2259,3 +2259,15 @@ h1 {
     transform: translateY(-50%);
   }
 }
+
+/* TESTE — CARDS BRANCOS */
+.product {
+  background: #fff;
+}
+
+.product .name,
+.product .price,
+.product .installment,
+.product .tag {
+  color: #111;
+}
