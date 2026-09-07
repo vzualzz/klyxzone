@@ -436,29 +436,17 @@
   <script src="script.js"></script>
 
 <script>
-  const headerSearchWrap = document.querySelector(".header-search-wrap");
-  const headerSearchToggle = document.getElementById("headerSearchToggle");
-  const headerSearch = document.getElementById("headerSearch");
-  const catalogSearch = document.getElementById("search");
-  const catalogSection = document.getElementById("produtos");
+  const headerSearchWrap =
+    document.querySelector(".header-search-wrap");
 
-  headerSearchToggle.addEventListener("click", () => {
-  const isOpen = headerSearchWrap.classList.toggle("active");
+  const headerSearchToggle =
+    document.getElementById("headerSearchToggle");
 
-  headerSearchToggle.setAttribute("aria-expanded", isOpen);
+  const headerSearch =
+    document.getElementById("headerSearch");
 
-  if (isOpen) {
-    setTimeout(() => {
-      headerSearch.focus();
-    }, 300);
-  }
-});
-
-<script>
-  const headerSearchWrap = document.querySelector(".header-search-wrap");
-  const headerSearchToggle = document.getElementById("headerSearchToggle");
-  const headerSearch = document.getElementById("headerSearch");
-  const headerSearchResults = document.getElementById("headerSearchResults");
+  const headerSearchResults =
+    document.getElementById("headerSearchResults");
 
   const moneyHeaderSearch = value =>
     value.toLocaleString("pt-BR", {
@@ -467,22 +455,28 @@
     });
 
   headerSearchToggle.addEventListener("click", () => {
-    const isOpen = headerSearchWrap.classList.toggle("active");
+    const isOpen =
+      headerSearchWrap.classList.toggle("active");
 
-    headerSearchToggle.setAttribute("aria-expanded", isOpen);
+    headerSearchToggle.setAttribute(
+      "aria-expanded",
+      isOpen
+    );
 
     if (isOpen) {
       setTimeout(() => {
         headerSearch.focus();
       }, 300);
     } else {
+      headerSearch.value = "";
       headerSearchResults.innerHTML = "";
       headerSearchResults.classList.remove("active");
     }
   });
 
   headerSearch.addEventListener("input", () => {
-    const query = headerSearch.value.trim().toLowerCase();
+    const query =
+      headerSearch.value.trim().toLowerCase();
 
     headerSearchResults.innerHTML = "";
 
@@ -508,8 +502,12 @@
 
     if (!results.length) {
       headerSearchResults.innerHTML = `
-        <div class="header-search-empty">
-          Nenhum produto encontrado.
+        <div class="header-search-no-results">
+          <strong>Não encontrou o que procura?</strong>
+          <span>A KLYXZONE pode encomendar para você.</span>
+          <a href="encomendas.html">
+            FAÇA SUA ENCOMENDA →
+          </a>
         </div>
       `;
 
@@ -518,17 +516,24 @@
     }
 
     results.forEach(product => {
-      const result = document.createElement("div");
-      result.className = "header-search-result";
+      const result =
+        document.createElement("div");
+
+      result.className =
+        "header-search-result";
 
       result.innerHTML = `
         ${
           product.image
-            ? `<img src="${product.image}" alt="${product.name}">`
+            ? `<img
+                src="${product.image}"
+                alt="${product.name}"
+              >`
             : `<div class="header-search-result-placeholder"></div>`
         }
 
         <div class="header-search-result-info">
+
           <div class="header-search-result-name">
             ${product.name}
           </div>
@@ -540,6 +545,7 @@
           <div class="header-search-result-price">
             ${moneyHeaderSearch(product.price)}
           </div>
+
         </div>
       `;
 
@@ -549,7 +555,8 @@
           JSON.stringify(product)
         );
 
-        window.location.href = `produto.html?id=${product.id}`;
+        window.location.href =
+          `produto.html?id=${product.id}`;
       });
 
       headerSearchResults.appendChild(result);
@@ -561,19 +568,18 @@
   document.addEventListener("click", event => {
     if (!headerSearchWrap.contains(event.target)) {
       headerSearchWrap.classList.remove("active");
-      headerSearchToggle.setAttribute("aria-expanded", "false");
+
+      headerSearchToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
       headerSearchResults.innerHTML = "";
+
       headerSearchResults.classList.remove("active");
     }
   });
 </script>
 
-  document.addEventListener("click", (event) => {
-    if (!headerSearchWrap.contains(event.target)) {
-      headerSearchWrap.classList.remove("active");
-      headerSearchToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-</script>
+</body>
 </body>
