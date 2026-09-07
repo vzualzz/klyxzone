@@ -38,13 +38,17 @@
   </button>
 
   <div class="header-search-box" id="headerSearchBox">
-    <input
-      id="headerSearch"
-      type="text"
-      placeholder="Buscar produto..."
-      autocomplete="off"
-    />
-  </div>
+
+  <input
+    id="headerSearch"
+    type="text"
+    placeholder="Buscar produto..."
+    autocomplete="off"
+  />
+
+  <div class="header-search-results" id="headerSearchResults"></div>
+
+</div>
 </div>
 
 <button class="btn" id="openCart">
@@ -450,20 +454,120 @@
   }
 });
 
-  headerSearch.addEventListener("input", () => {
-    catalogSearch.value = headerSearch.value;
+<script>
+  const headerSearchWrap = document.querySelector(".header-search-wrap");
+  const headerSearchToggle = document.getElementById("headerSearchToggle");
+  const headerSearch = document.getElementById("headerSearch");
+  const headerSearchResults = document.getElementById("headerSearchResults");
 
-    catalogSearch.dispatchEvent(
-      new Event("input", { bubbles: true })
-    );
+  const moneyHeaderSearch = value =>
+    value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
 
-    if (headerSearch.value.trim() !== "") {
-      catalogSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+  headerSearchToggle.addEventListener("click", () => {
+    const isOpen = headerSearchWrap.classList.toggle("active");
+
+    headerSearchToggle.setAttribute("aria-expanded", isOpen);
+
+    if (isOpen) {
+      setTimeout(() => {
+        headerSearch.focus();
+      }, 300);
+    } else {
+      headerSearchResults.innerHTML = "";
+      headerSearchResults.classList.remove("active");
     }
   });
+
+  headerSearch.addEventListener("input", () => {
+    const query = headerSearch.value.trim().toLowerCase();
+
+    headerSearchResults.innerHTML = "";
+
+    if (!query) {
+      headerSearchResults.classList.remove("active");
+      return;
+    }
+
+    const results = products
+      .filter(product =>
+        [
+          product.name,
+          product.desc,
+          product.category,
+          product.brand
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase()
+          .includes(query)
+      )
+      .slice(0, 5);
+
+    if (!results.length) {
+      headerSearchResults.innerHTML = `
+        <div class="header-search-empty">
+          Nenhum produto encontrado.
+        </div>
+      `;
+
+      headerSearchResults.classList.add("active");
+      return;
+    }
+
+    results.forEach(product => {
+      const result = document.createElement("div");
+      result.className = "header-search-result";
+
+      result.innerHTML = `
+        ${
+          product.image
+            ? `<img src="${product.image}" alt="${product.name}">`
+            : `<div class="header-search-result-placeholder"></div>`
+        }
+
+        <div class="header-search-result-info">
+          <div class="header-search-result-name">
+            ${product.name}
+          </div>
+
+          <div class="header-search-result-meta">
+            ${product.brand || product.category}
+          </div>
+
+          <div class="header-search-result-price">
+            ${moneyHeaderSearch(product.price)}
+          </div>
+        </div>
+      `;
+
+      result.addEventListener("click", () => {
+        localStorage.setItem(
+          "klyxSelectedProduct",
+          JSON.stringify(product)
+        );
+
+        window.location.href = `produto.html?id=${product.id}`;
+      });
+
+      headerSearchResults.appendChild(result);
+    });
+
+    headerSearchResults.classList.add("active");
+  });
+
+  document.addEventListener("click", event => {
+    if (!headerSearchWrap.contains(event.target)) {
+      headerSearchWrap.classList.remove("active");
+      headerSearchToggle.setAttribute("aria-expanded", "false");
+
+      headerSearchResults.innerHTML = "";
+      headerSearchResults.classList.remove("active");
+    }
+  });
+</script>
 
   document.addEventListener("click", (event) => {
     if (!headerSearchWrap.contains(event.target)) {
