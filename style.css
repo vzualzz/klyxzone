@@ -2426,13 +2426,15 @@ h1 {
   color: #555;
 }
 
-/* TESTE — busca deslizante no header */
+/* TESTE — busca estilo Doctor Mouse */
+
 .header-search-wrap {
   position: relative;
   display: flex;
   align-items: center;
 }
 
+/* botão da lupa */
 .header-search-toggle {
   width: 40px;
   height: 40px;
@@ -2445,7 +2447,7 @@ h1 {
   justify-content: center;
   cursor: pointer;
   position: relative;
-  z-index: 20;
+  z-index: 2002;
 }
 
 .header-search-toggle svg {
@@ -2457,15 +2459,18 @@ h1 {
   stroke-linecap: round;
 }
 
+/* barra que entra pela direita */
 .header-search-box {
   position: absolute;
-  top: 50%;
-  right: 0;
 
-  width: 420px;
+  top: 50%;
+  right: -170px;
+
+  width: 430px;
   height: 44px;
 
-  transform: translate(0, -50%) translateX(100%);
+  transform: translateY(-50%) translateX(110%);
+
   opacity: 0;
   visibility: hidden;
 
@@ -2474,18 +2479,22 @@ h1 {
     opacity 0.25s ease,
     visibility 0.35s ease;
 
-  z-index: 10;
+  z-index: 2000;
 }
 
+/* aberta */
 .header-search-wrap.active .header-search-box {
-  transform: translate(0, -50%) translateX(-50px);
+  transform: translateY(-50%) translateX(0);
+
   opacity: 1;
   visibility: visible;
 }
 
+/* campo */
 .header-search-box input {
   width: 100%;
   height: 44px;
+
   padding: 0 18px;
 
   box-sizing: border-box;
@@ -2510,18 +2519,14 @@ h1 {
   border-color: #aaa;
 }
 
-
-
-/* TESTE — resultados da busca no header */
-
-.header-search-box {
-  height: auto;
-  min-height: 44px;
-  overflow: visible;
-}
-
+/* resultados ficam FORA da altura da barra */
 .header-search-results {
-  margin-top: 8px;
+  position: absolute;
+
+  top: 54px;
+  right: 0;
+
+  width: 430px;
 
   background: #fff;
   border: 1px solid #ddd;
@@ -2532,18 +2537,23 @@ h1 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 
   opacity: 0;
-  max-height: 0;
+  visibility: hidden;
   pointer-events: none;
+
+  transform: translateY(-6px);
 
   transition:
     opacity 0.2s ease,
-    max-height 0.25s ease;
+    transform 0.2s ease,
+    visibility 0.2s ease;
 }
 
 .header-search-results.active {
   opacity: 1;
-  max-height: 320px;
+  visibility: visible;
   pointer-events: auto;
+
+  transform: translateY(0);
 }
 
 .header-search-result {
@@ -2578,6 +2588,7 @@ h1 {
 
 .header-search-result-info {
   min-width: 0;
+
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -2604,30 +2615,23 @@ h1 {
   color: #111;
 }
 
-.header-search-empty {
-  padding: 18px;
-  text-align: center;
-
-  font-size: 13px;
-  color: #777;
-}
-
-
 .header-search-no-results {
-  padding: 24px 18px;
+  padding: 22px 18px;
   text-align: center;
 }
 
 .header-search-no-results strong {
   display: block;
   margin-bottom: 6px;
+
   font-size: 14px;
   color: #111;
 }
 
 .header-search-no-results span {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
+
   font-size: 12px;
   line-height: 1.5;
   color: #777;
@@ -2637,13 +2641,19 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 9px 14px;
+
   border-radius: 9px;
+
   background: #111;
   color: #fff;
+
   text-decoration: none;
+
   font-size: 11px;
   font-weight: 700;
+
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
