@@ -30,6 +30,9 @@ const shelves = {
 const state = {
   query: "",
   category: "todos",
+  brand: "all",
+  price: "all",
+  sort: "default",
   cart: JSON.parse(localStorage.getItem("klyxCart")) || []
 };
 
@@ -45,6 +48,23 @@ const exclusiveGridEl = document.getElementById("exclusiveGrid");
 
 const searchEl = document.getElementById("search");
 const clearEl = document.getElementById("clearFilters");
+
+const toggleFiltersEl =
+  document.getElementById("toggleFilters");
+
+const filterPanelEl =
+  document.getElementById("filterPanel");
+
+const brandFilterEl =
+  document.getElementById("brandFilter");
+
+const priceFilterEl =
+  document.getElementById("priceFilter");
+
+const sortProductsEl =
+  document.getElementById("sortProducts");
+
+
 const cartCountEl = document.getElementById("cartCount");
 const cartItemsCountEl = document.getElementById("cartItemsCount");
 const cartTotalEl = document.getElementById("cartTotal");
@@ -74,12 +94,69 @@ function renderChips() {
 }
 
 function filteredProducts() {
-  return products.filter(product => {
-    const matchesCategory = state.category === "todos" || product.category === state.category;
-    const query = state.query.trim().toLowerCase();
-    const matchesQuery = !query || [product.name, product.desc, product.category].join(" ").toLowerCase().includes(query);
-    return matchesCategory && matchesQuery;
+  let result = products.filter(product => {
+
+    const matchesCategory =
+      state.category === "todos" ||
+      product.category === state.category;
+
+    const query =
+      state.query.trim().toLowerCase();
+
+    const matchesQuery =
+      !query ||
+      [
+        product.name,
+        product.desc,
+        product.category,
+        product.brand
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase()
+        .includes(query);
+
+    const matchesBrand =
+      state.brand === "all" ||
+      product.brand === state.brand;
+
+    const matchesPrice =
+      state.price === "all" ||
+      (
+        state.price === "1500plus"
+          ? product.price > 1500
+          : product.price <= Number(state.price)
+      );
+
+    return (
+      matchesCategory &&
+      matchesQuery &&
+      matchesBrand &&
+      matchesPrice
+    );
   });
+
+  if (state.sort === "price-asc") {
+    result.sort((a, b) => a.price - b.price);
+  }
+
+  if (state.sort === "price-desc") {
+    result.sort((a, b) => b.price - a.price);
+  }
+
+  if (state.sort === "name-asc") {
+    result.sort((a, b) =>
+      a.name.localeCompare(b.name, "pt-BR")
+    );
+  }
+
+  if (state.sort === "name-desc") {
+    result.sort((a, b) =>
+      b.name.localeCompare(a.name, "pt-BR")
+    );
+  }
+
+  return result;
 }
 
 function createProductCard(product) {
@@ -373,6 +450,55 @@ function closeCart() {
   drawerEl.setAttribute("aria-hidden", "true");
 }
 
+function renderBrandFilter() {
+  const brands = [
+    ...new Set(
+      products
+        .map(product => product.brand)
+        .filter(Boolean)
+    )
+  ].sort((a, b) =>
+    a.localeCompare(b, "pt-BR")
+  );
+
+  brandFilterEl.innerHTML = `
+    <option value="all">
+      Todas as marcas
+    </option>
+  `;
+
+  brands.forEach(brand => {
+    const option =
+      document.createElement("option");
+
+    option.value = brand;
+    option.textContent = brand;
+
+    brandFilterEl.appendChild(option);
+  });
+}
+
+toggleFiltersEl.addEventListener("click", () => {
+  filterPanelEl.classList.toggle("active");
+});
+
+brandFilterEl.addEventListener("change", event => {
+  state.brand = event.target.value;
+  renderGrid();
+});
+
+priceFilterEl.addEventListener("change", event => {
+  state.price = event.target.value;
+  renderGrid();
+});
+
+sortProductsEl.addEventListener("change", event => {
+  state.sort = event.target.value;
+  renderGrid();
+});
+
+renderBrandFilter();
+
 searchEl.addEventListener("input", event => {
   state.query = event.target.value;
   renderGrid();
@@ -381,7 +507,17 @@ searchEl.addEventListener("input", event => {
 clearEl.addEventListener("click", () => {
   state.query = "";
   state.category = "todos";
+  state.brand = "all";
+  state.price = "all";
+  state.sort = "default";
+
   searchEl.value = "";
+  brandFilterEl.value = "all";
+  priceFilterEl.value = "all";
+  sortProductsEl.value = "default";
+
+  filterPanelEl.classList.remove("active");
+
   renderChips();
   renderGrid();
 });
