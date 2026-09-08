@@ -293,15 +293,18 @@ const catalogOrder = [
 function renderGrid() {
   const items = filteredProducts();
 
-  const orderedItems = [...items].sort((a, b) => {
-    const indexA = catalogOrder.indexOf(a.id);
-    const indexB = catalogOrder.indexOf(b.id);
+  const orderedItems =
+    state.sort === "default"
+      ? [...items].sort((a, b) => {
+          const indexA = catalogOrder.indexOf(a.id);
+          const indexB = catalogOrder.indexOf(b.id);
 
-    return (
-      (indexA === -1 ? Infinity : indexA) -
-      (indexB === -1 ? Infinity : indexB)
-    );
-  });
+          return (
+            (indexA === -1 ? Infinity : indexA) -
+            (indexB === -1 ? Infinity : indexB)
+          );
+        })
+      : items;
 
   gridEl.innerHTML = "";
 
@@ -315,10 +318,11 @@ function renderGrid() {
   }
 
   orderedItems.forEach(product => {
-    gridEl.appendChild(createProductCard(product));
+    gridEl.appendChild(
+      createProductCard(product)
+    );
   });
 }
-
 function addToCart(productId) {
   const product = products.find(item => item.id === productId);
   if (!product) return;
