@@ -333,10 +333,81 @@
       <div class="chips" id="chips"></div>
 
       <div class="toolbar">
-        <input class="search" id="search" type="text" placeholder="Buscar produto..." />
-        <button class="btn" id="clearFilters">Limpar filtros</button>
-      </div>
 
+  <input
+    class="search"
+    id="search"
+    type="text"
+    placeholder="Buscar produto..."
+  />
+
+  <button class="btn" id="toggleFilters">
+    Filtrar
+  </button>
+
+  <select class="sort-select" id="sortProducts">
+    <option value="default">Ordenar</option>
+    <option value="price-asc">Menor preço</option>
+    <option value="price-desc">Maior preço</option>
+    <option value="name-asc">Nome: A–Z</option>
+    <option value="name-desc">Nome: Z–A</option>
+  </select>
+
+  <button class="btn" id="clearFilters">
+    Limpar filtros
+  </button>
+
+</div>
+
+<div class="filter-panel" id="filterPanel">
+
+  <div class="filter-group">
+
+    <label for="brandFilter">
+      Marca
+    </label>
+
+    <select id="brandFilter">
+      <option value="all">
+        Todas as marcas
+      </option>
+    </select>
+
+  </div>
+
+  <div class="filter-group">
+
+    <label for="priceFilter">
+      Preço
+    </label>
+
+    <select id="priceFilter">
+      <option value="all">
+        Qualquer preço
+      </option>
+      <option value="300">
+        Até R$ 300
+      </option>
+      <option value="500">
+        Até R$ 500
+      </option>
+      <option value="700">
+        Até R$ 700
+      </option>
+      <option value="1000">
+        Até R$ 1.000
+      </option>
+      <option value="1500">
+        Até R$ 1.500
+      </option>
+      <option value="1500plus">
+        Acima de R$ 1.500
+      </option>
+    </select>
+
+  </div>
+
+</div>
       <div class="grid" id="grid"></div>
     </section>
   </main>
