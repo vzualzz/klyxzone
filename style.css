@@ -2732,3 +2732,18 @@ h1 {
   outline: none;
   cursor: pointer;
 }
+
+
+/* TESTE — espaço entre filtros e produtos */
+.filter-panel {
+  margin-bottom: 0;
+  transition:
+    max-height 0.25s ease,
+    opacity 0.2s ease,
+    margin-top 0.25s ease,
+    margin-bottom 0.25s ease;
+}
+
+.filter-panel.active {
+  margin-bottom: 24px;
+}
