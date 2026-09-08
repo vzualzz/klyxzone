@@ -89,7 +89,7 @@ const products = [
     imageHover: "imagens1/artizanzeroorange.jpg",
     gallery: [
       "imagens1/artisanfxzero.jpg",
-      "imagens1/artisanzeroorange.jpg"
+      "imagens1/artizanzeroorange.jpg"
     ]
   },
 
