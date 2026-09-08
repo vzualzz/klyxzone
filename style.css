@@ -2747,3 +2747,370 @@ h1 {
 .filter-panel.active {
   margin-bottom: 24px;
 }
+
+
+
+
+
+/* =========================================
+   MOBILE — COMPACTO E RESPONSIVO
+   TESTE FINAL
+========================================= */
+
+@media (max-width: 760px) {
+
+  /* =========================
+     GERAL
+  ========================= */
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    width: calc(100% - 24px);
+  }
+
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  .nav {
+    padding: 8px 0;
+    gap: 8px;
+  }
+
+  .brand img {
+    width: 125px;
+  }
+
+  .navlinks {
+    gap: 5px;
+    flex-wrap: nowrap;
+  }
+
+  .navlinks .btn {
+    padding: 8px 10px;
+    font-size: 0.72rem;
+  }
+
+
+  /* LUPA */
+
+  .header-search-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .header-search-toggle svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .header-search-box {
+    top: 50%;
+    right: 0;
+
+    width: min(330px, calc(100vw - 90px));
+    height: 40px;
+  }
+
+  .header-search-wrap.active .header-search-box {
+    transform: translateY(-50%) translateX(0);
+  }
+
+  .header-search-box input {
+    height: 40px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+
+  .header-search-results {
+    top: 48px;
+    right: 0;
+    width: min(330px, calc(100vw - 90px));
+  }
+
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+    padding: 8px 0 6px;
+  }
+
+  .hero-grid {
+    gap: 0;
+  }
+
+  .hero-main {
+    padding: 0;
+    border-radius: 16px;
+  }
+
+  .hero-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-dots {
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .hero-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+
+  /* =========================
+     VITRINES HORIZONTAIS
+  ========================= */
+
+  /* esconde as setinhas somente no celular */
+  .product-shelf .shelf-arrows {
+    display: none;
+  }
+
+  .horizontal-products {
+    gap: 10px;
+    padding: 3px 0 8px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .horizontal-products::-webkit-scrollbar {
+    display: none;
+  }
+
+  .horizontal-products .product {
+    flex: 0 0 220px;
+    width: 220px;
+    min-width: 220px;
+  }
+
+
+  /* =========================
+     SEÇÕES
+  ========================= */
+
+  .section {
+    padding-top: 12px;
+  }
+
+  .section-head {
+    margin: 14px 0 10px;
+    gap: 5px;
+  }
+
+  .section-head h2 {
+    font-size: 1.3rem;
+  }
+
+  .section-head p {
+    font-size: 0.76rem;
+  }
+
+
+  /* =========================
+     CATÁLOGO
+  ========================= */
+
+  .panel {
+    padding: 12px 0;
+  }
+
+  .chips {
+    gap: 7px;
+    padding: 10px 0 8px;
+  }
+
+  .chip {
+    padding: 8px 11px;
+    font-size: 0.75rem;
+  }
+
+  .toolbar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .toolbar .search {
+    grid-column: 1 / -1;
+  }
+
+  .toolbar .btn,
+  .toolbar .sort-select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .search {
+    height: 40px;
+    padding: 0 13px;
+    font-size: 0.85rem;
+    border-radius: 11px;
+  }
+
+  .sort-select {
+    height: 40px;
+    font-size: 0.75rem;
+    padding: 0 8px;
+  }
+
+
+  /* =========================
+     FILTROS
+  ========================= */
+
+  .filter-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .filter-group {
+    min-width: 0;
+  }
+
+  .filter-group label {
+    font-size: 11px;
+  }
+
+  .filter-group select {
+    width: 100%;
+    min-width: 0;
+    height: 40px;
+    padding: 0 9px;
+    font-size: 0.75rem;
+  }
+
+
+  /* =========================
+     CARDS
+  ========================= */
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .product {
+    border-radius: 14px;
+  }
+
+  .content {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .name {
+    font-size: 0.83rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+  }
+
+  .installment {
+    font-size: 0.68rem;
+  }
+
+  .product .tag {
+    font-size: 0.66rem;
+  }
+
+  .thumb img {
+    width: 84%;
+    height: 84%;
+  }
+
+
+  /* tira efeitos de hover no toque */
+  .product:hover {
+    transform: none;
+  }
+
+  .product:hover .product-image {
+    opacity: 1;
+  }
+
+  .product:hover .product-image-hover {
+    opacity: 0;
+  }
+
+  .product:hover .thumb img {
+    transform: none;
+  }
+
+
+  /* =========================
+     ENCOMENDAS
+  ========================= */
+
+  .order-highlight {
+    margin: 25px 0 45px;
+    padding: 40px 20px;
+    border-radius: 20px;
+  }
+
+  .order-highlight h2 {
+    font-size: 1.8rem;
+  }
+
+  .order-highlight p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .order-highlight-button {
+    padding: 11px 17px;
+    font-size: 0.78rem;
+  }
+
+
+  /* =========================
+     SOBRE A KLYXZONE
+  ========================= */
+
+  .about-klyxzone {
+    padding: 35px 12px 45px;
+  }
+
+  .about-klyxzone-label {
+    font-size: 9px;
+    letter-spacing: 1.6px;
+  }
+
+  .about-klyxzone h2 {
+    font-size: 1.55rem;
+  }
+
+  .about-klyxzone p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+
+  /* =========================
+     RODAPÉ
+  ========================= */
+
+  .footer-grid {
+    gap: 20px;
+  }
+
+  footer {
+    padding: 22px 0 28px;
+  }
+}
