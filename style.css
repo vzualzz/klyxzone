@@ -2661,3 +2661,74 @@ h1 {
   transform: translateY(-2px);
   opacity: 0.9;
 }
+
+
+/* TESTE — filtros e ordenação */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sort-select {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-panel {
+  display: flex;
+  gap: 14px;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  margin-top: 0;
+
+  transition:
+    max-height 0.25s ease,
+    opacity 0.2s ease,
+    margin-top 0.25s ease;
+}
+
+.filter-panel.active {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-group label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+}
+
+.filter-group select {
+  height: 40px;
+  min-width: 180px;
+
+  padding: 0 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  background: #fff;
+  color: #111;
+
+  outline: none;
+  cursor: pointer;
+}
