@@ -27,8 +27,6 @@ const decreaseButton = document.getElementById("decreaseProduct");
 const increaseButton = document.getElementById("increaseProduct");
 const addButton = document.getElementById("addProductToCart");
 
-const addButton = document.getElementById("addProductToCart");
-
 if (product.stock === "fora") {
   addButton.disabled = true;
   addButton.textContent = "FORA DE ESTOQUE";
