@@ -167,6 +167,9 @@ const products = [
       "imagens1/nemviradoll1.jfif"
     ],
      galleryScales: [
+      0,
+       1.5,
+       
       1,
       1.5
     ]
