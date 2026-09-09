@@ -88,18 +88,18 @@ stockStatus.className =
 
 if (product.stock === "nacional") {
 
-  stockStatus.textContent =
-    "● EM ESTOQUE NACIONAL";
+  stockStatus.innerHTML =
+    `<span class="stock-dot stock-green"></span> EM ESTOQUE NACIONAL`;
 
 } else if (product.stock === "fora") {
 
-  stockStatus.textContent =
-    "● FORA DE ESTOQUE";
+  stockStatus.innerHTML =
+    `<span class="stock-dot stock-red"></span> FORA DE ESTOQUE`;
 
 } else if (product.stock === "encomenda") {
 
-  stockStatus.textContent =
-    "● DISPONÍVEL PARA ENCOMENDA";
+  stockStatus.innerHTML =
+    `<span class="stock-dot stock-blue"></span> DISPONÍVEL PARA ENCOMENDA`;
 
 }
 
