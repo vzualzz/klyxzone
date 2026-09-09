@@ -3592,3 +3592,24 @@ h1 {
   }
 
 }
+
+
+@media (max-width: 760px) {
+
+  .hero-slide.active {
+    animation: heroSlideInMobile 0.55s ease;
+  }
+
+  @keyframes heroSlideInMobile {
+    from {
+      opacity: 0;
+      transform: translateX(0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+}
