@@ -3490,3 +3490,14 @@ h1 {
 
 }
 
+
+
+
+.product-stock {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #777;
+}
+
