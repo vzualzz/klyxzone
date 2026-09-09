@@ -275,11 +275,11 @@ const products = [
     desc: "Projetado para precisão de 0,005 mm com profundidade de disparo ajustável (0,005 mm–3,5 mm) para eliminar o atraso e melhorar o controle.",
     initial: "M",
     brand: "GravaStar",
-    image: "imagens1/mercuryv60pro.webp",
-    imageHover: "imagens1/mercuryv60pro2.webp",
+    image: "imagens1/mercuryv60prowhite.png",
+    imageHover: "imagens1/mercuryv60problack.png",
     gallery: [
-      "imagens1/mercuryv60pro.webp",
-      "imagens1/mercuryv60pro2.webp"
+      "imagens1/mercuryv60prowhite.png",
+      "imagens1/mercuryv60problack.webp"
     ]
   }
 ];
