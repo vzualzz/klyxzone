@@ -1062,9 +1062,9 @@ h1 {
 }
 
 .horizontal-products .product {
-  flex: 0 0 220px;
-  width: 220px;
-  min-width: 220px;
+  flex: 0 0 calc((100% - 10px) / 2);
+  width: calc((100% - 10px) / 2);
+  min-width: calc((100% - 10px) / 2);
 }
 }
 
