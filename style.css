@@ -3577,3 +3577,18 @@ h1 {
   background: #d7d7d7;
   transform: none;
 }
+
+
+/* =========================
+   AJUSTE FINAL — VITRINES MOBILE
+========================= */
+
+@media (max-width: 760px) {
+
+  .horizontal-products .product {
+    flex: 0 0 calc((100% - 10px) / 2);
+    width: calc((100% - 10px) / 2);
+    min-width: calc((100% - 10px) / 2);
+  }
+
+}
