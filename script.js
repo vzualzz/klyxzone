@@ -5,7 +5,7 @@ const products = [
     category: "mouses",
     price: 1349.91,
     stock: "nacional",
-    desc: "Leve, preciso e com acabamento monocromático.",
+    desc: "O Beast X Max é a combinação perfeita entre qualidade e desempenho, levando sua experiência nos jogos a um novo patamar. Com um design ultraleve de apenas 45 gramas e equipado com o avançado sensor PAW3950 HS, você terá total controle e fluidez para dominar qualquer partida com facilidade.",
     initial: "B",
     brand: "WLMouse",
     image: "imagens1/beast1.webp",
