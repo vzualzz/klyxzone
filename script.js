@@ -165,6 +165,12 @@ const products = [
       "imagens1/nemvira2.jfif",
       "imagens1/nemviradoll.jfif",
       "imagens1/nemviradoll1.jfif"
+    ],
+     galleryScales: [
+      1,
+      1.4,
+      2,
+      1.4
     ]
   },
 
