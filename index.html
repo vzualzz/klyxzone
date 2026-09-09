@@ -89,9 +89,13 @@
      真夜 MAYO
   </div>
 
-  <a href="produto.html?id=15" class="mayo-button">
-    ENCOMENDE AGORA
-  </a>
+  <a
+  href="produto.html?id=15"
+  class="mayo-button"
+  data-product-id="15"
+>
+  ENCOMENDE AGORA
+</a>
 
 </div>
     </div>
@@ -154,10 +158,13 @@
           Mousepad NemVira Doll
         </div>
 
-        <a href="produto.html?id=10" class="gravastar-button">
-          ENCOMENDE AGORA
-        </a>
-
+        <a
+        href="produto.html?id=10"
+        class="gravastar-button"
+        data-product-id="10"
+      >
+           ENCOMENDE AGORA
+           </a>
       </div>
 
     </div>
@@ -650,6 +657,34 @@
       headerSearchResults.classList.remove("active");
     }
   });
+</script>
+
+
+  <script>
+  document
+    .querySelectorAll("[data-product-id]")
+    .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const productId =
+          Number(button.dataset.productId);
+
+        const product =
+          products.find(
+            item => item.id === productId
+          );
+
+        if (!product) return;
+
+        localStorage.setItem(
+          "klyxSelectedProduct",
+          JSON.stringify(product)
+        );
+
+      });
+
+    });
 </script>
 
 </body>
