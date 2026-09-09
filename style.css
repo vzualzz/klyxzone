@@ -3563,3 +3563,17 @@ h1 {
 .product:hover .thumb img {
   transform: translateY(-8px) scale(1.03);
 }
+
+
+.product-add-button.out-of-stock {
+  background: #d7d7d7;
+  color: #666;
+  border-color: #d7d7d7;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.product-add-button.out-of-stock:hover {
+  background: #d7d7d7;
+  transform: none;
+}
