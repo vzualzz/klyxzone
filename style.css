@@ -3597,10 +3597,10 @@ h1 {
 @media (max-width: 760px) {
 
   .hero-slide.active {
-    animation: heroSlideInMobile 0.55s ease;
+    animation: heroFadeMobile 0.55s ease !important;
   }
 
-  @keyframes heroSlideInMobile {
+  @keyframes heroFadeMobile {
     from {
       opacity: 0;
       transform: translateX(0);
