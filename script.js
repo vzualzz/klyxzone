@@ -159,9 +159,10 @@ const products = [
     initial: "D",
     brand: "NemVira",
     image: "imagens1/nemviradollmain.jfif",
-    imageHover: "imagens1/nemviradoll.jfif",
+    imageHover: "imagens1/nemvira2.jfif",
     gallery: [
       "imagens1/nemviradollmain.jfif",
+      "imagens1/nemvira2.jfif",
       "imagens1/nemviradoll.jfif",
       "imagens1/nemviradoll1.jfif"
     ]
