@@ -280,7 +280,7 @@ const products = [
     imageHover: "imagens1/mercuryv60problack.png",
     gallery: [
       "imagens1/mercuryv60prowhite.png",
-      "imagens1/mercuryv60problack.webp"
+      "imagens1/mercuryv60problack.png"
     ]
   }
 ];
