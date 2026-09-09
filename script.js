@@ -198,6 +198,10 @@ const products = [
     gallery: [
       "imagens1/koku.webp",
       "imagens1/koku2.webp"
+    ],
+    galleryScales: [
+      1,
+      1.5
     ]
   },
 
