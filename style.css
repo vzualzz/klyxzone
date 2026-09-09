@@ -2322,6 +2322,17 @@ h1 {
   min-width: 360px;
 }
 
+
+/* TESTE — efeito de produto flutuando */
+.product .thumb img {
+  transition: transform 0.35s ease;
+}
+
+.product:hover .thumb img {
+  transform: translateY(-8px) scale(1.03);
+}
+
+
 /* TESTE — destaque de encomendas */
 .order-highlight {
   margin: 40px 0 70px;
