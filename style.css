@@ -3581,10 +3581,14 @@ h1 {
 
 @media (max-width: 760px) {
 
+  #relatedProducts {
+    gap: 10px;
+  }
+
   #relatedProducts .product {
-    flex: 0 0 calc((100% - 10px) / 2);
-    width: calc((100% - 10px) / 2);
-    min-width: calc((100% - 10px) / 2);
+    flex: 0 0 calc((100% - 10px) / 2) !important;
+    width: calc((100% - 10px) / 2) !important;
+    min-width: calc((100% - 10px) / 2) !important;
   }
 
 }
