@@ -3531,3 +3531,35 @@ h1 {
 .stock-blue {
   background: #4da3ff;
 }
+
+ /* =======================================================
+     teste animaçao
+     ======================================================= */
+
+.product .thumb {
+  position: relative;
+}
+
+.product .thumb img {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product .product-image-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease,
+              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product:hover .product-image {
+  opacity: 0;
+}
+
+.product:hover .product-image-hover {
+  opacity: 1;
+}
+
+.product:hover .thumb img {
+  transform: translateY(-8px) scale(1.03);
+}
