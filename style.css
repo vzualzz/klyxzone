@@ -3501,3 +3501,33 @@ h1 {
   color: #777;
 }
 
+.product-stock {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #777;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.stock-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.stock-green {
+  background: #35d07f;
+}
+
+.stock-red {
+  background: #ff5555;
+}
+
+.stock-blue {
+  background: #4da3ff;
+}
