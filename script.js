@@ -34,7 +34,7 @@ const products = [
     name: "Aspas RS6 Ultra HE",
     category: "teclados",
     price: 1889.91,
-    stock: "nacional",
+    stock: "fora",
     desc: "Formato compacto com aparência premium.",
     initial: "A",
     brand: "ATK",
