@@ -105,10 +105,7 @@ if (product.stock === "nacional") {
 
 if (product.stock) {
 
-  installmentPrice.insertAdjacentElement(
-    "afterend",
-    stockStatus
-  );
+  productInstallments.appendChild(stockStatus);
 
 }
 
