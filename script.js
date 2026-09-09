@@ -168,7 +168,7 @@ const products = [
     ],
      galleryScales: [
       1,
-      1.4
+      1.5
     ]
   },
 
