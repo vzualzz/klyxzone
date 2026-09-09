@@ -12,7 +12,11 @@ const products = [
     imageHover: "imagens1/beastblue.webp",
     gallery: [
       "imagens1/beast1.webp",
-      "imagens1/beastblue.webp"
+      "imagens1/beastblue.webp",
+      "imagens1/beastsilver.webp",
+      "imagens1/beastwhite.webp",
+      "imagens1/beastpurple.webp",
+      "imagens1/beastred.webp"
     ]
   },
 
