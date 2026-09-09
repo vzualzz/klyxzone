@@ -75,6 +75,44 @@ const installment = product.price / 10;
 installmentPrice.textContent =
   `10x de ${money(installment)}`;
 
+
+/* =========================
+   STATUS DE ESTOQUE
+========================= */
+
+const stockStatus =
+  document.createElement("div");
+
+stockStatus.className =
+  "product-stock";
+
+if (product.stock === "nacional") {
+
+  stockStatus.textContent =
+    "● EM ESTOQUE NACIONAL";
+
+} else if (product.stock === "fora") {
+
+  stockStatus.textContent =
+    "● FORA DE ESTOQUE";
+
+} else if (product.stock === "encomenda") {
+
+  stockStatus.textContent =
+    "● DISPONÍVEL PARA ENCOMENDA";
+
+}
+
+if (product.stock) {
+
+  installmentPrice.insertAdjacentElement(
+    "afterend",
+    stockStatus
+  );
+
+}
+
+
 productDescription.textContent =
   product.desc;
 
