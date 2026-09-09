@@ -26,6 +26,11 @@ const quantityElement = document.getElementById("productQuantity");
 const decreaseButton = document.getElementById("decreaseProduct");
 const increaseButton = document.getElementById("increaseProduct");
 const addButton = document.getElementById("addProductToCart");
+if (product.stock === "fora") {
+  addButton.disabled = true;
+  addButton.textContent = "FORA DE ESTOQUE";
+  addButton.classList.add("out-of-stock");
+}
 
 const openCartButton = document.getElementById("openCart");
 const closeCartButton = document.getElementById("closeCart");
@@ -669,6 +674,10 @@ if (overlay) {
 addButton.addEventListener(
   "click",
   () => {
+
+    if (product.stock === "fora") {
+      return;
+    }
 
     const cart = getCart();
 
