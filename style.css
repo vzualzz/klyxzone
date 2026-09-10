@@ -3617,20 +3617,14 @@ h1 {
 
 @media (max-width: 760px) {
 
-  body {
-    position: static !important;
+  .drawer,
+  .overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    margin: 0 !important;
   }
 
   .drawer {
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-
-    width: 100vw !important;
-    height: 100dvh !important;
-
     transform: translateX(100%) !important;
   }
 
