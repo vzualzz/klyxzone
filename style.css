@@ -3633,3 +3633,15 @@ h1 {
   }
 
 }
+
+
+@media (max-width: 760px) {
+
+  html,
+  body {
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+  }
+
+}
