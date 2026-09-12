@@ -3979,3 +3979,39 @@ h1 {
   }
 
 }
+
+/* =======================================================
+   MOBILE — MESMAS ANIMAÇÕES DO DESKTOP
+   ======================================================= */
+
+@media (max-width: 760px) {
+
+  /* BANNER */
+  .hero-slide.active {
+    animation: heroSlideIn 0.55s ease !important;
+  }
+
+  /* TEXTO DO BANNER */
+  .hero-slide.active .hero-copy {
+    animation: heroTextUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  }
+
+  /* MAYO */
+  .hero-slide:first-child.active .mayo-label {
+    animation: mayoContentUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both !important;
+  }
+
+  .hero-slide:first-child.active .mayo-title {
+    animation: mayoContentUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both !important;
+  }
+
+  .hero-slide:first-child.active .mayo-button {
+    animation: mayoContentUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both !important;
+  }
+
+  /* GRAVASTAR + NEMVIRA */
+  .hero-slide.active .gravastar-content {
+    animation: gravastarContentUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  }
+
+}
