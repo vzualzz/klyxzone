@@ -3764,8 +3764,6 @@ h1 {
 
     visibility: hidden !important;
     opacity: 0 !important;
-
-    transform: none !important;
   }
 
   .hero-slide.active {
