@@ -3743,7 +3743,8 @@ h1 {
 }
 
 /* =======================================================
-   KLYXZONE — HERO MOBILE CORRIGIDO + ANIMADO
+   KLYXZONE — RESET DEFINITIVO DO HERO MOBILE
+   Mantém as animações originais
    ======================================================= */
 
 @media (max-width: 760px) {
@@ -3779,7 +3780,10 @@ h1 {
     visibility: visible !important;
     opacity: 1 !important;
 
-    animation: mobileHeroIn 0.65s ease both !important;
+    /*
+      ESTA É A ANIMAÇÃO ORIGINAL DO MOBILE
+    */
+    animation: heroFadeMobile 0.55s ease !important;
   }
 
 
@@ -3827,7 +3831,10 @@ h1 {
 
     z-index: 1 !important;
 
-    animation: mobileBannerImageIn 0.8s ease both !important;
+    /*
+      NÃO colocamos uma animação nova na imagem.
+      A animação original pertence ao slide.
+    */
   }
 
 
@@ -3848,7 +3855,6 @@ h1 {
     width: auto !important;
     max-width: 80% !important;
 
-    opacity: 1 !important;
     visibility: visible !important;
 
     transform: translateY(-50%) !important;
@@ -3856,31 +3862,47 @@ h1 {
     z-index: 20 !important;
   }
 
-  .hero-slide.active .mayo-label {
-    opacity: 0 !important;
-    visibility: visible !important;
+  /*
+    ANIMAÇÕES ORIGINAIS DO MAYO
+  */
 
-    animation: mobileTextIn 0.55s ease 0.10s forwards !important;
+  .hero-slide:first-child.active .mayo-label {
+    animation:
+      mayoContentUp
+      0.5s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      0.05s
+      both !important;
   }
 
-  .hero-slide.active .mayo-title {
-    opacity: 0 !important;
-    visibility: visible !important;
+  .hero-slide:first-child.active .mayo-title {
+    animation:
+      mayoContentUp
+      0.55s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      0.12s
+      both !important;
+  }
 
-    animation: mobileTextIn 0.6s ease 0.18s forwards !important;
+  .hero-slide:first-child.active .mayo-button {
+    animation:
+      mayoContentUp
+      0.6s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      0.2s
+      both !important;
+  }
+
+  .hero-slide.active .mayo-label,
+  .hero-slide.active .mayo-title,
+  .hero-slide.active .mayo-button {
+    visibility: visible !important;
   }
 
   .hero-slide.active .mayo-button {
     position: static !important;
-
     display: inline-flex !important;
-
-    opacity: 0 !important;
-    visibility: visible !important;
-
     transform: none !important;
-
-    animation: mobileButtonIn 0.65s ease 0.28s forwards !important;
   }
 
 
@@ -3901,28 +3923,27 @@ h1 {
     width: auto !important;
     max-width: 85% !important;
 
-    opacity: 0 !important;
     visibility: visible !important;
-
-    transform: translateY(calc(-50% + 25px)) !important;
 
     z-index: 20 !important;
 
-    animation: gravastarMobileIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards !important;
+    /*
+      ANIMAÇÃO ORIGINAL DO SEU CSS
+    */
+    animation:
+      gravastarContentUp
+      0.65s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      both !important;
   }
 
-  .hero-slide.active .gravastar-title {
-    opacity: 1 !important;
+  .hero-slide.active .gravastar-title,
+  .hero-slide.active .gravastar-button {
     visibility: visible !important;
   }
 
   .hero-slide.active .gravastar-button {
     display: inline-flex !important;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    transform: none !important;
   }
 
 
@@ -3939,11 +3960,6 @@ h1 {
     overflow: hidden !important;
   }
 
-  /*
-     Mantém o banner de encomendas funcionando como já estava.
-     Não aplicamos a animação especial de MAYO/Gravastar nele.
-  */
-
   .hero-slide.active .hero-order .hero-copy {
     position: absolute !important;
 
@@ -3953,81 +3969,13 @@ h1 {
     width: 55% !important;
     max-width: 55% !important;
 
-    opacity: 1 !important;
     visibility: visible !important;
 
     transform: translateY(-50%) !important;
 
     z-index: 10 !important;
-  }
 
 
-  /* =====================================================
-     ANIMAÇÕES
-     ===================================================== */
-
-  @keyframes mobileHeroIn {
-    from {
-      opacity: 0;
-      transform: translateX(18px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-
-  @keyframes mobileBannerImageIn {
-    from {
-      opacity: 0.72;
-      transform: scale(1.04);
-    }
-
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-
-  @keyframes mobileTextIn {
-    from {
-      opacity: 0;
-      transform: translateY(22px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-
-  @keyframes mobileButtonIn {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-
-  @keyframes gravastarMobileIn {
-    from {
-      opacity: 0;
-      transform: translateY(calc(-50% + 25px));
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(-50%);
-    }
   }
 
 }
