@@ -3741,3 +3741,8 @@ h1 {
   }
 
 }
+
+/* TESTE DE PUBLICAÇÃO */
+body {
+  outline: 10px solid red !important;
+}
