@@ -3855,7 +3855,7 @@ h1 {
 
     visibility: visible !important;
 
-    transform: translateY(-50%) !important;
+    transform: translateY(-50%);
 
     z-index: 20 !important;
   }
