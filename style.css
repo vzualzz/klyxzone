@@ -3743,12 +3743,15 @@ h1 {
 }
 
 /* =======================================================
-   KLYXZONE — RESET DEFINITIVO DO HERO MOBILE
+   KLYXZONE — HERO MOBILE CORRIGIDO + ANIMADO
    ======================================================= */
 
 @media (max-width: 760px) {
 
-  /* TODOS OS SLIDES */
+  /* =====================================================
+     SLIDES
+     ===================================================== */
+
   .hero-slide {
     position: absolute !important;
     inset: 0 !important;
@@ -3761,11 +3764,9 @@ h1 {
     visibility: hidden !important;
     opacity: 0 !important;
 
-    animation: none !important;
     transform: none !important;
   }
 
-  /* SOMENTE O SLIDE ATIVO */
   .hero-slide.active {
     position: relative !important;
     inset: auto !important;
@@ -3778,12 +3779,14 @@ h1 {
     visibility: visible !important;
     opacity: 1 !important;
 
-    animation: none !important;
-    transform: none !important;
+    animation: mobileHeroIn 0.65s ease both !important;
   }
 
 
-  /* ÁREA DO BANNER */
+  /* =====================================================
+     ÁREA DO BANNER
+     ===================================================== */
+
   .hero-slide.active .hero-main {
     position: relative !important;
 
@@ -3791,7 +3794,6 @@ h1 {
 
     width: 100vw !important;
     height: 320px !important;
-
     min-height: 320px !important;
 
     padding: 0 !important;
@@ -3801,7 +3803,10 @@ h1 {
   }
 
 
-  /* IMAGEM */
+  /* =====================================================
+     IMAGEM
+     ===================================================== */
+
   .hero-slide.active .hero-banner {
     position: absolute !important;
 
@@ -3810,16 +3815,19 @@ h1 {
     width: 100% !important;
     height: 100% !important;
 
+    max-width: none !important;
+
     display: block !important;
 
     object-fit: cover !important;
     object-position: center !important;
 
     opacity: 1 !important;
-
     visibility: visible !important;
 
     z-index: 1 !important;
+
+    animation: mobileBannerImageIn 0.8s ease both !important;
   }
 
 
@@ -3834,7 +3842,6 @@ h1 {
     top: 50% !important;
 
     display: flex !important;
-
     flex-direction: column !important;
     align-items: flex-start !important;
 
@@ -3849,11 +3856,18 @@ h1 {
     z-index: 20 !important;
   }
 
-  .hero-slide.active .mayo-label,
-  .hero-slide.active .mayo-title,
-  .hero-slide.active .mayo-button {
-    opacity: 1 !important;
+  .hero-slide.active .mayo-label {
+    opacity: 0 !important;
     visibility: visible !important;
+
+    animation: mobileTextIn 0.55s ease 0.10s forwards !important;
+  }
+
+  .hero-slide.active .mayo-title {
+    opacity: 0 !important;
+    visibility: visible !important;
+
+    animation: mobileTextIn 0.6s ease 0.18s forwards !important;
   }
 
   .hero-slide.active .mayo-button {
@@ -3861,12 +3875,17 @@ h1 {
 
     display: inline-flex !important;
 
+    opacity: 0 !important;
+    visibility: visible !important;
+
     transform: none !important;
+
+    animation: mobileButtonIn 0.65s ease 0.28s forwards !important;
   }
 
 
   /* =====================================================
-     GRAVASTAR + NEMVIRA
+     GRAVASTAR / NEMVIRA
      ===================================================== */
 
   .hero-slide.active .gravastar-content {
@@ -3876,23 +3895,23 @@ h1 {
     top: 50% !important;
 
     display: flex !important;
-
     flex-direction: column !important;
     align-items: flex-start !important;
 
     width: auto !important;
     max-width: 85% !important;
 
-    opacity: 1 !important;
+    opacity: 0 !important;
     visibility: visible !important;
 
-    transform: translateY(-50%) !important;
+    transform: translateY(calc(-50% + 25px)) !important;
 
     z-index: 20 !important;
+
+    animation: gravastarMobileIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards !important;
   }
 
-  .hero-slide.active .gravastar-title,
-  .hero-slide.active .gravastar-button {
+  .hero-slide.active .gravastar-title {
     opacity: 1 !important;
     visibility: visible !important;
   }
@@ -3900,12 +3919,15 @@ h1 {
   .hero-slide.active .gravastar-button {
     display: inline-flex !important;
 
+    opacity: 1 !important;
+    visibility: visible !important;
+
     transform: none !important;
   }
 
 
   /* =====================================================
-     ENCOMENDAS — NÃO ALTERAR A IDEIA DO BANNER
+     ENCOMENDAS
      ===================================================== */
 
   .hero-slide.active .hero-order {
@@ -3916,6 +3938,11 @@ h1 {
 
     overflow: hidden !important;
   }
+
+  /*
+     Mantém o banner de encomendas funcionando como já estava.
+     Não aplicamos a animação especial de MAYO/Gravastar nele.
+  */
 
   .hero-slide.active .hero-order .hero-copy {
     position: absolute !important;
@@ -3932,8 +3959,75 @@ h1 {
     transform: translateY(-50%) !important;
 
     z-index: 10 !important;
+  }
 
-    animation: none !important;
+
+  /* =====================================================
+     ANIMAÇÕES
+     ===================================================== */
+
+  @keyframes mobileHeroIn {
+    from {
+      opacity: 0;
+      transform: translateX(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes mobileBannerImageIn {
+    from {
+      opacity: 0.72;
+      transform: scale(1.04);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+  @keyframes mobileTextIn {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  @keyframes mobileButtonIn {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  @keyframes gravastarMobileIn {
+    from {
+      opacity: 0;
+      transform: translateY(calc(-50% + 25px));
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
   }
 
 }
