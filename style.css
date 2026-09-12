@@ -3742,7 +3742,198 @@ h1 {
 
 }
 
-/* TESTE DE PUBLICAÇÃO */
-body {
-  outline: 10px solid red !important;
+/* =======================================================
+   KLYXZONE — RESET DEFINITIVO DO HERO MOBILE
+   ======================================================= */
+
+@media (max-width: 760px) {
+
+  /* TODOS OS SLIDES */
+  .hero-slide {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    display: none !important;
+
+    visibility: hidden !important;
+    opacity: 0 !important;
+
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* SOMENTE O SLIDE ATIVO */
+  .hero-slide.active {
+    position: relative !important;
+    inset: auto !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    display: block !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    animation: none !important;
+    transform: none !important;
+  }
+
+
+  /* ÁREA DO BANNER */
+  .hero-slide.active .hero-main {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100vw !important;
+    height: 320px !important;
+
+    min-height: 320px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* IMAGEM */
+  .hero-slide.active .hero-banner {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    z-index: 1 !important;
+  }
+
+
+  /* =====================================================
+     MAYO
+     ===================================================== */
+
+  .hero-slide.active .mayo-content {
+    position: absolute !important;
+
+    left: 5% !important;
+    top: 50% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    width: auto !important;
+    max-width: 80% !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: translateY(-50%) !important;
+
+    z-index: 20 !important;
+  }
+
+  .hero-slide.active .mayo-label,
+  .hero-slide.active .mayo-title,
+  .hero-slide.active .mayo-button {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .hero-slide.active .mayo-button {
+    position: static !important;
+
+    display: inline-flex !important;
+
+    transform: none !important;
+  }
+
+
+  /* =====================================================
+     GRAVASTAR + NEMVIRA
+     ===================================================== */
+
+  .hero-slide.active .gravastar-content {
+    position: absolute !important;
+
+    left: 5% !important;
+    top: 50% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    width: auto !important;
+    max-width: 85% !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: translateY(-50%) !important;
+
+    z-index: 20 !important;
+  }
+
+  .hero-slide.active .gravastar-title,
+  .hero-slide.active .gravastar-button {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .hero-slide.active .gravastar-button {
+    display: inline-flex !important;
+
+    transform: none !important;
+  }
+
+
+  /* =====================================================
+     ENCOMENDAS — NÃO ALTERAR A IDEIA DO BANNER
+     ===================================================== */
+
+  .hero-slide.active .hero-order {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 320px !important;
+
+    overflow: hidden !important;
+  }
+
+  .hero-slide.active .hero-order .hero-copy {
+    position: absolute !important;
+
+    left: 5% !important;
+    top: 50% !important;
+
+    width: 55% !important;
+    max-width: 55% !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: translateY(-50%) !important;
+
+    z-index: 10 !important;
+
+    animation: none !important;
+  }
+
 }
