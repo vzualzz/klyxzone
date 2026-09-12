@@ -3645,3 +3645,67 @@ h1 {
   }
 
 }
+
+/* =======================================================
+   KLYXZONE — CORREÇÃO FINAL DOS BANNERS MOBILE
+   ======================================================= */
+
+@media (max-width: 760px) {
+
+  /* -------------------------------------------------------
+     MAYO
+     ------------------------------------------------------- */
+
+  .mayo-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(-50%) !important;
+    z-index: 20 !important;
+  }
+
+  .mayo-label,
+  .mayo-title,
+  .mayo-button {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .mayo-button {
+    position: static !important;
+    transform: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     GRAVASTAR
+     ------------------------------------------------------- */
+
+  .gravastar-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(-50%) !important;
+    z-index: 20 !important;
+  }
+
+  .gravastar-title,
+  .gravastar-button {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .gravastar-button {
+    transform: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     GARANTIA PARA OS SLIDES
+     ------------------------------------------------------- */
+
+  .hero-slide.active .mayo-content,
+  .hero-slide.active .gravastar-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+}
