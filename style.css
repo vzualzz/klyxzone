@@ -4305,3 +4305,47 @@ body.cart-open {
   right: 0;
   top: var(--cart-scroll-y);
 }
+
+
+/* =====================================================
+   HOVER DOS PRODUTOS — ANIMAÇÃO SEM REESCALAR A IMAGEM
+===================================================== */
+
+.product .thumb {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.product .thumb img {
+  transform: none !important;
+  transition: opacity 0.35s ease !important;
+}
+
+.product:hover .thumb {
+  transform: translateY(-8px) scale(1.03) !important;
+}
+
+.product:hover .thumb img {
+  transform: none !important;
+}
+
+.product .product-image {
+  opacity: 1;
+  z-index: 2;
+}
+
+.product .product-image-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.product:hover .product-image {
+  opacity: 0;
+}
+
+.product:hover .product-image-hover {
+  opacity: 1;
+}
