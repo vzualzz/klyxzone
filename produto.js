@@ -639,18 +639,20 @@ quantityRow.appendChild(increaseButton);
 
 function openProductCart() {
 
-  document.documentElement.style.overflow = "hidden";
-  document.body.style.overflow = "hidden";
+  productScrollPosition = window.scrollY;
+
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${productScrollPosition}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
 
   drawer.classList.add("open");
   overlay.classList.add("open");
 
-  drawer.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
+  drawer.setAttribute("aria-hidden", "false");
 }
+
 /* =========================
    ABRIR CARRINHO
 ========================= */
@@ -679,14 +681,15 @@ function closeCart() {
   drawer.classList.remove("open");
   overlay.classList.remove("open");
 
-  drawer.setAttribute(
-    "aria-hidden",
-    "true"
-  );
+  drawer.setAttribute("aria-hidden", "true");
 
-  document.documentElement.style.overflow = "";
-  document.body.style.overflow = "";
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
 
+  window.scrollTo(0, productScrollPosition);
 }
 
 if (overlay) {
