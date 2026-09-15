@@ -4300,3 +4300,11 @@ body > .overlay {
   inset: 0 !important;
   z-index: 99998 !important;
 }
+
+body.cart-open {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: var(--cart-scroll-y);
+}
