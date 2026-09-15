@@ -2763,9 +2763,8 @@ h1 {
   ========================= */
 
   body {
-    overflow-x: hidden;
-  }
-
+  overflow-x: clip;
+}
   .wrap {
     width: calc(100% - 24px);
   }
