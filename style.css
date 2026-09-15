@@ -4373,3 +4373,11 @@ body {
 .product .thumb img {
   backface-visibility: hidden;
 }
+
+.product:hover .thumb {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.product:hover .thumb img {
+  transform: none !important;
+}
