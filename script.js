@@ -372,6 +372,9 @@ const drawerEl =
 const overlayEl =
   document.getElementById("overlay");
 
+let mobileScrollPosition = 0;
+
+
 const openCartEl =
   document.getElementById("openCart");
 
