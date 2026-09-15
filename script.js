@@ -527,7 +527,7 @@ function createProductCard(product) {
         product.name;
 
       imageHover.loading =
-        "lazy";
+        "eager";
 
       imageHover.className =
         "product-image-hover";
