@@ -970,6 +970,19 @@ function removeFromCart(productId) {
 
 function openCart() {
 
+  if (window.innerWidth <= 760) {
+
+    mobileScrollPosition =
+      window.scrollY;
+
+    document.body.style.position = "fixed";
+    document.body.style.top =
+      `-${mobileScrollPosition}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  }
+
   drawerEl.classList.add(
     "open"
   );
@@ -998,8 +1011,21 @@ function closeCart() {
     "aria-hidden",
     "true"
   );
-}
 
+  if (window.innerWidth <= 760) {
+
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+
+    window.scrollTo(
+      0,
+      mobileScrollPosition
+    );
+  }
+}
 function renderBrandFilter() {
 
   const brands = [
