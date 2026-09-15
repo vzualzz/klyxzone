@@ -3987,27 +3987,25 @@ h1 {
 
 
 /* =======================================================
-   CORREÇÃO — CARRINHO MOBILE
+   CARRINHO — TRAVAR PÁGINA ATRÁS NO MOBILE
    ======================================================= */
 
 @media (max-width: 760px) {
 
-  .drawer {
-    overscroll-behavior: contain !important;
+  body:has(.drawer.open) {
     overflow: hidden !important;
+    touch-action: none !important;
+  }
+
+  .drawer {
+    touch-action: none;
   }
 
   .drawer-body {
+    touch-action: pan-y !important;
     overflow-y: auto !important;
-    overflow-x: hidden !important;
     overscroll-behavior: contain !important;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
-  }
-
-  .drawer-head,
-  .drawer-foot {
-    touch-action: none;
   }
 
 }
