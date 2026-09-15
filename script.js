@@ -1542,30 +1542,3 @@ if (
     endDrag
   );
 }
-
-
-/* =======================================================
-   CARRINHO — BLOQUEIO DE TOUCH NO MOBILE
-   ======================================================= */
-
-document.addEventListener(
-  "touchmove",
-  (event) => {
-
-    if (window.innerWidth > 760) {
-      return;
-    }
-
-    if (!drawerEl.classList.contains("open")) {
-      return;
-    }
-
-    if (event.target.closest(".drawer-body")) {
-      return;
-    }
-
-    event.preventDefault();
-
-  },
-  { passive: false }
-);
