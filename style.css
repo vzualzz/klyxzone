@@ -2328,10 +2328,9 @@ h1 {
   transition: transform 0.35s ease;
 }
 
-.product:hover .thumb img {
+.product:hover .thumb {
   transform: translateY(-8px) scale(1.03);
 }
-
 
 /* TESTE — destaque de encomendas */
 .order-highlight {
@@ -3544,7 +3543,7 @@ h1 {
   position: relative;
 }
 
-.product .thumb img {
+.product .thumb {
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -3552,8 +3551,8 @@ h1 {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.35s ease,
-              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: none;
+  transition: opacity 0.35s ease;
 }
 
 .product:hover .product-image {
@@ -3563,8 +3562,7 @@ h1 {
 .product:hover .product-image-hover {
   opacity: 1;
 }
-
-.product:hover .thumb img {
+.product:hover .thumb {
   transform: translateY(-8px) scale(1.03);
 }
 
