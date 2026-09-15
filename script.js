@@ -979,13 +979,9 @@ function openCart() {
     "aria-hidden",
     "false"
   );
-
-  document.documentElement.style.overflow = "hidden";
-  document.body.style.overflow = "hidden";
-  }
 }
 
- function closeCart() {
+function closeCart() {
 
   drawerEl.classList.remove(
     "open"
@@ -999,10 +995,6 @@ function openCart() {
     "aria-hidden",
     "true"
   );
-
- document.documentElement.style.overflow = "";
- document.body.style.overflow = "";
-  }
 }
 
 function renderBrandFilter() {
