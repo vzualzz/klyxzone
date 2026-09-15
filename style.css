@@ -4369,3 +4369,18 @@ body {
   top: 0 !important;
   z-index: 1000 !important;
 }
+
+
+/* CORREÇÃO DE RASTERIZAÇÃO DO HOVER NO CHROME */
+.product .thumb img {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.product:hover .thumb img {
+  -webkit-transform: translate3d(0, -8px, 0) scale(1.03);
+  transform: translate3d(0, -8px, 0) scale(1.03);
+}
