@@ -758,19 +758,16 @@ addButton.addEventListener(
 
     setTimeout(() => {
 
-      drawer.classList.add("open");
+  drawer.classList.add("open");
 
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflow = "hidden";
+  overlay.classList.add("open");
 
-      overlay.classList.add("open");
+  drawer.setAttribute(
+    "aria-hidden",
+    "false"
+  );
 
-      drawer.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-    }, 300);
+}, 300);
 
   }
 );
