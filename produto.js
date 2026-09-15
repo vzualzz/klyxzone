@@ -640,14 +640,15 @@ function openProductCart() {
 
   drawer.classList.add("open");
 
+  document.documentElement.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
+
   overlay.classList.add("open");
 
   drawer.setAttribute(
     "aria-hidden",
     "false"
   );
-
-  window.scrollTo(0, window.scrollY);
 
 }
 /* =========================
