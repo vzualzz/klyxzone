@@ -639,9 +639,6 @@ quantityRow.appendChild(increaseButton);
 
 function openProductCart() {
 
-  document.documentElement.style.overflow = "hidden";
-  document.body.style.overflow = "hidden";
-
   drawer.classList.add("open");
   overlay.classList.add("open");
 
@@ -651,6 +648,7 @@ function openProductCart() {
   );
 
 }
+
 /* =========================
    ABRIR CARRINHO
 ========================= */
@@ -683,9 +681,6 @@ function closeCart() {
     "aria-hidden",
     "true"
   );
-
-  document.documentElement.style.overflow = "";
-  document.body.style.overflow = "";
 
 }
 
