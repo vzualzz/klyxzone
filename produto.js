@@ -639,15 +639,6 @@ quantityRow.appendChild(increaseButton);
 
 function openProductCart() {
 
-  productScrollPosition = window.scrollY;
-
-  document.body.classList.add("cart-open");
-
-  document.body.style.setProperty(
-    "--cart-scroll-y",
-    `-${productScrollPosition}px`
-  );
-
   drawer.classList.add("open");
   overlay.classList.add("open");
 
@@ -686,24 +677,9 @@ function closeCart() {
   drawer.classList.remove("open");
   overlay.classList.remove("open");
 
-  document.body.classList.remove("cart-open");
-
   drawer.setAttribute(
     "aria-hidden",
     "true"
-  );
-
-  window.scrollTo(
-    0,
-    productScrollPosition
-  );
-
-}
-if (closeCartButton) {
-
-  closeCartButton.addEventListener(
-    "click",
-    closeCart
   );
 
 }
