@@ -758,16 +758,23 @@ addButton.addEventListener(
 
     setTimeout(() => {
 
-  drawer.classList.add("open");
+      drawer.classList.add("open");
 
-  overlay.classList.add("open");
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
 
-  drawer.setAttribute(
-    "aria-hidden",
-    "false"
-  );
+      overlay.classList.add("open");
 
-}, 300);
+      drawer.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+    }, 300);
+
+  }
+);
+
 
 /* =========================
    FRETE
