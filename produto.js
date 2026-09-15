@@ -640,8 +640,8 @@ function openProductCart() {
 
   drawer.classList.add("open");
 
-  document.documentElement.style.overflow = "hidden";
-  document.body.style.overflow = "hidden";
+  document.documentElement.style.overflow = "clip";
+  document.body.style.overflow = "clip";
 
   overlay.classList.add("open");
 
@@ -651,6 +651,7 @@ function openProductCart() {
   );
 
 }
+
 /* =========================
    ABRIR CARRINHO
 ========================= */
@@ -685,8 +686,8 @@ function closeCart() {
     "true"
   );
 
-  document.documentElement.style.overflow = "";
-  document.body.style.overflow = "";
+ document.documentElement.style.overflow = "";
+document.body.style.overflow = "";
 
 }
 
