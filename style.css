@@ -3989,3 +3989,22 @@ h1 {
   }
 }
 
+@media (max-width: 760px) {
+
+  .drawer {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    height: 100dvh !important;
+
+    z-index: 1100 !important;
+  }
+
+  .overlay {
+    z-index: 1050 !important;
+  }
+
+}
+
