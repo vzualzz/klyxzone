@@ -985,7 +985,8 @@ function openCart() {
     document.body.style.overflow = "hidden";
   }
 }
-function closeCart() {
+
+ function closeCart() {
 
   drawerEl.classList.remove(
     "open"
@@ -999,6 +1000,11 @@ function closeCart() {
     "aria-hidden",
     "true"
   );
+
+  if (window.innerWidth <= 760) {
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+  }
 }
 
 function renderBrandFilter() {
