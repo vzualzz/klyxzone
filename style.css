@@ -4356,3 +4356,16 @@ body.cart-open {
   top: 0 !important;
   z-index: 1000 !important;
 }
+
+
+html,
+body {
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
+}
+
+.topbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
