@@ -545,6 +545,46 @@ function updateCart() {
     info.appendChild(details);
 
 
+
+    /* QUANTIDADE */
+
+  const quantityRow = document.createElement("div");
+    quantityRow.className = "quantity-row";
+
+  const decreaseButton = document.createElement("button");
+    decreaseButton.className = "btn";
+    decreaseButton.textContent = "-";
+
+    decreaseButton.addEventListener("click", () => {
+  if (item.quantity > 1) {
+    item.quantity--;
+  } else {
+    cart.splice(index, 1);
+  }
+
+  saveCart(cart);
+  updateCart();
+});
+
+const quantityValue = document.createElement("span");
+quantityValue.textContent = item.quantity;
+
+const increaseButton = document.createElement("button");
+increaseButton.className = "btn";
+increaseButton.textContent = "+";
+
+increaseButton.addEventListener("click", () => {
+  item.quantity++;
+  saveCart(cart);
+  updateCart();
+});
+
+quantityRow.appendChild(decreaseButton);
+quantityRow.appendChild(quantityValue);
+quantityRow.appendChild(increaseButton);
+
+    info.appendChild(quantityRow);
+
     /* REMOVER */
 
     const removeButton =
