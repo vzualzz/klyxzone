@@ -854,12 +854,6 @@ function updateCart() {
     quantityRow.className =
       "quantity-row";
 
-    const quantityLabel =
-      document.createElement("span");
-
-    quantityLabel.textContent =
-      "Quantidade:";
-
     const increaseButton =
       document.createElement("button");
 
@@ -916,10 +910,6 @@ function updateCart() {
           );
         }
       }
-    );
-
-    quantityRow.appendChild(
-      quantityLabel
     );
 
     quantityRow.appendChild(
