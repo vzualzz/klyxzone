@@ -980,9 +980,8 @@ function openCart() {
     "false"
   );
 
-  if (window.innerWidth <= 760) {
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
+  document.documentElement.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
   }
 }
 
@@ -1001,9 +1000,8 @@ function openCart() {
     "true"
   );
 
-  if (window.innerWidth <= 760) {
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
+ document.documentElement.style.overflow = "";
+ document.body.style.overflow = "";
   }
 }
 
