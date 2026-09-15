@@ -4107,3 +4107,9 @@ h1 {
   font-size: 13px;
   color: var(--text);
 }
+
+@media (min-width: 761px) {
+  .cart-item .quantity-row span {
+    font-size: 11px;
+  }
+}
