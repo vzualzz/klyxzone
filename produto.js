@@ -42,9 +42,8 @@ const cartCount = document.getElementById("cartCount");
 const cartItemsCount = document.getElementById("cartItemsCount");
 const cartTotal = document.getElementById("cartTotal");
 
-
 let quantity = 1;
-let productScrollPosition = 0;
+
 
 /* =========================
    DINHEIRO
@@ -637,17 +636,6 @@ quantityRow.appendChild(increaseButton);
 
 }
 
-function openProductCart() {
-
-  drawer.classList.add("open");
-  overlay.classList.add("open");
-
-  drawer.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-}
 
 /* =========================
    ABRIR CARRINHO
@@ -659,9 +647,19 @@ if (openCartButton) {
     "click",
     () => {
 
-      openProductCart();
-      updateCart();
+      drawer.classList.add("open");
 
+   document.documentElement.style.overflow = "hidden";
+   document.body.style.overflow = "hidden";
+
+   overlay.classList.add("open");
+
+   drawer.setAttribute(
+     "aria-hidden",
+     "false"
+   );
+
+   updateCart();
     }
   );
 
@@ -675,6 +673,7 @@ if (openCartButton) {
 function closeCart() {
 
   drawer.classList.remove("open");
+
   overlay.classList.remove("open");
 
   drawer.setAttribute(
@@ -682,7 +681,21 @@ function closeCart() {
     "true"
   );
 
+  document.documentElement.style.overflow = "";
+  document.body.style.overflow = "";
+
 }
+
+
+if (closeCartButton) {
+
+  closeCartButton.addEventListener(
+    "click",
+    closeCart
+  );
+
+}
+
 
 if (overlay) {
 
@@ -745,9 +758,19 @@ addButton.addEventListener(
 
     setTimeout(() => {
 
-  openProductCart();
+      drawer.classList.add("open");
 
-}, 300);
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+
+      overlay.classList.add("open");
+
+      drawer.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+    }, 300);
 
   }
 );
