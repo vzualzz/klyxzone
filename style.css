@@ -3985,27 +3985,3 @@ h1 {
   }
 }
 
-
-/* =======================================================
-   CARRINHO — TRAVAR PÁGINA ATRÁS NO MOBILE
-   ======================================================= */
-
-@media (max-width: 760px) {
-
-  body:has(.drawer.open) {
-    overflow: hidden !important;
-    touch-action: none !important;
-  }
-
-  .drawer {
-    touch-action: none;
-  }
-
-  .drawer-body {
-    touch-action: pan-y !important;
-    overflow-y: auto !important;
-    overscroll-behavior: contain !important;
-    -webkit-overflow-scrolling: touch;
-  }
-
-}
