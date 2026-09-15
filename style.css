@@ -4361,7 +4361,7 @@ body.cart-open {
 html,
 body {
   overflow-y: visible !important;
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
 }
 
 .topbar {
