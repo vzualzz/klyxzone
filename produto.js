@@ -42,8 +42,9 @@ const cartCount = document.getElementById("cartCount");
 const cartItemsCount = document.getElementById("cartItemsCount");
 const cartTotal = document.getElementById("cartTotal");
 
-let quantity = 1;
 
+let quantity = 1;
+let productScrollPosition = 0;
 
 /* =========================
    DINHEIRO
@@ -638,11 +639,16 @@ quantityRow.appendChild(increaseButton);
 
 function openProductCart() {
 
+  productScrollPosition = window.scrollY;
+
+  document.body.style.position = "fixed";
+  document.body.style.top =
+    `-${productScrollPosition}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
+
   drawer.classList.add("open");
-
-  document.documentElement.style.overflow = "clip";
-  document.body.style.overflow = "clip";
-
   overlay.classList.add("open");
 
   drawer.setAttribute(
@@ -678,7 +684,6 @@ if (openCartButton) {
 function closeCart() {
 
   drawer.classList.remove("open");
-
   overlay.classList.remove("open");
 
   drawer.setAttribute(
@@ -686,8 +691,16 @@ function closeCart() {
     "true"
   );
 
- document.documentElement.style.overflow = "";
-document.body.style.overflow = "";
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
+
+  window.scrollTo(
+    0,
+    productScrollPosition
+  );
 
 }
 
