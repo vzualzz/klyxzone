@@ -4349,3 +4349,10 @@ body.cart-open {
 .product:hover .product-image-hover {
   opacity: 1;
 }
+
+/* HEADER FIXO DURANTE TODA A NAVEGAÇÃO */
+.topbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
