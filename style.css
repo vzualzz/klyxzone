@@ -4056,3 +4056,54 @@ h1 {
   }
 
 }
+
+
+/* =======================================================
+   CONTROLE DE QUANTIDADE — CARRINHO
+   ======================================================= */
+
+.cart-item .quantity-row {
+  width: 190px;
+  height: 48px;
+
+  border: 1px solid var(--line);
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  margin-top: 8px;
+  gap: 0;
+}
+
+.cart-item .quantity-row .btn {
+  width: 48px;
+  height: 100%;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  border-radius: 0;
+
+  background: transparent;
+  color: var(--text);
+
+  font-size: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item .quantity-row .btn:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.cart-item .quantity-row span {
+  font-size: 14px;
+  color: var(--text);
+}
