@@ -641,11 +641,12 @@ function openProductCart() {
 
   productScrollPosition = window.scrollY;
 
-  document.body.style.position = "fixed";
-  document.body.style.top = `-${productScrollPosition}px`;
-  document.body.style.left = "0";
-  document.body.style.right = "0";
-  document.body.style.width = "100%";
+  document.body.classList.add("cart-open");
+
+  document.body.style.setProperty(
+    "--cart-scroll-y",
+    `-${productScrollPosition}px`
+  );
 
   drawer.classList.add("open");
   overlay.classList.add("open");
@@ -685,16 +686,12 @@ function closeCart() {
   drawer.classList.remove("open");
   overlay.classList.remove("open");
 
+  document.body.classList.remove("cart-open");
+
   drawer.setAttribute(
     "aria-hidden",
     "true"
   );
-
-  document.body.style.position = "";
-  document.body.style.top = "";
-  document.body.style.left = "";
-  document.body.style.right = "";
-  document.body.style.width = "";
 
   window.scrollTo(
     0,
@@ -702,7 +699,6 @@ function closeCart() {
   );
 
 }
-
 if (closeCartButton) {
 
   closeCartButton.addEventListener(
