@@ -4378,7 +4378,6 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   will-change: transform, opacity;
-  transform-origin: center center;
 }
 
 .product:hover .thumb img {
