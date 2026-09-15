@@ -4369,3 +4369,7 @@ body {
   top: 0 !important;
   z-index: 1000 !important;
 }
+
+.product .thumb img {
+  backface-visibility: hidden;
+}
