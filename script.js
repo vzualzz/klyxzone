@@ -979,8 +979,12 @@ function openCart() {
     "aria-hidden",
     "false"
   );
-}
 
+  if (window.innerWidth <= 760) {
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+  }
+}
 function closeCart() {
 
   drawerEl.classList.remove(
