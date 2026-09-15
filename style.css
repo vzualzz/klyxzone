@@ -3984,3 +3984,20 @@ h1 {
     z-index: 1000 !important;
   }
 }
+
+
+/* =======================================================
+   CORREÇÃO — SCROLL DO CARRINHO NO MOBILE
+   ======================================================= */
+
+@media (max-width: 760px) {
+
+  .drawer-body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+}
