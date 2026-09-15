@@ -639,6 +639,14 @@ quantityRow.appendChild(increaseButton);
 
 function openProductCart() {
 
+  productScrollPosition = window.scrollY;
+
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${productScrollPosition}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
+
   drawer.classList.add("open");
   overlay.classList.add("open");
 
@@ -680,6 +688,17 @@ function closeCart() {
   drawer.setAttribute(
     "aria-hidden",
     "true"
+  );
+
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
+
+  window.scrollTo(
+    0,
+    productScrollPosition
   );
 
 }
