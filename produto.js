@@ -636,7 +636,20 @@ quantityRow.appendChild(increaseButton);
 
 }
 
+function openProductCart() {
 
+  drawer.classList.add("open");
+
+  overlay.classList.add("open");
+
+  drawer.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  window.scrollTo(0, window.scrollY);
+
+}
 /* =========================
    ABRIR CARRINHO
 ========================= */
@@ -647,19 +660,9 @@ if (openCartButton) {
     "click",
     () => {
 
-      drawer.classList.add("open");
+      openProductCart();
+      updateCart();
 
-   document.documentElement.style.overflow = "hidden";
-   document.body.style.overflow = "hidden";
-
-   overlay.classList.add("open");
-
-   drawer.setAttribute(
-     "aria-hidden",
-     "false"
-   );
-
-   updateCart();
     }
   );
 
@@ -758,19 +761,9 @@ addButton.addEventListener(
 
     setTimeout(() => {
 
-      drawer.classList.add("open");
+  openProductCart();
 
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflow = "hidden";
-
-      overlay.classList.add("open");
-
-      drawer.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-    }, 300);
+}, 300);
 
   }
 );
