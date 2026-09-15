@@ -4383,3 +4383,13 @@ body {
   -webkit-transform: translate3d(0, -8px, 0) scale(1.03);
   transform: translate3d(0, -8px, 0) scale(1.03);
 }
+
+
+/* HEADER FIXO — PÁGINA DE PRODUTO */
+@media (max-width: 760px) {
+  body > .topbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2000 !important;
+  }
+}
