@@ -3987,10 +3987,15 @@ h1 {
 
 
 /* =======================================================
-   CORREÇÃO — SCROLL DO CARRINHO NO MOBILE
+   CORREÇÃO — CARRINHO MOBILE
    ======================================================= */
 
 @media (max-width: 760px) {
+
+  .drawer {
+    overscroll-behavior: contain !important;
+    overflow: hidden !important;
+  }
 
   .drawer-body {
     overflow-y: auto !important;
@@ -3998,6 +4003,11 @@ h1 {
     overscroll-behavior: contain !important;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-y;
+  }
+
+  .drawer-head,
+  .drawer-foot {
+    touch-action: none;
   }
 
 }
