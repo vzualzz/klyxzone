@@ -4063,11 +4063,11 @@ h1 {
    ======================================================= */
 
 .cart-item .quantity-row {
-  width: 190px;
-  height: 48px;
+  width: 92px;
+  height: 32px;
 
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 10px;
 
   display: flex;
   align-items: center;
@@ -4080,7 +4080,7 @@ h1 {
 }
 
 .cart-item .quantity-row .btn {
-  width: 48px;
+  width: 30px;
   height: 100%;
 
   padding: 0;
@@ -4092,7 +4092,7 @@ h1 {
   background: transparent;
   color: var(--text);
 
-  font-size: 20px;
+  font-size: 16px;
 
   display: inline-flex;
   align-items: center;
@@ -4104,6 +4104,6 @@ h1 {
 }
 
 .cart-item .quantity-row span {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text);
 }
