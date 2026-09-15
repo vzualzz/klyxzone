@@ -3474,13 +3474,17 @@ h1 {
   }
 
   .drawer-body {
-    flex: 1;
+  flex: 1;
 
-    min-height: 0;
+  min-height: 0;
 
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  display: grid;
+  grid-auto-rows: max-content;
+  align-content: start;
+}
 
   .drawer-foot {
     flex-shrink: 0;
