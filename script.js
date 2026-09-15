@@ -960,18 +960,21 @@ function removeFromCart(productId) {
 
 function openCart() {
 
-  if (window.innerWidth <= 760) {
+ if (window.innerWidth <= 760) {
 
-    mobileScrollPosition =
-      window.scrollY;
+  mobileScrollPosition =
+    window.scrollY;
 
-    document.body.style.position = "fixed";
-    document.body.style.top =
-      `-${mobileScrollPosition}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
-  }
+  document.body.style.position = "fixed";
+  document.body.style.top =
+    `-${mobileScrollPosition}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
+
+  drawerEl.style.position = "fixed";
+  drawerEl.style.top = "0";
+}
 
   drawerEl.classList.add(
     "open"
