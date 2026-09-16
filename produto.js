@@ -753,6 +753,13 @@ addButton.addEventListener(
 
     setTimeout(() => {
 
+  if (window.innerWidth <= 760) {
+
+    drawer.style.position = "fixed";
+    drawer.style.top = "0";
+
+  }
+
   drawer.classList.add("open");
 
   overlay.classList.add("open");
