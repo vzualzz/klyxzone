@@ -3240,15 +3240,15 @@ h1 {
      ======================================================= */
 
   .mayo-content {
-    position: absolute;
-
-    left: 5%;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    z-index: 10;
-  }
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
   .mayo-label {
     font-size: 0.58rem;
