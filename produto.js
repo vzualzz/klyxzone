@@ -43,6 +43,7 @@ const cartItemsCount = document.getElementById("cartItemsCount");
 const cartTotal = document.getElementById("cartTotal");
 
 let quantity = 1;
+let mobileScrollPosition = 0;
 
 
 /* =========================
@@ -755,9 +756,20 @@ addButton.addEventListener(
 
   if (window.innerWidth <= 760) {
 
+    mobileScrollPosition =
+      window.scrollY;
+
+    document.body.style.position = "fixed";
+
+    document.body.style.top =
+      `-${mobileScrollPosition}px`;
+
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+
     drawer.style.position = "fixed";
     drawer.style.top = "0";
-
   }
 
   drawer.classList.add("open");
@@ -770,7 +782,6 @@ addButton.addEventListener(
   );
 
 }, 300);
-
   }
 );
 
