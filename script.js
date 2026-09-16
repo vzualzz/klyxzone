@@ -1183,8 +1183,6 @@ const total =
 
 message +=
   `💰 *Total:* ${money(total)}`;
-    message +=
-      "📦 Por favor, confirme o endereço de entrega.";
 
     const whatsappNumber =
       "5531972247548";
