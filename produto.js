@@ -754,6 +754,22 @@ addButton.addEventListener(
 
     setTimeout(() => {
 
+  if (window.innerWidth <= 760) {
+
+    mobileScrollPosition =
+      window.scrollY;
+
+    document.body.style.position = "fixed";
+
+    document.body.style.top =
+      `-${mobileScrollPosition}px`;
+
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+
+  }
+
   drawer.classList.add("open");
 
   overlay.classList.add("open");
