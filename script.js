@@ -1166,24 +1166,23 @@ checkoutButton.addEventListener(
     }
 
     let message =
-      "🛒 *Pedido via Loja Online* %0A%0A";
+  "🛒 *Pedido via Loja Online* %0A%0A" +
+  "Olá! Gostaria de realizar este pedido com a KLYXZONE. Seguem os produtos selecionados: %0A%0A";
 
-    state.cart.forEach(item => {
+state.cart.forEach(item => {
+  message +=
+    `• ${item.name} %0A   Quantidade: ${item.quantity}x %0A   Preço unitário: ${money(item.price)} %0A%0A`;
+});
 
-      message +=
-        `• ${item.name} %0A   Quantidade: ${item.quantity}x %0A   Preço unitário: ${money(item.price)} %0A%0A`;
-    });
+const total =
+  state.cart.reduce(
+    (sum, item) =>
+      sum + item.price * item.quantity,
+    0
+  );
 
-    const total =
-      state.cart.reduce(
-        (sum, item) =>
-          sum + item.price * item.quantity,
-        0
-      );
-
-    message +=
-      `💰 *Total:* ${money(total)} %0A%0A`;
-
+message +=
+  `💰 *Total:* ${money(total)}`;
     message +=
       "📦 Por favor, confirme o endereço de entrega.";
 
