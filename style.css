@@ -2810,7 +2810,7 @@ h1 {
     top: 50%;
     right: 0;
 
-    width: min(330px, calc(100vw - 90px));
+    width: min(300px, calc(100vw - 110px));
     height: 40px;
   }
 
