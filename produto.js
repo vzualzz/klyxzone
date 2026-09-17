@@ -658,21 +658,10 @@ if (openCartButton) {
 ========================= */
 
 function closeCart() {
-
-  drawer.classList.remove("open");
-
-  overlay.classList.remove("open");
-
-  drawer.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  document.documentElement.style.overflow = "";
-  document.body.style.overflow = "";
-
+  if (drawer.open) {
+    drawer.close();
+  }
 }
-
 
 if (closeCartButton) {
 
@@ -743,17 +732,8 @@ addButton.addEventListener(
 
     /* ABRE O CARRINHO */
 
-    setTimeout(() => {
-
-  drawer.classList.add("open");
-
-  overlay.classList.add("open");
-
-  drawer.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
+setTimeout(() => {
+  openCart();
 }, 300);
   }
 );
