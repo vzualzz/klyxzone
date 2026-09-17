@@ -36,6 +36,7 @@ const openCartButton = document.getElementById("openCart");
 const closeCartButton = document.getElementById("closeCart");
 const drawer = document.getElementById("drawer");
 const overlay = document.getElementById("overlay");
+const checkoutButton = document.getElementById("checkoutButton");
 
 const cartItems = document.getElementById("cartItems");
 const cartCount = document.getElementById("cartCount");
