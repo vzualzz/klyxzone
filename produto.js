@@ -643,6 +643,11 @@ function openCart() {
 
   if (!drawer.open) {
     drawer.showModal();
+
+    requestAnimationFrame(() => {
+      drawer.classList.add("open");
+      overlay.classList.add("open");
+    });
   }
 }
 
@@ -660,10 +665,16 @@ if (openCartButton) {
 
 function closeCart() {
   if (drawer.open) {
-    drawer.close();
+    drawer.classList.remove("open");
+    overlay.classList.remove("open");
+
+    setTimeout(() => {
+      if (!drawer.classList.contains("open")) {
+        drawer.close();
+      }
+    }, 280);
   }
 }
-
 if (closeCartButton) {
 
   closeCartButton.addEventListener(
