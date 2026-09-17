@@ -4444,3 +4444,21 @@ dialog.drawer::backdrop {
 dialog.drawer:not([open]) {
   display: none !important;
 }
+
+/* =========================
+   CORREÇÃO DO CARRINHO
+========================= */
+
+/* Texto do carrinho */
+dialog.drawer,
+dialog.drawer .drawer-head,
+dialog.drawer .drawer-body,
+dialog.drawer .drawer-foot,
+dialog.drawer .cart-item {
+  color: var(--text) !important;
+}
+
+/* Impede os produtos de esticarem verticalmente */
+dialog.drawer .drawer-body {
+  align-content: start !important;
+}
