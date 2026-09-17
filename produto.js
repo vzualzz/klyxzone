@@ -684,6 +684,14 @@ if (closeCartButton) {
 
 }
 
+if (drawer) {
+  drawer.addEventListener("click", (event) => {
+    if (event.target === drawer) {
+      closeCart();
+    }
+  });
+}
+
 
 if (overlay) {
 
