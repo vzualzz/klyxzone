@@ -702,6 +702,37 @@ if (overlay) {
 
 }
 
+/* =========================
+   ABRIR CARRINHO DO PRODUTO
+========================= */
+
+function openProductCart() {
+
+  drawer.style.position = "fixed";
+  drawer.style.top = "0";
+  drawer.style.right = "0";
+  drawer.style.bottom = "0";
+  drawer.style.left = "auto";
+
+  drawer.style.height = "100dvh";
+  drawer.style.maxHeight = "100dvh";
+
+  drawer.style.zIndex = "99999";
+
+  overlay.style.position = "fixed";
+  overlay.style.inset = "0";
+  overlay.style.zIndex = "99998";
+
+  drawer.classList.add("open");
+  overlay.classList.add("open");
+
+  drawer.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+}
+
 
 /* =========================
    ADICIONAR AO CARRINHO
@@ -754,14 +785,7 @@ addButton.addEventListener(
 
     setTimeout(() => {
 
-  drawer.classList.add("open");
-
-  overlay.classList.add("open");
-
-  drawer.setAttribute(
-    "aria-hidden",
-    "false"
-  );
+  openProductCart();
 
 }, 300);
   }
