@@ -637,28 +637,19 @@ quantityRow.appendChild(increaseButton);
    ABRIR CARRINHO
 ========================= */
 
-if (openCartButton) {
+function openCart() {
+  updateCart();
 
+  if (!drawer.open) {
+    drawer.showModal();
+  }
+}
+
+if (openCartButton) {
   openCartButton.addEventListener(
     "click",
-    () => {
-
-      drawer.classList.add("open");
-
-   document.documentElement.style.overflow = "hidden";
-   document.body.style.overflow = "hidden";
-
-   overlay.classList.add("open");
-
-   drawer.setAttribute(
-     "aria-hidden",
-     "false"
-   );
-
-   updateCart();
-    }
+    openCart
   );
-
 }
 
 
