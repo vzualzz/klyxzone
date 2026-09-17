@@ -162,10 +162,11 @@ const products = [
     imageHover: "imagens1/nemvira2.jfif",
     gallery: [
       "imagens1/nemviradollmain22.png",
-      "imagens1/nemviradollmain.jfif",
+      "imagens1/nemvira2.jfif",
       "imagens1/nemvira2.jfif",
       "imagens1/nemviradoll.jfif",
-      "imagens1/nemviradoll1.jfif"
+      "imagens1/nemviradoll1.jfif",
+      "imagens1/nemviradollmain.jfif"
     ],
      galleryScales: [
       0,
