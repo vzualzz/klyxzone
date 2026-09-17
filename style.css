@@ -4439,3 +4439,8 @@ dialog.drawer::backdrop {
     max-height: 100dvh !important;
   }
 }
+
+/* ESCONDE O CARRINHO QUANDO O DIALOG ESTÁ FECHADO */
+dialog.drawer:not([open]) {
+  display: none !important;
+}
