@@ -4422,11 +4422,41 @@ dialog.drawer {
   border: 0 !important;
   background: #0b0b0b !important;
 
-  transform: none !important;
+  transform: translateX(100%) !important;
+  transition: transform .28s ease !important;
+}
+
+dialog.drawer.open {
+  transform: translateX(0) !important;
 }
 
 dialog.drawer::backdrop {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0,0,0,0.42);
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+dialog.drawer.open::backdrop {
+  opacity: 1;
+}
+
+/* ESCONDE O CARRINHO QUANDO ESTÁ FECHADO */
+dialog.drawer:not([open]) {
+  display: none !important;
+}
+
+/* TEXTO DO CARRINHO */
+dialog.drawer,
+dialog.drawer .drawer-head,
+dialog.drawer .drawer-body,
+dialog.drawer .drawer-foot,
+dialog.drawer .cart-item {
+  color: var(--text) !important;
+}
+
+/* IMPede OS PRODUTOS DE ESTICAREM */
+dialog.drawer .drawer-body {
+  align-content: start !important;
 }
 
 @media (max-width: 760px) {
@@ -4438,27 +4468,4 @@ dialog.drawer::backdrop {
     max-width: 100vw !important;
     max-height: 100dvh !important;
   }
-}
-
-/* ESCONDE O CARRINHO QUANDO O DIALOG ESTÁ FECHADO */
-dialog.drawer:not([open]) {
-  display: none !important;
-}
-
-/* =========================
-   CORREÇÃO DO CARRINHO
-========================= */
-
-/* Texto do carrinho */
-dialog.drawer,
-dialog.drawer .drawer-head,
-dialog.drawer .drawer-body,
-dialog.drawer .drawer-foot,
-dialog.drawer .cart-item {
-  color: var(--text) !important;
-}
-
-/* Impede os produtos de esticarem verticalmente */
-dialog.drawer .drawer-body {
-  align-content: start !important;
 }
