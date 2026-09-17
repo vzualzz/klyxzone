@@ -4624,3 +4624,14 @@ dialog.drawer.open {
   }
 
 }
+
+
+
+.drawer-body {
+  align-content: start !important;
+  grid-auto-rows: max-content !important;
+}
+
+.cart-item {
+  align-self: start !important;
+}
