@@ -969,9 +969,10 @@ const relatedProducts = [
     initial: "D",
     brand: "NemVira",
     image: "imagens1/nemviradollmain22.png",
-    imageHover: "imagens1/nemviradoll.jfif",
+    imageHover: "imagens1/nemvira2.jfif",
     gallery: [
       "imagens1/nemviradollmain22.png",
+      "imagens1/nemvira2.jfif",
       "imagens1/nemviradoll.jfif",
       "imagens1/nemviradoll1.jfif"
     ]
