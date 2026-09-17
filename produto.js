@@ -968,10 +968,10 @@ const relatedProducts = [
     desc: "NemVira Doll é um mousepad de tecido extremamente raro, feito para quem busca algo diferente e difícil de encontrar.",
     initial: "D",
     brand: "NemVira",
-    image: "imagens1/nemviradollmain.jfif",
+    image: "imagens1/nemviradollmain22.png",
     imageHover: "imagens1/nemviradoll.jfif",
     gallery: [
-      "imagens1/nemviradollmain.jfif",
+      "imagens1/nemviradollmain22.png",
       "imagens1/nemviradoll.jfif",
       "imagens1/nemviradoll1.jfif"
     ]
