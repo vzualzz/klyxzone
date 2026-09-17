@@ -4469,3 +4469,44 @@ dialog.drawer .drawer-body {
     max-height: 100dvh !important;
   }
 }
+
+
+/* =======================================================
+   CARRINHO — ANIMAÇÃO DO DIALOG
+   ======================================================= */
+
+dialog.drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+
+  width: 420px !important;
+  max-width: 100vw !important;
+
+  height: 100vh !important;
+  max-height: 100vh !important;
+
+  margin: 0 !important;
+
+  transform: translateX(100%) !important;
+  transition: transform .28s ease !important;
+
+  z-index: 99999 !important;
+}
+
+dialog.drawer.open {
+  transform: translateX(0) !important;
+}
+
+@media (max-width: 760px) {
+  dialog.drawer {
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+  }
+}
